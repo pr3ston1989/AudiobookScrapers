@@ -1,0 +1,1504 @@
+{
+  "services": {
+    "audioteka": [
+      {
+        "requested_url": "https://audioteka.com/pl/audiobook/gos-c-zuzia-antecka-jak-radzic-sobie-z-niejadkiem-odc-155-mama-lama/",
+        "data": {
+          "url": "https://audioteka.com/pl/audiobook/gos-c-zuzia-antecka-jak-radzic-sobie-z-niejadkiem-odc-155-mama-lama/",
+          "title": "GOŚĆ Zuzia Antecka | Jak radzić sobie z niejadkiem? | ODC. 155 | mama lama",
+          "authors": [
+            "Anna Weber",
+            "Ola Woźniak"
+          ],
+          "narrators": [
+            "Anna Weber",
+            "Ola Woźniak i goście"
+          ],
+          "publisher": [
+            "Pomelody"
+          ],
+          "length_str": "PT0H31M",
+          "duration_minutes": 31,
+          "type": null,
+          "format": "MP3",
+          "language": "pl",
+          "category": null,
+          "collections": [
+            "Mama Lama",
+            "Mama Lama"
+          ],
+          "avg_rating": 0.0,
+          "rating_count": 0,
+          "description": "Audiobook GOŚĆ Zuzia Antecka | Jak radzić sobie z niejadkiem? | ODC. 155 | mama lama autorstwa Anna Weber, Ola Woźniak od Pomelody słuchaj w Audiotece. Audioteka – dziesiątki tysięcy uwielbianych tytułów!",
+          "why_worth_it": null,
+          "cover_url": "https://atkcdn.audioteka.com/cc/2c/gos-c-zuzia-antecka-jak-radzic--2cc5bdbf/4.jpg?w=300&auto=format",
+          "reviews": []
+        },
+        "quality": {
+          "complete": true,
+          "missing_required": [],
+          "available_fields": [
+            "title",
+            "authors",
+            "narrators",
+            "publisher",
+            "description",
+            "cover_url",
+            "duration_minutes",
+            "length_str",
+            "language",
+            "collections",
+            "avg_rating",
+            "rating_count",
+            "format"
+          ],
+          "optional_absent": [
+            "category",
+            "categories",
+            "series",
+            "volume_number",
+            "release_date",
+            "premiere_date",
+            "release_year",
+            "isbn",
+            "pages",
+            "original_title",
+            "translator",
+            "tags",
+            "why_worth_it",
+            "reviews"
+          ]
+        },
+        "cookies": null
+      },
+      {
+        "requested_url": "https://audioteka.com/pl/audiobook/obdarowana/",
+        "data": {
+          "url": "https://audioteka.com/pl/audiobook/obdarowana/",
+          "title": "Obdarowana",
+          "authors": [
+            "Suzumi Suzuki"
+          ],
+          "narrators": [
+            "Agnieszka Baranowska"
+          ],
+          "publisher": [
+            "Bo.wiem"
+          ],
+          "length_str": "PT2H28M",
+          "duration_minutes": 148,
+          "type": "Audiobook - pełny",
+          "format": "MP3",
+          "language": "pl",
+          "category": "Literatura współczesna",
+          "collections": [],
+          "avg_rating": 4.2,
+          "rating_count": 12,
+          "description": "Audiobook Obdarowana autorstwa Suzumi Suzuki od Bo.wiem słuchaj w Audiotece. Audioteka – dziesiątki tysięcy uwielbianych tytułów!",
+          "why_worth_it": null,
+          "cover_url": "https://atkcdn.audioteka.com/cc/19/obdarowana/4.jpg?w=300&auto=format",
+          "reviews": [
+            {
+              "user": "Wieha",
+              "text": "Warto! Ascetyczna opowieść o odchodzeniu matki, i powrocie córki. Odległy świat wyimkowej społeczności japońskiej podanej w zwięzły sposób.\nPani lektorka - Agnieszka Baranowska też ładnie zinterpretowała tę pozycję.",
+              "stars": 5
+            },
+            {
+              "user": "Hiroki",
+              "text": "Kocham takie książki. Ubrudzony zostałem trudną historią dwóch kobiet. Ciężar ich emocji spadł na mnie i doświadczył. Love it.",
+              "stars": 5
+            },
+            {
+              "user": "Adam",
+              "text": "całkiem przyjemna książka o odchodzeniu",
+              "stars": 5
+            },
+            {
+              "username": "Wieha",
+              "text": "Warto! Ascetyczna opowieść o odchodzeniu matki, i powrocie córki. Odległy świat wyimkowej społeczności japońskiej podanej w zwięzły sposób.\nPani lektorka - Agnieszka Baranowska też ładnie zinterpretowała tę pozycję.",
+              "date": "2026-05-05",
+              "rating": 5
+            },
+            {
+              "username": "Hiroki",
+              "text": "Kocham takie książki. Ubrudzony zostałem trudną historią dwóch kobiet. Ciężar ich emocji spadł na mnie i doświadczył. Love it.",
+              "date": "2026-05-12",
+              "rating": 5
+            },
+            {
+              "username": "Adam",
+              "text": "całkiem przyjemna książka o odchodzeniu",
+              "date": "2026-05-03",
+              "rating": 5
+            }
+          ]
+        },
+        "quality": {
+          "complete": true,
+          "missing_required": [],
+          "available_fields": [
+            "title",
+            "authors",
+            "narrators",
+            "publisher",
+            "description",
+            "cover_url",
+            "duration_minutes",
+            "length_str",
+            "language",
+            "category",
+            "avg_rating",
+            "rating_count",
+            "format",
+            "reviews"
+          ],
+          "optional_absent": [
+            "categories",
+            "collections",
+            "series",
+            "volume_number",
+            "release_date",
+            "premiere_date",
+            "release_year",
+            "isbn",
+            "pages",
+            "original_title",
+            "translator",
+            "tags",
+            "why_worth_it"
+          ]
+        },
+        "cookies": null
+      },
+      {
+        "requested_url": "https://audioteka.com/pl/audiobook/11-pieter-komedia-kryminalna/",
+        "data": {
+          "url": "https://audioteka.com/pl/audiobook/11-pieter-komedia-kryminalna/",
+          "title": "11 pięter. Komedia kryminalna",
+          "authors": [
+            "Piotr Jedliński"
+          ],
+          "narrators": [
+            "Mikołaj Krawczyk"
+          ],
+          "publisher": [
+            "Wydawnictwo Lind&Co Polska"
+          ],
+          "length_str": "PT13H55M",
+          "duration_minutes": 835,
+          "type": "Audiobook - pełny",
+          "format": "MP3",
+          "language": "pl",
+          "category": "Komedia",
+          "collections": [],
+          "avg_rating": 3.4,
+          "rating_count": 8,
+          "description": "Audiobook 11 pięter. Komedia kryminalna autorstwa Piotr Jedliński od Wydawnictwo Lind&Co Polska słuchaj w Audiotece. Audioteka – dziesiątki tysięcy uwielbianych tytułów!",
+          "why_worth_it": null,
+          "cover_url": "https://atkcdn.audioteka.com/cc/9f/11-pieter-komedia-kryminalna/4.jpg?w=300&auto=format",
+          "reviews": [
+            {
+              "user": "Anna",
+              "text": "Bardzo sympatyczna 🌹🌹",
+              "stars": 5
+            },
+            {
+              "username": "Anna",
+              "text": "Bardzo sympatyczna 🌹🌹",
+              "date": "2026-05-02",
+              "rating": 4
+            }
+          ]
+        },
+        "quality": {
+          "complete": true,
+          "missing_required": [],
+          "available_fields": [
+            "title",
+            "authors",
+            "narrators",
+            "publisher",
+            "description",
+            "cover_url",
+            "duration_minutes",
+            "length_str",
+            "language",
+            "category",
+            "avg_rating",
+            "rating_count",
+            "format",
+            "reviews"
+          ],
+          "optional_absent": [
+            "categories",
+            "collections",
+            "series",
+            "volume_number",
+            "release_date",
+            "premiere_date",
+            "release_year",
+            "isbn",
+            "pages",
+            "original_title",
+            "translator",
+            "tags",
+            "why_worth_it"
+          ]
+        },
+        "cookies": null
+      }
+    ],
+    "storytel": [
+      {
+        "requested_url": "https://www.storytel.com/pl/books/the-wealth-gap-is-a-knowledge-gap-14740522",
+        "data": {
+          "url": "https://www.storytel.com/pl/books/the-wealth-gap-is-a-knowledge-gap-14740522",
+          "title": "The Wealth Gap Is a Knowledge Gap",
+          "authors": [
+            "Dorian Frinch"
+          ],
+          "narrators": [
+            "Hale Bennett"
+          ],
+          "publisher": [
+            "Stream Readers"
+          ],
+          "length_str": "PT21M",
+          "duration_minutes": 21,
+          "type": "audiobook",
+          "format": null,
+          "language": "en",
+          "category": "Rozwój osobisty",
+          "collections": [],
+          "avg_rating": null,
+          "rating_count": null,
+          "description": "Most people do not stay broke because they lack motivation. They stay behind because they were never taught the rules of wealth. The Wealth Gap Is a Knowledge Gap is a direct, practical audiobook that explains seven financial concepts wealthy people understand earlier than everyone else. No hype. No fluff. No empty motivation. Just the information gap between earning money and actually building wealth. Inside, you'll learn the basics of compound interest, tax optimization, asset vs. liability thinking, income diversification, leverage, the difference between income and wealth, and how generational wealth is built and protected.",
+          "why_worth_it": null,
+          "cover_url": "https://covers.storytel.com/jpg-640/9780278620612.6b91970c-d9c7-4c69-89f3-817d09932ddd?optimize=high",
+          "reviews": [],
+          "volume_number": null,
+          "isbn": "9780278620612",
+          "release_date": "2026-08-03"
+        },
+        "quality": {
+          "complete": true,
+          "missing_required": [],
+          "available_fields": [
+            "title",
+            "authors",
+            "narrators",
+            "publisher",
+            "description",
+            "cover_url",
+            "duration_minutes",
+            "length_str",
+            "language",
+            "category",
+            "release_date",
+            "isbn"
+          ],
+          "optional_absent": [
+            "categories",
+            "collections",
+            "series",
+            "volume_number",
+            "avg_rating",
+            "rating_count",
+            "premiere_date",
+            "release_year",
+            "pages",
+            "original_title",
+            "translator",
+            "format",
+            "tags",
+            "why_worth_it",
+            "reviews"
+          ]
+        },
+        "cookies": null
+      },
+      {
+        "requested_url": "https://www.storytel.com/pl/books/the-last-word-2447984",
+        "data": {
+          "url": "https://www.storytel.com/pl/books/the-last-word-2447984",
+          "title": "The Last Word",
+          "authors": [
+            "Amy Price"
+          ],
+          "narrators": [
+            "Annie Aldington",
+            "Amy Price"
+          ],
+          "publisher": [
+            "HQ"
+          ],
+          "length_str": "PT11H20M",
+          "duration_minutes": 680,
+          "type": "audiobook",
+          "format": null,
+          "language": "en",
+          "category": "Biografie",
+          "collections": [],
+          "avg_rating": 5.0,
+          "rating_count": 3,
+          "description": "Raw and unflinchingThis is a mother’s account of her daughter’s lifeAnd of Katie Price and her turbulent rise to fameThe Sunday Times bestselling memoir from Amy Price.Katie Price’s life has long been lived in the public eye, documented both by her own books, reality tv, and the tabloids. But what does this story look like from the inside?While battling a terminal illness, Katie’s mother, Amy Price, has the last word in this honest and insightful memoir, where she reveals how her family’s past has shaped her daughter’s future.The Last Word is the definitive story of how Katrina Amy Alexandria Alexis Infield became Katie Price. It documents how her life has been shaped by a tradition of strong women, by cycles of abuse which have been repeated through generations, and by the impact of fame and trauma on a close family unit.With tributes read by Kate, Sophie, Dan, and Paul Price.The Last Word was Number 2 in the Sunday Times Hardback Non-Fiction bestseller list on Sunday 16th July.",
+          "why_worth_it": null,
+          "cover_url": "https://covers.storytel.com/jpg-640/9780008589806.7838a317-7b8c-4785-89d9-bf942ac11de1?optimize=high",
+          "reviews": [],
+          "volume_number": null,
+          "isbn": "9780008589806",
+          "release_date": "2023-07-06"
+        },
+        "quality": {
+          "complete": true,
+          "missing_required": [],
+          "available_fields": [
+            "title",
+            "authors",
+            "narrators",
+            "publisher",
+            "description",
+            "cover_url",
+            "duration_minutes",
+            "length_str",
+            "language",
+            "category",
+            "avg_rating",
+            "rating_count",
+            "release_date",
+            "isbn"
+          ],
+          "optional_absent": [
+            "categories",
+            "collections",
+            "series",
+            "volume_number",
+            "premiere_date",
+            "release_year",
+            "pages",
+            "original_title",
+            "translator",
+            "format",
+            "tags",
+            "why_worth_it",
+            "reviews"
+          ]
+        },
+        "cookies": null
+      },
+      {
+        "requested_url": "https://www.storytel.com/pl/books/predykcja-dalii-13432705",
+        "data": {
+          "url": "https://www.storytel.com/pl/books/predykcja-dalii-13432705",
+          "title": "Predykcja Dalii",
+          "authors": [
+            "Kajetan Szokalski"
+          ],
+          "narrators": [
+            "Mikołaj Krawczyk"
+          ],
+          "publisher": [
+            "Pulp Books"
+          ],
+          "length_str": "PT52M",
+          "duration_minutes": 52,
+          "type": "audiobook",
+          "format": null,
+          "language": "pl",
+          "category": "Science fiction",
+          "collections": [],
+          "avg_rating": 3.9,
+          "rating_count": 7,
+          "description": "Staropol, gorące lato 1906. Śledcza Dalia zostaje wezwana do sprawy włamania i morderstwa młodej żony. Na miejscu, w podupadającej posiadłości, nic nie jest takie, jak powinno, na jaw wychodzą dawne spory i konflikty. Jednak okazuje się, że to dopiero początekOpowieść szkatułkowa zgrabnie łącząca w sobie elementy kryminału i cyberpunka.",
+          "why_worth_it": null,
+          "cover_url": "https://covers.storytel.com/jpg-640/9788397964891.82f5f2f6-4031-4b42-add9-2052812dae83?optimize=high",
+          "reviews": [],
+          "volume_number": null,
+          "isbn": "9788397964891",
+          "release_date": "2026-01-22"
+        },
+        "quality": {
+          "complete": true,
+          "missing_required": [],
+          "available_fields": [
+            "title",
+            "authors",
+            "narrators",
+            "publisher",
+            "description",
+            "cover_url",
+            "duration_minutes",
+            "length_str",
+            "language",
+            "category",
+            "avg_rating",
+            "rating_count",
+            "release_date",
+            "isbn"
+          ],
+          "optional_absent": [
+            "categories",
+            "collections",
+            "series",
+            "volume_number",
+            "premiere_date",
+            "release_year",
+            "pages",
+            "original_title",
+            "translator",
+            "format",
+            "tags",
+            "why_worth_it",
+            "reviews"
+          ]
+        },
+        "cookies": null
+      }
+    ],
+    "empik": [
+      {
+        "requested_url": "https://www.empik.com/the-truth-about-pyecraft-a-humorous-science-fiction-story-wells-herbert-george,p1764931904,ebooki-i-mp3-p",
+        "data": {
+          "url": "https://www.empik.com/the-truth-about-pyecraft-a-humorous-science-fiction-story-wells-herbert-george,p1764931904,ebooki-i-mp3-p",
+          "title": "The Truth About Pyecraft. A Humorous Science Fiction Story",
+          "authors": [
+            "Wells Herbert George"
+          ],
+          "category": "Poezja, aforyzm, dramat",
+          "avg_rating": 0,
+          "rating_count": 0,
+          "cover_url": "https://ecsmedia.pl/cir/b/the-truth-about-pyecraft-a-humorous-science-fiction-story-audiobook-2026/07/22/5315393829180884439/db88c88be873429c9dc2007fb0566d50.webp",
+          "description": "What if London’s heaviest man weighed absolutely nothing? In this brilliantly bizarre, darkly comedic tale by H.G. Wells, an annoyed gentleman named Formalyn is relentlessly badgered by Pyecraft - the most monstrously obese, insufferable clubman in London. Desperate to escape his massive size, Pyecraft begs for an ancient, secret recipe passed down by Formalyn’s Hindu great-grandmother. Reluctantly, Formalyn surrenders the strange formula, warning of its volatile nature. But the potion works with a terrifyingly literal, gravity-defying twist that leaves Pyecraft trapped in a situation so absurdly scandalous, it could ruin his reputation forever. Packed with Wells' trademark wit and an unforgettable mystery, this classic story explores the hilarious dangers of getting exactly what you wish for. Right now, Pyecraft sits in his usual chair, watching, waiting, and hiding a secret that defies the very laws of nature. Press play now and uncover the shocking truth about Pyecraft!",
+          "tags": [],
+          "publisher": "Velubri Audio",
+          "narrators": [
+            "Wilkie John"
+          ],
+          "release_date": "2026-07-22",
+          "release_year": 2026,
+          "length_str": "0 godz.22 min.",
+          "duration_minutes": 22,
+          "language": "angielski",
+          "reviews": [],
+          "format": "MP3",
+          "type": "audiobook"
+        },
+        "quality": {
+          "complete": true,
+          "missing_required": [],
+          "available_fields": [
+            "title",
+            "authors",
+            "narrators",
+            "publisher",
+            "description",
+            "cover_url",
+            "duration_minutes",
+            "length_str",
+            "language",
+            "category",
+            "avg_rating",
+            "rating_count",
+            "release_date",
+            "release_year",
+            "format"
+          ],
+          "optional_absent": [
+            "categories",
+            "collections",
+            "series",
+            "volume_number",
+            "premiere_date",
+            "isbn",
+            "pages",
+            "original_title",
+            "translator",
+            "tags",
+            "why_worth_it",
+            "reviews"
+          ]
+        },
+        "cookies": "not_present"
+      },
+      {
+        "requested_url": "https://www.empik.com/nadzieja-i-tesknota-rozstanie-joanna-jax,p1720284176,ebooki-i-mp3-p",
+        "data": {
+          "url": "https://www.empik.com/nadzieja-i-tesknota-rozstanie-joanna-jax,p1720284176,ebooki-i-mp3-p",
+          "title": "Nadzieja i tęsknota. Rozstanie",
+          "authors": [
+            "Joanna Jax"
+          ],
+          "category": "Literatura obyczajowa",
+          "avg_rating": 3.8888888,
+          "rating_count": 9,
+          "cover_url": "https://ecsmedia.pl/c/nadzieja-i-tesknota-rozstanie-audiobook-b-iext229886480.jpg",
+          "description": "Po rozbiorze Rzeczpospolitej i porażce insurekcji kościuszkowskiej Miłosz i Aleksandra próbują pogodzić się z utratą ojczyzny i starają się ułożyć sobie życie w rodzinnym domu Miłosza, w Kamieńcu. Siostra Aleksandry, Klementyna, usiłuje zaś odzyskać córkę uprowadzoną przez swoją szwagierkę. Gdy jej próby kończą się fiaskiem, zaczyna popadać w obłęd. Tymczasem Konstancja Dunina, chcąc zdobyć przychylność małżonka, oddaje swojego młodszego syna pod opiekę zakonnic w domu podrzutków, dzięki czemu może ponownie zamieszkać z rodziną. Sytuacja w Europie, wbrew oczekiwaniom jej mieszkańców, nie stabilizuje się, a to za sprawą pojawienia się na politycznej scenie Napoleona Bonapartego. W Miłosza wstępuje nowa nadzieja. Postanawia kolejny raz wyjechać za granicę i tam dołączyć do wojsk dowodzonych przez rzutkiego francuskiego przywódcę. Opuszcza Kamieniec, a siostry Aleksandra i Klementyna mimo sprzeciwu Rastawickiego powracają do majątku Laudańskich i wpadają w poważnie tarapaty.",
+          "tags": [
+            "dramat rodzinny",
+            "powieść historyczna",
+            "relacje rodzinne",
+            "saga rodzinna",
+            "strata",
+            "tajemnice z przeszłości"
+          ],
+          "publisher": "Skarpa Warszawska",
+          "narrators": [
+            "Liberek Barbara"
+          ],
+          "release_date": "2026-03-13",
+          "release_year": 2026,
+          "length_str": "8 godz.24 min.",
+          "duration_minutes": 504,
+          "language": "polski",
+          "reviews": [
+            {
+              "username": "Karolina Matuszak",
+              "rating": 3,
+              "date": "22.03.2026",
+              "text": "Fabuła i dramaturgia jak zawsze ok, ale jeśli autorka pisze że w okolicach 1800 roku we Rzymie były walki po wejściu Garibaldiego, który to Garobaldi urodził się w 1804 roku, to ktoś tam lekko popłynął, nie tylko autorka ale i korekta. Czasem Pani Liberek czyta niektóre nazwy czy nazwiska w sposób, który pokazuje że nie bardzo uważała na historii, np. gen. Kutuzowa, ale to jej się zdarzało również w poprzednich częściach. Może warto by dać lektorom wskazówki w takich sprawach."
+            },
+            {
+              "username": "Ewa",
+              "rating": 4,
+              "date": "07.05.2026",
+              "text": "hm.... czy będzie następna część? książka jakby nie była skończona....."
+            },
+            {
+              "username": "Monika",
+              "rating": 4,
+              "date": "22.03.2026",
+              "text": "warto poczytać."
+            },
+            {
+              "username": "Dorota Budzikur",
+              "rating": 5,
+              "date": "24.03.2026",
+              "text": "super! polecam"
+            },
+            {
+              "username": "magdadubla",
+              "rating": 5,
+              "date": "28.03.2026",
+              "text": "emocjonująca"
+            }
+          ],
+          "format": "MP3",
+          "type": "audiobook"
+        },
+        "quality": {
+          "complete": true,
+          "missing_required": [],
+          "available_fields": [
+            "title",
+            "authors",
+            "narrators",
+            "publisher",
+            "description",
+            "cover_url",
+            "duration_minutes",
+            "length_str",
+            "language",
+            "category",
+            "avg_rating",
+            "rating_count",
+            "release_date",
+            "release_year",
+            "format",
+            "tags",
+            "reviews"
+          ],
+          "optional_absent": [
+            "categories",
+            "collections",
+            "series",
+            "volume_number",
+            "premiere_date",
+            "isbn",
+            "pages",
+            "original_title",
+            "translator",
+            "why_worth_it"
+          ]
+        },
+        "cookies": "not_present"
+      },
+      {
+        "requested_url": "https://www.empik.com/na-zawsze-swan-t-l,p1716164699,ebooki-i-mp3-p",
+        "data": {
+          "url": "https://www.empik.com/na-zawsze-swan-t-l,p1716164699,ebooki-i-mp3-p",
+          "title": "Na zawsze",
+          "authors": [
+            "Swan T. L."
+          ],
+          "category": "Romans",
+          "avg_rating": 4.6875,
+          "rating_count": 32,
+          "cover_url": "https://ecsmedia.pl/c/na-zawsze-audiobook-b-iext217708950.jpg",
+          "description": "To poruszające zwieńczenie serii i okazja stworzona przez autorkę, by ponownie spotkać się z bohaterami, którzy zdobyli serca czytelników. Książka stanowi zbiór rozbudowanych epilogów i dzięki ich lekturze możemy zobaczyć, jak bracia odnajdują się w nowych etapach życia, mierzą z codziennymi wyzwaniami i odkrywają kolejne odcienie miłości. Książka zawiera treści nieodpowiednie dla osób poniżej osiemnastego roku życia.",
+          "tags": [
+            "druga szansa",
+            "nowy początek",
+            "relacje rodzinne"
+          ],
+          "publisher": "Wydawnictwo NieZwykłe",
+          "narrators": [
+            "Malina Lina"
+          ],
+          "release_date": "2026-02-26",
+          "release_year": 2026,
+          "length_str": "6 godz.33 min.",
+          "duration_minutes": 393,
+          "language": null,
+          "reviews": [
+            {
+              "username": "Anonim",
+              "rating": 5,
+              "date": "23.05.2026",
+              "text": "Rozbudowane epilog wszystkich czterech tomów bardzo mi się podobały. Pierwszy i drugi najzabawniejszy, trzeci bardzo wzruszający, czwarty też w porządku, chociaż historia związku Christophera i Hayden w ogóle mnie nie przekonuje, nie ma tam chemii moim zdaniem. Ogólnie podoba mi się to, jak się te związki rozwinęły i fajnie by było, gdyby każda wielka miłość miała takie szczęśliwe zakończenie:)."
+            },
+            {
+              "username": "Anonim",
+              "rating": 5,
+              "date": "18.05.2026",
+              "text": "Te epilogi okazały się być naprawdę dobrze napisanym i dobrze przeczytanymi kontynuacjami czterech historii braci Mails i ich żon. Tak jak w przypadku głównych książek, moją faworytką jest opowieść o Tristanie, Claire (Znienawidzony rywal/Przejęcie) i ich dużej rodzinie. Ale w tym wypadku każda część jest świetna. Polecam. Jagoda"
+            },
+            {
+              "username": "Teresa",
+              "rating": 5,
+              "date": "09.03.2026",
+              "text": "Zabawna historia. Aż wierzyć się nie chce, że bogacz zostawia wszystko i chce wyruszyć w nieznane mając tylko 2000 dolarów. Przez to też wikła się w śmieszne sytuacje.😄. Jeśli ktoś szuka lekkiej lektury to polecam ."
+            },
+            {
+              "username": "Anonim",
+              "rating": 5,
+              "date": "06.03.2026",
+              "text": "Na początku myślałam że to będzie słabe , i się rozczarowałam. Lubię książki autorki za humor i lekkość pióra"
+            },
+            {
+              "username": "Anonim",
+              "rating": 5,
+              "date": "03.03.2026",
+              "text": "Fajne zakończenie histori wszystkich braci ❤️Czy ktoś wie coś o kontynuacji nowej serii ich dzieci ?"
+            }
+          ],
+          "format": "MP3",
+          "type": "audiobook"
+        },
+        "quality": {
+          "complete": true,
+          "missing_required": [],
+          "available_fields": [
+            "title",
+            "authors",
+            "narrators",
+            "publisher",
+            "description",
+            "cover_url",
+            "duration_minutes",
+            "length_str",
+            "category",
+            "avg_rating",
+            "rating_count",
+            "release_date",
+            "release_year",
+            "format",
+            "tags",
+            "reviews"
+          ],
+          "optional_absent": [
+            "language",
+            "categories",
+            "collections",
+            "series",
+            "volume_number",
+            "premiere_date",
+            "isbn",
+            "pages",
+            "original_title",
+            "translator",
+            "why_worth_it"
+          ]
+        },
+        "cookies": "not_present"
+      }
+    ],
+    "lubimyczytac": [
+      {
+        "requested_url": "https://lubimyczytac.pl/ksiazka/5187984/a",
+        "data": {
+          "url": "https://lubimyczytac.pl/ksiazka/5187984/300-najwazniejszych-pozycji-szachowych",
+          "type": "ksiazka",
+          "external_id": 5187984,
+          "slug": "300-najwazniejszych-pozycji-szachowych",
+          "title": "300 najważniejszych pozycji szachowych",
+          "original_title": null,
+          "description": "Studiowanie zaledwie pięciu pozycji tygodniowo pozwala skupić się na najważniejszych elementach. Jeśli uczysz się zbyt wielu naraz lub robisz to powierzchownie, wzrasta ryzyko rozluźnienia dyscypliny, a nawet zapomnienia już poznanych idei. Kluczem do sukcesu jest powolna nauka, tak aby dać sobie dostatecznie dużo czasu na przemyślenie przykładu.\n[z Wprowadzenia]\nW tej książce Thomas Engqvist przedstawia najważniejsze pozycje szachowe, które powinien poznać każdy, kto chce rozwijać swoją wiedzę i umiejętności gry. Autor szczegółowo omawia każdą z nich, uwzględniając podstawowe oraz bardziej zaawansowane przykłady danych pozycji. Ten sposób nauki ułatwia zrozumienie i przyswojenie nawet najtrudniejszych rozgrywek.\nEngqvist zwraca szczególną uwagę na systematyczne wracanie do poznanych już pozycji i utrwalanie wiedzy, aby zintegrować przestudiowane przykłady z własnym taktycznym myśleniem.\nOmówione pozycje pochodzą z zasobu bogatej historii szachowej, między innymi z gier dawnych mistrzów, współczesnych gwiazd i własnej gry Engqvista.\nW tej książce znajdziesz:\n- 150 przykładów debiutów oraz gier środkowych podzielonych tematycznie,\n- 150 końcówek – od pionkowych i skoczkowych po te z udziałem hetmanów.\nThomas Engqvist – międzynarodowy mistrz z ponad trzydziestoletnim doświadczeniem w królewskiej grze. Jest także trenerem szachowym oraz redaktorem strony schacksnack.se.",
+          "avg_rating": 9.0,
+          "cover_url": "https://s.lubimyczytac.pl/upload/books/5187000/5187984/1268255-352x500.jpg",
+          "authors": [
+            {
+              "name": "Thomas Engqvist"
+            }
+          ],
+          "categories": [
+            {
+              "name": "hobby"
+            }
+          ],
+          "publisher": {
+            "name": "Wydawnictwo RM"
+          },
+          "series": null,
+          "pages": 304,
+          "duration_minutes": null,
+          "release_date": "2025-05-28",
+          "premiere_date": "2025-05-28",
+          "isbn": "9788381518604",
+          "translator": null,
+          "format": "papier",
+          "volume_number": null,
+          "reviews": [
+            {
+              "username": "Oficjalna Recenzja",
+              "full_text": "Cieszę się, że powstają książki dotyczące szachów i nie tylko – a właściwie „nisz”, dzięki którym każdy może znaleźć coś dla siebie. To nie tylko sposób na przekazanie wiedzy, ale również szansa, by zainteresować osoby, które wcześniej nie miały do czynienia z takimi grami. Thomas Engqvist postanowił podzielić się wiedzą szachową i pomóc rozwinąć nasze umiejętności\nKsiążka ta jest poradnikiem, który ma nietypową, choć jak najbardziej uzasadnioną formę (ze względu na to, że dotyczy gry!). Na jednej stronie można znaleźć nawet trzy ilustracje przedstawiające szachownicę i pionki, pod którymi wyjaśnione są zagrywki. Dlatego podczas lektury trzeba się skupić i odnaleźć wzrokiem pionka, o którym mowa – ale to właśnie dobry sposób, by lepiej zapamiętać informacje. Ważne jest jednak, by uzbroić się w czas i cierpliwość, aby wszystko powoli przyswoić i przeanalizować.\n„300 najważniejszych pozycji szachowych” jest książką, po którą powinni sięgnąć fani szachów mający już pewne doświadczenie. Nie jest to poradnik uczący gry od podstaw, to przewodnik, który pomoże wygrać. Skierowany jest do osób z rankingiem od 1000 do 3000 punktów.\nJak autor wspomniał we wprowadzeniu, książka przedstawia główne idee pozycyjne w debiucie, grze środkowej i końcówce. „Rozdziały” są podzielone na różne kategorie. Między innymi można znaleźć manewrowanie figurami (skoczkami, gońcami, wieżami itp.) czy grę na skrzydłach (na przykład atak na skrzydle królewskim).\nPrzykłady pochodzą z partii dawnych mistrzów, współczesnych gwiazd oraz samego autora. A wszystko jest opatrzone datą, co ułatwia wyszukanie konkretnych posunięć w internecie i pozwala zobaczyć nie tylko fragment, ale całą rozgrywkę prosto z szachownicy (co zrobiłam w przypadku partii Svetozara Gligoricia i Vasilija Smysłowa z 1947 roku). Dla chętnych, omówiony przykład znajduje się na stronie 215.\nPionki zostały oznaczone jako, przykładowo, ♖g6+ i pogrubione, by łatwiej było rozpoznać, czy chodzi o białe czy czarne figury. Książka jest przejrzysta, ale (jak wspomniałam) wymaga dużego skupienia. Wiedzy można z niej zaczerpnąć naprawdę sporo, tym bardziej że z trzystu stron robi się jakby sześćset ze względu na to, że każda strona jest podzielona na pół. Co oznacza, że pozycja ta nie jest specjalnie pogrubiona, a pomniejszona, by zawrzeć więcej informacji (choć, jak autor wspomniał, nie są to wszystkie idee i techniki! Zamieścił tam tylko najważniejsze przykłady).\nWięc jeśli ktoś lubi grać w szachy i chce się nauczyć czegoś więcej, ta pozycja będzie dla niego idealna. Jednak zaznaczam, nie jest to poradnik dla absolutnie początkujących szachistów. Choć, w mojej opinii, tacy też mogą po niego sięgnąć i zainteresować się grą.\n„Której fazie gry należy poświęcać najwięcej uwagi? Moim zdaniem końcówkom, w nich najwyraźniej widać możliwości poszczególnych figur szachowych”\n300 najważniejszych pozycji szachowych, strona 5",
+              "is_featured": true,
+              "rating": null
+            },
+            {
+              "username": "kulturalne_zuki",
+              "full_text": "Książka „300 najważniejszych pozycji szachowych” przedstawia główne idee pozycyjne, które można stosować we wszystkich etapach partii.\nPublikacja ta pomaga wzmocnić umiejętności rozgrywkowe.",
+              "is_featured": false,
+              "rating": 9
+            },
+            {
+              "username": "pliszka_literacka",
+              "full_text": "Książka Thomasa Engqvista to prawdziwa perełka dla wszystkich, którzy chcą rozwijać się w szachach – bez względu na poziom zaawansowania. Autor nie owija w bawełnę, tylko od razu przechodzi do rzeczy. Przedstawia konkretne pozycje szachowe, które warto znać, jeśli chcemy naprawdę zrozumieć tę grę i grać coraz lepiej.\nTo, co szczególnie wyróżnia tę pozycję, to jej praktyczne podejście. Książkę można studiować krok po kroku – nawet po kilka pozycji tygodniowo – dzięki czemu nauka nie jest przytłaczająca. Wręcz przeciwnie – jest przemyślana i skuteczna. Engqvist zachęca do spokojnej, dokładnej analizy, a nie do szybkiego „przerobienia” materiału. To bardzo mądre podejście – w szachach liczy się przecież nie ilość, ale jakość zrozumienia.\nKażda pozycja w książce jest dokładnie omówiona, a towarzyszą jej przejrzyste diagramy – dzięki nim od razu wiadomo, co się dzieje na szachownicy. To duża pomoc, zwłaszcza dla osób, które uczą się wizualizacji pozycji lub chcą po prostu lepiej widzieć układ figur.\nW książce znajdziemy aż 300 pozycji – 150 dotyczących debiutów i gry środkowej, oraz 150 końcówek. Autor czerpie inspirację z partii wielkich mistrzów – zarówno tych dawnych, jak i współczesnych – a także ze swojej własnej praktyki. To czyni tę książkę wyjątkową – mamy dostęp do bardzo bogatego i różnorodnego materiału.\nEngqvist pisze jasno i zrozumiale. Nawet trudniejsze pozycje tłumaczy w sposób przystępny, więc książka będzie dobrym wyborem zarówno dla początkujących, jak i bardziej doświadczonych graczy. To nie jest lektura „na raz” – wręcz przeciwnie, warto do niej regularnie wracać, analizować pozycje, porównywać je z własną grą i wyciągać wnioski.\nPolecam gorąco!",
+              "is_featured": false,
+              "rating": 7
+            },
+            {
+              "username": "MałeKsiążkoweMole",
+              "full_text": "„300 najważniejszych pozycji szachowych” to książka, która zainspiruje graczy na różnym poziomie. Początkujący szachiści znajdą tutaj cały szereg nowych pozycji do przestudiowania, które pomogą im rozwijać umiejętności gry. Nawet zaawansowani gracze mogą skorzystać z tej propozycji i udoskonalić swoje sposoby na „rozpracowanie” przeciwnika.\nAutor opisuje każdą pozycję szachową, krok po kroku, i w sposób bardzo szczegółowy. Namawia, aby studiować kilka pozycji tygodniowo, skupić się na na nich, dać sobie czas na analizę i zapamiętanie. Zachęca również do częstych rozgrywek ze znajomymi w celu szlifowania umiejętności.\nTo wyjątkowo pomocna książka.",
+              "is_featured": false,
+              "rating": 10
+            },
+            {
+              "username": "Bookiecikowa",
+              "full_text": "Cieszę się, że powstają książki dotyczące szachów i nie tylko – a właściwie „nisz”, dzięki którym każdy może znaleźć coś dla siebie. To nie tylko sposób na przekazanie wiedzy, ale również szansa, by zainteresować osoby, które wcześniej nie miały do czynienia z takimi grami. Thomas Engqvist postanowił podzielić się wiedzą szachową i pomóc rozwinąć nasze umiejętności\nKsiążka ta jest poradnikiem, który ma nietypową, choć jak najbardziej uzasadnioną formę (ze względu na to, że dotyczy gry!). Na jednej stronie można znaleźć nawet trzy ilustracje przedstawiające szachownicę i pionki, pod którymi wyjaśnione są zagrywki. Dlatego podczas lektury trzeba się skupić i odnaleźć wzrokiem pionka, o którym mowa – ale to właśnie dobry sposób, by lepiej zapamiętać informacje. Ważne jest jednak, by uzbroić się w czas i cierpliwość, aby wszystko powoli przyswoić i przeanalizować.\n„300 najważniejszych pozycji szachowych” jest książką, po którą powinni sięgnąć fani szachów mający już pewne doświadczenie. Nie jest to poradnik uczący gry od podstaw, to przewodnik, który pomoże wygrać. Skierowany jest do osób z rankingiem od 1000 do 3000 punktów.\nJak autor wspomniał we wprowadzeniu, książka przedstawia główne idee pozycyjne w debiucie, grze środkowej i końcówce. „Rozdziały” są podzielone na różne kategorie. Między innymi można znaleźć manewrowanie figurami (skoczkami, gońcami, wieżami itp.) czy grę na skrzydłach (na przykład atak na skrzydle królewskim).\nPrzykłady pochodzą z partii dawnych mistrzów, współczesnych gwiazd oraz samego autora. A wszystko jest opatrzone datą, co ułatwia wyszukanie konkretnych posunięć w internecie i pozwala zobaczyć nie tylko fragment, ale całą rozgrywkę prosto z szachownicy (co zrobiłam w przypadku partii Svetozara Gligoricia i Vasilija Smysłowa z 1947 roku). Dla chętnych, omówiony przykład znajduje się na stronie 215.\nPionki zostały oznaczone jako, przykładowo, ♖g6+ i pogrubione, by łatwiej było rozpoznać, czy chodzi o białe czy czarne figury. Książka jest przejrzysta, ale (jak wspomniałam) wymaga dużego skupienia. Wiedzy można z niej zaczerpnąć naprawdę sporo, tym bardziej że z trzystu stron robi się jakby sześćset ze względu na to, że każda strona jest podzielona na pół. Co oznacza, że pozycja ta nie jest specjalnie pogrubiona, a pomniejszona, by zawrzeć więcej informacji (choć, jak autor wspomniał, nie są to wszystkie idee i techniki! Zamieścił tam tylko najważniejsze przykłady).\nWięc jeśli ktoś lubi grać w szachy i chce się nauczyć czegoś więcej, ta pozycja będzie dla niego idealna. Jednak zaznaczam, nie jest to poradnik dla absolutnie początkujących szachistów. Choć, w mojej opinii, tacy też mogą po niego sięgnąć i zainteresować się grą.\n„Której fazie gry należy poświęcać najwięcej uwagi? Moim zdaniem końcówkom, w nich najwyraźniej widać możliwości poszczególnych figur szachowych”\n300 najważniejszych pozycji szachowych, strona 5",
+              "is_featured": false,
+              "rating": 10
+            },
+            {
+              "username": "Gerbera41",
+              "full_text": "Wydanie to zostało napisane przez szachowego mistrza z wieloletnim doświadczeniem w międzynarodowych turniejach.\nThomas Engqvist na wstępie swojej książki rozważa, która z faz gry w szachy jest kluczowa. Dochodzi do pewnych wniosków i dzieli się nimi z czytelnikami.\nPrzedstawia najważniejsze pozycje szachowe, jakie zaistniały w czasie zawodów. Zdecydowana większość z nich pochodzi z XV w., ale są także te z XVIII w., XIX w. i XXI w.\nKsiążka- poradnik, przeznaczona raczej dla osób z rankingiem 1000 punktów. Tak twierdzi autor.\nAle przecież każdy z ciekawości może wziąć ją do ręki, przejrzeć i zaznajomić się z treścią, a nuż wówczas zechce zgłębić temat szachowych rozgrywek.\nPolecam!\nZa egzemplarz do recenzji dziękuję Wydawnictwu RM📒📖",
+              "is_featured": false,
+              "rating": 9
+            },
+            {
+              "username": "Magdalena",
+              "full_text": "Świetna książka pokazująca jak można nauczyć się paru trików w grze w szachy na podstawie analizy rozgrywek mistrzów 🔥♟️.\nKsiążka na pewno jest dla osób, które grają już w szachy i mają jako takie pojęcie. Bardzo wspomoże w rozgrywkach i da ciut inne spojrzenie niż człowiek już ma 💪⚡.\nNajbardziej podobał mi się rozdział o manewrowaniu pionkami 🔥. Pewnie dlatego, że w życiu też lubię manewrować, ale nie tylko pionkami 🤭.",
+              "is_featured": false,
+              "rating": 10
+            },
+            {
+              "username": "KARO_LAG",
+              "full_text": "Książkę miałam okazję czytać i analizować dzięki uprzejmości i współpracy z samym wydawnictwem RM, za co ślicznie dziękuję :)\nKsiążka jest zbiorem najwazniejszych i gotowych wręcz przepisów na poruszanie się po świecie szachów. Znajdziecie w niej zarówno rady dla debiutantów jak i dla wprawionych graczy. Każda pozycja jest rozrysowana, niezwykle szczegółowo, tak aby unaocznić graczowi co i kiedy powinno się zrobić, kiedy i czym zagrać. Według książki , jeśli każdego tygodnia opanujemy chociaż 5 pozycji i je dobrze utrwalimy oraz przećwiczymy na przeciwniku , to mamy gwarantowany sukces po skończonej lekturze. Prócz pozycji dowiemy się także , jak przewidywać, bo warto wspomnieć , że szachy to \"gra szybkich i zgubnych zmian\" :) I coś w tym faktycznie jest, bo są one połączeniem strategii, logiki, taktyki, sprytu ale i pomyłek , które są nieodłączną częścią niemalże każdej rozgrywki. Nie myli się ten kto nic nie robi. Jeśli interesujecie się szachami. Grywacie okazjonalnie lub całkiem profesjonalnie. Chcecie uzupełnić swój warsztat lub rozwinąć go tudzież po prostu zacząć grać, to ta propozycja będzie dla Was. Ja jestem bardzo pozytywnie zaskoczona dopracowaniem treści i przemyślanej każdej ze stron. Rozpisany jest zarówno nasz potencjalny i możliwy ruch jak i przeciwnika. Wiemy jaka po naszym ruchu powinna być dalsza kolejność rozgrywki. Każdy z pionków jest opisany, oraz jego pozycja przed i po wykonanym ruchu. Wszystko ujęte w szczegółowych czarno-białych grafikach szachownic. Każda trudniejsza zagrywka ma odwołanie do tej podstawowej ,aby się nie pogubić. Jeśli chcecie się dowiedzieć co to takiego \"wieżówka\"? Jaki ruch do teorii wprowadził Morphy? Jak wygląda wariant Tajmanowa? Jak zagrywał arcymistrz Karlsson? Jakie ustawienie jest najbardziej popularne? Kiedy zagrać pionkiem a kiedy psychologicznie przeciwnikiem? Kiedy następuje przełom i jak go wykonać? Który moment rozgrywki jest najważniejszy i wymaga najwięcej skupienia? Ile wymiarów ma psychologia przy grze? To ta książka może przypaść Ci do gustu :) Całość jest napisana w ciekawy i humorystyczny sposób. Oprócz wiedzy , w środku znajdziemy wzmianki historyczne, poparcia naukowe czy przykłady z literatury. Każdy rozdział to inne metody gry, okraszone ciekawostkami, podpowiedziami i sugestiami. Podział na części i rozdziały pomaga poruszać się po całości. To co mogę Wam polecić, to zasiadając do tej książki zaopatrzcie się albo w znaczniki albo w zakreślacze do ważnych fragmentów, ponieważ czcionka jest wyjątkowo mała i jeśli zgubicie jakiś wątek , to nie łatwo będzie go odnaleźć ponownie. A warto wspomnieć o tym , że niektórych kwestii w szachach trzeba nauczyć się po prostu na pamięć, będą one niejaką bazą do dalszych poczynań. Dla mnie osobiście ,dla osoby grywającej w szachy, nie mającej jakiegoś dużego bagażu doświadczeń czy przeciwników , była to bardzo interesująca lektura. Na pewno inna tematycznie od czytywanych na co dzień ale równie ciekawa. A po przeczytaniu czuje się szachowo bogatsza i pewniejsza na szachownicy, rozumiem idee i założenia ruchów pionków i umiem je zastosować :)",
+              "is_featured": false,
+              "rating": 7
+            },
+            {
+              "username": "Gerbera41",
+              "text": "Wydanie to zostało napisane przez szachowego mistrza z wieloletnim doświadczeniem w międzynarodowych turniejach.\nThomas Engqvist na wstępie swojej książki rozważa, która z faz gry w szachy jest kluczowa. Dochodzi do pewnych wniosków i dzieli się nimi z czytelnikami. \nPrzedstawia najważniejsze pozycje szachowe, jakie zaistniały w czasie zawodów. Zdecydowana większość z nich pochodzi z XV w., ale są także te z XVIII w., XIX w. i XXI w.\nKsiążka- poradnik, przeznaczona raczej dla osób z rankingiem 1000 punktów. Tak twierdzi autor.\nAle przecież każdy z ciekawości może wziąć ją do ręki, przejrzeć i zaznajomić się z treścią, a nuż wówczas zechce zgłębić temat szachowych rozgrywek.\nPolecam!\nZa egzemplarz do recenzji dziękuję Wydawnictwu RM📒📖",
+              "date": "2025-06-17 09:44:59.583022",
+              "rating": "9"
+            },
+            {
+              "username": "Magdalena",
+              "text": "Świetna książka pokazująca jak można nauczyć się paru trików w grze w szachy na podstawie analizy rozgrywek mistrzów 🔥♟️.\nKsiążka na pewno jest dla osób, które grają już w szachy i mają jako takie pojęcie. Bardzo wspomoże w rozgrywkach i da ciut inne spojrzenie niż człowiek już ma 💪⚡.\nNajbardziej podobał mi się rozdział o manewrowaniu pionkami 🔥. Pewnie dlatego, że w życiu też lubię manewrować, ale nie tylko pionkami 🤭.",
+              "date": "2025-06-08 22:05:37.612857",
+              "rating": "10"
+            },
+            {
+              "username": "Bookiecikowa",
+              "text": "Cieszę się, że powstają książki dotyczące szachów i nie tylko – a właściwie „nisz”, dzięki którym każdy może znaleźć coś dla siebie. To nie tylko sposób na przekazanie wiedzy, ale również szansa, by zainteresować osoby, które wcześniej nie miały do czynienia z takimi grami. Thomas Engqvist postanowił podzielić się wiedzą szachową i pomóc rozwinąć nasze umiejętności\n\nKsiążka ta jest poradnikiem, który ma nietypową, choć jak najbardziej uzasadnioną formę (ze względu na to, że dotyczy gry!). Na jednej stronie można znaleźć nawet trzy ilustracje przedstawiające szachownicę i pionki, pod którymi wyjaśnione są zagrywki. Dlatego podczas lektury trzeba się skupić i odnaleźć wzrokiem pionka, o którym mowa – ale to właśnie dobry sposób, by lepiej zapamiętać informacje. Ważne jest jednak, by uzbroić się w czas i cierpliwość, aby wszystko powoli przyswoić i przeanalizować.\n\n„300 najważniejszych pozycji szachowych” jest książką, po którą powinni sięgnąć fani szachów mający już pewne doświadczenie. Nie jest to poradnik uczący gry od podstaw, to przewodnik, który pomoże wygrać. Skierowany jest do osób z rankingiem od 1000 do 3000 punktów.\n\nJak autor wspomniał we wprowadzeniu, książka przedstawia główne idee pozycyjne w debiucie, grze środkowej i końcówce. „Rozdziały” są podzielone na różne kategorie. Między innymi można znaleźć manewrowanie figurami (skoczkami, gońcami, wieżami itp.) czy grę na skrzydłach (na przykład atak na skrzydle królewskim).\n\nPrzykłady pochodzą z partii dawnych mistrzów, współczesnych gwiazd oraz samego autora. A wszystko jest opatrzone datą, co ułatwia wyszukanie konkretnych posunięć w internecie i pozwala zobaczyć nie tylko fragment, ale całą rozgrywkę prosto z szachownicy (co zrobiłam w przypadku partii Svetozara Gligoricia i Vasilija Smysłowa z 1947 roku). Dla chętnych, omówiony przykład znajduje się na stronie 215.\n\nPionki zostały oznaczone jako, przykładowo, ♖g6+ i pogrubione, by łatwiej było rozpoznać, czy chodzi o białe czy czarne figury. Książka jest przejrzysta, ale (jak wspomniałam) wymaga dużego skupienia. Wiedzy można z niej zaczerpnąć naprawdę sporo, tym bardziej że z trzystu stron robi się jakby sześćset ze względu na to, że każda strona jest podzielona na pół. Co oznacza, że pozycja ta nie jest specjalnie pogrubiona, a pomniejszona, by zawrzeć więcej informacji (choć, jak autor wspomniał, nie są to wszystkie idee i techniki! Zamieścił tam tylko najważniejsze przykłady).\n\nWięc jeśli ktoś lubi grać w szachy i chce się nauczyć czegoś więcej, ta pozycja będzie dla niego idealna. Jednak zaznaczam, nie jest to poradnik dla absolutnie początkujących szachistów. Choć, w mojej opinii, tacy też mogą po niego sięgnąć i zainteresować się grą.\n\n„Której fazie gry należy poświęcać najwięcej uwagi? Moim zdaniem końcówkom, w nich najwyraźniej widać możliwości poszczególnych figur szachowych”\n300 najważniejszych pozycji szachowych, strona 5",
+              "date": "2025-06-18 18:28:48.433512",
+              "rating": "10"
+            },
+            {
+              "username": "pliszka_literacka",
+              "text": "Książka Thomasa Engqvista to prawdziwa perełka dla wszystkich, którzy chcą rozwijać się w szachach – bez względu na poziom zaawansowania. Autor nie owija w bawełnę, tylko od razu przechodzi do rzeczy. Przedstawia konkretne pozycje szachowe, które warto znać, jeśli chcemy naprawdę zrozumieć tę grę i grać coraz lepiej.\n\nTo, co szczególnie wyróżnia tę pozycję, to jej praktyczne podejście. Książkę można studiować krok po kroku – nawet po kilka pozycji tygodniowo – dzięki czemu nauka nie jest przytłaczająca. Wręcz przeciwnie – jest przemyślana i skuteczna. Engqvist zachęca do spokojnej, dokładnej analizy, a nie do szybkiego „przerobienia” materiału. To bardzo mądre podejście – w szachach liczy się przecież nie ilość, ale jakość zrozumienia.\n\nKażda pozycja w książce jest dokładnie omówiona, a towarzyszą jej przejrzyste diagramy – dzięki nim od razu wiadomo, co się dzieje na szachownicy. To duża pomoc, zwłaszcza dla osób, które uczą się wizualizacji pozycji lub chcą po prostu lepiej widzieć układ figur.\n\nW książce znajdziemy aż 300 pozycji – 150 dotyczących debiutów i gry środkowej, oraz 150 końcówek. Autor czerpie inspirację z partii wielkich mistrzów – zarówno tych dawnych, jak i współczesnych – a także ze swojej własnej praktyki. To czyni tę książkę wyjątkową – mamy dostęp do bardzo bogatego i różnorodnego materiału.\n\nEngqvist pisze jasno i zrozumiale. Nawet trudniejsze pozycje tłumaczy w sposób przystępny, więc książka będzie dobrym wyborem zarówno dla początkujących, jak i bardziej doświadczonych graczy. To nie jest lektura „na raz” – wręcz przeciwnie, warto do niej regularnie wracać, analizować pozycje, porównywać je z własną grą i wyciągać wnioski.\n\nPolecam gorąco!",
+              "date": "2025-07-16 16:41:29.853011",
+              "rating": "7"
+            },
+            {
+              "username": "KARO_LAG",
+              "text": "Książkę miałam okazję czytać i analizować dzięki uprzejmości i współpracy z samym wydawnictwem RM, za co ślicznie dziękuję :) \nKsiążka jest zbiorem najwazniejszych i gotowych wręcz przepisów na poruszanie się po świecie szachów. Znajdziecie w niej zarówno rady dla debiutantów jak i dla wprawionych graczy. Każda pozycja jest rozrysowana, niezwykle szczegółowo, tak aby unaocznić graczowi co i kiedy powinno się zrobić, kiedy i czym zagrać. Według książki , jeśli każdego tygodnia opanujemy chociaż 5 pozycji i je dobrze utrwalimy oraz przećwiczymy na przeciwniku , to mamy gwarantowany sukces po skończonej lekturze. Prócz pozycji dowiemy się także , jak przewidywać, bo warto wspomnieć , że szachy to &quot;gra szybkich i zgubnych zmian&quot; :) I coś w tym faktycznie jest, bo są one połączeniem strategii, logiki, taktyki, sprytu ale i pomyłek , które są nieodłączną częścią niemalże każdej rozgrywki. Nie myli się ten kto nic nie robi. Jeśli interesujecie się szachami. Grywacie okazjonalnie lub całkiem profesjonalnie. Chcecie uzupełnić swój warsztat lub rozwinąć go tudzież po prostu zacząć grać, to ta propozycja będzie dla Was. Ja jestem bardzo pozytywnie zaskoczona dopracowaniem treści i przemyślanej każdej ze stron. Rozpisany jest zarówno nasz potencjalny i możliwy ruch jak i przeciwnika. Wiemy jaka po naszym ruchu powinna być dalsza kolejność rozgrywki. Każdy z pionków jest opisany, oraz jego pozycja przed i po wykonanym ruchu. Wszystko ujęte w szczegółowych czarno-białych grafikach szachownic. Każda trudniejsza zagrywka ma odwołanie do tej podstawowej ,aby się nie pogubić. Jeśli chcecie się dowiedzieć co to takiego &quot;wieżówka&quot;? Jaki ruch do teorii wprowadził Morphy? Jak wygląda wariant Tajmanowa? Jak zagrywał arcymistrz Karlsson? Jakie ustawienie jest najbardziej popularne? Kiedy zagrać pionkiem a kiedy psychologicznie przeciwnikiem? Kiedy następuje przełom i jak go wykonać? Który moment rozgrywki jest najważniejszy i wymaga najwięcej skupienia? Ile wymiarów ma psychologia przy grze? To ta książka może przypaść Ci do gustu :) Całość jest napisana w ciekawy i humorystyczny sposób. Oprócz wiedzy , w środku znajdziemy wzmianki historyczne, poparcia naukowe czy przykłady z literatury. Każdy rozdział to inne metody gry, okraszone ciekawostkami, podpowiedziami i sugestiami. Podział na części i rozdziały pomaga poruszać się po całości. To co mogę Wam polecić, to zasiadając do tej książki zaopatrzcie się albo w znaczniki albo w zakreślacze do ważnych fragmentów, ponieważ czcionka jest wyjątkowo mała i jeśli zgubicie jakiś wątek , to nie łatwo będzie go odnaleźć ponownie. A warto wspomnieć o tym , że niektórych kwestii w szachach trzeba nauczyć się po prostu na pamięć, będą one niejaką bazą do dalszych poczynań. Dla mnie osobiście ,dla osoby grywającej w szachy, nie mającej jakiegoś dużego bagażu doświadczeń czy przeciwników , była to bardzo interesująca lektura. Na pewno inna tematycznie od czytywanych na co dzień ale równie ciekawa. A po przeczytaniu czuje się szachowo bogatsza i pewniejsza na szachownicy, rozumiem idee i założenia ruchów pionków i umiem je zastosować :)",
+              "date": "2025-06-04 18:39:57.515742",
+              "rating": "7"
+            },
+            {
+              "username": "MałeKsiążkoweMole",
+              "text": "„300 najważniejszych pozycji szachowych” to książka, która zainspiruje graczy na różnym poziomie. Początkujący szachiści znajdą tutaj cały szereg nowych pozycji do przestudiowania, które pomogą im rozwijać umiejętności gry. Nawet zaawansowani gracze mogą skorzystać z tej propozycji i udoskonalić swoje sposoby na „rozpracowanie” przeciwnika.\n\nAutor opisuje każdą pozycję szachową, krok po kroku, i w sposób bardzo szczegółowy. Namawia, aby studiować kilka pozycji tygodniowo, skupić się na na nich, dać sobie czas na analizę i zapamiętanie. Zachęca również do częstych rozgrywek ze znajomymi w celu szlifowania umiejętności.\n\nTo wyjątkowo pomocna książka.",
+              "date": "2025-07-07 11:30:33.699978",
+              "rating": "10"
+            }
+          ],
+          "language": "polski",
+          "rating_count": 8
+        },
+        "quality": {
+          "complete": true,
+          "missing_required": [],
+          "available_fields": [
+            "title",
+            "authors",
+            "publisher",
+            "description",
+            "cover_url",
+            "language",
+            "categories",
+            "avg_rating",
+            "rating_count",
+            "release_date",
+            "premiere_date",
+            "isbn",
+            "pages",
+            "format",
+            "reviews"
+          ],
+          "optional_absent": [
+            "narrators",
+            "duration_minutes",
+            "length_str",
+            "category",
+            "collections",
+            "series",
+            "volume_number",
+            "release_year",
+            "original_title",
+            "translator",
+            "tags",
+            "why_worth_it"
+          ]
+        },
+        "cookies": null
+      },
+      {
+        "requested_url": "https://lubimyczytac.pl/ksiazka/5113756/schronisko-ktore-przestalo-istniec",
+        "data": {
+          "url": "https://lubimyczytac.pl/ksiazka/5113756/schronisko-ktore-przestalo-istniec",
+          "type": "ksiazka",
+          "external_id": 5113756,
+          "slug": "schronisko-ktore-przestalo-istniec",
+          "title": "Schronisko, które przestało istnieć",
+          "original_title": null,
+          "description": "Wydanie specjalne z trzema zaproszeniami na osobiste spotkanie z autorem. Znajdź swój szczęśliwy egzemplarz!\nWydanie luksusowe w twardej oprawie z zupełnie nową okładką zostało wzbogacone o reprinty przedwojennych pocztówek. Książka jest pięknie wydana z barwionymi brzegami, kolorową wyklejką, tasiemką oraz miejscem na zbieranie pieczątek z górskich wędrówek.\n* * *\nMłody stomatolog Maksymilian Rajczakowski jedzie w Karkonosze, by odetchnąć od rodzinnych problemów. Nie jest świadomy tajemnic drzemiących w wojennej przeszłości gór. Czy znajdzie to, czego szuka?\nWłaściciel nieczynnego schroniska Nad Śnieżnymi Kotłami ginie w nieszczęśliwym wypadku. Niedługo po tej tragedii na miejsce przybywa jego bratanek Maksymilian. Mężczyzna dowiaduje się, że przed śmiercią wujek z niejasnych przyczyn interesował się losami innego górskiego schroniska, które tuż po II wojnie światowej spłonęło w niewyjaśnionych okolicznościach. Gdy na jaw wychodzą kolejne fakty, Rajczakowski nabiera podejrzeń, że śmierć wujka nie była nieszczęśliwym zrządzeniem losu. Nieświadomy czyhającego zagrożenia podejmuje własne śledztwo. Wkrótce zaczyna otrzymywać pogróżki od kogoś, kto podaje się za Ducha Gór… Jeśli w porę nie rozwikła zagadki, znajdzie się w śmiertelnym niebezpieczeństwie.\n„Schronisko, które przestało istnieć” otwiera serię powieści poświęconych Karkonoszom. To trzymające w napięciu i naznaczone rodzinnymi sekretami kryminały, a także gęsta od zagadek i legend wędrówka po zapomnianych szlakach przeszłości.",
+          "avg_rating": 7.5,
+          "cover_url": "https://s.lubimyczytac.pl/upload/books/5113000/5113756/1148643-352x500.jpg",
+          "authors": [
+            {
+              "name": "Sławek Gortych"
+            }
+          ],
+          "categories": [
+            {
+              "name": "kryminał"
+            },
+            {
+              "name": "sensacja"
+            },
+            {
+              "name": "thriller"
+            }
+          ],
+          "publisher": {
+            "name": "Wydawnictwo Dolnośląskie"
+          },
+          "series": {
+            "name": "Karkonoska seria kryminalna"
+          },
+          "pages": 384,
+          "duration_minutes": null,
+          "release_date": "2024-05-15",
+          "premiere_date": "2022-07-28",
+          "isbn": "9788327167590",
+          "translator": null,
+          "format": "papier",
+          "volume_number": "1",
+          "reviews": [
+            {
+              "username": "Oficjalna Recenzja",
+              "full_text": "Już niejednokrotnie wspominałam, że lubię sięgać po literackie debiuty, bo te potrafią być naprawdę zaskakujące. Sławek Gortych udowadnia, że można napisać nie tyle dobrą, co wręcz świetną debiutancką książkę, którą pochłania się z zapartym tchem. Powieść „Schronisko, które przestało istnieć” zupełnie mnie zaskoczyła i przeszła najśmielsze oczekiwania.\nMłody stomatolog, Maksymilian Rajczakowski, ucieka na urlop w Karkonosze, do opuszczonego schroniska należącego do jego zmarłego niedawno wujka, aby odetchnąć od dotychczasowego życia i zrozumieć, dlaczego jego wujek zaszył się w tym odludnym miejscu. Szybko jednak okazuje się, że Artur Rajczakowski nie wiódł sielskiego życia na szczytach gór, a owe strzeliste skały skrywają więcej tajemnic, niż mogłoby się wydawać. Czy zabawa w detektywa opłaci się młodemu stomatologowi?\nZ tej książki na pierwszy plan wybija się ciekawy klimat mroźnych gór i kryjącej się gdzieś tajemnic. Bardzo łatwo zanurzyć się w tej opowieści, w której autor stopniowo buduje napięcie. Na początku poznajemy jedną z tajemnic, Gortych rzuca szczątkowe informacje o różnych wydarzeniach, po czym zostawia czytelnika z płynącą fabułą w zupełnie innej rzeczywistości. Z powodzeniem przeplata wątki z dalekiej przeszłości, z zasłyszanymi legendami i wierzeniami, wprowadzając tylko coraz większą aurę tajemnicy.\nCzytelnik tak naprawdę zawieszony jest w swego rodzaju napięciu, podczas odkrywania historii zawartej w „Schronisku, które przestało istnieć”. Drobne, nieco niepokojące sytuacje podbijają to uczucie, a w międzyczasie autor angażuje czytelnika w odkrywanie zawiłych powiązań między niegdysiejszymi właścicielami karkonoskich schronisk. Pojawia się w tej historii wiele opisów różnych sytuacji, często też zapamiętanych z różnych perspektyw, na szczęście jednak niełatwo w ich zawiłościach się zgubić - wszystko układa się przez całą książkę w spójną całość.\nW fikcyjnej fabule autor przemyca czytelnikowi wiele anegdot dotyczących samych Karkonoszy, jak i wprowadza prawdziwych bohaterów czy wzoruje się na historycznych wydarzeniach, które miejsce miały w górach podczas II wojny światowej. Widać w tym zamiłowanie autora do tych gór, a także rozległą wiedzę. Wszystko to jednak opisane jest w taki sposób, że gładko się wszystkie te historie czyta i przyswaja. Samo pióro autora jest niezwykle lekkie, prowadzenie fabuły spójne - prawdziwa perełka wśród debiutów!\nJeżeli chodzi o samego antagonistę, to właściwie już od samego początku domyślałam się, kim tak naprawdę jest - i nie pomyliłam się. Niemniej, wszelkie motywy i związane z tą osobą historie były naprawdę zaskakujące, dlatego nie odczułam jakiegoś specjalnego zawodu, że autorowi, mimo kilku prób wodzenia za nos, ostatecznie nie udało się mnie zwieść. I na pewno oddać trzeba autorowi kreację wszystkich bohaterów, którzy jawią się tutaj jako naprawdę charakterystyczne postacie.\nW całym tym poszukiwaniu, zabawie w detektywów i próbie odkrycia różnych tajemnic, rozgrywają się też niejako małe dramaty rodzinne. Maksymilian zdawał sobie sprawę, że jego rodzina nie jest do końca normalna, że tak naprawdę wolą wszelkie trudne tematy zamiatać pod dywan, niż po prostu o nich porozmawiać, jednak i te od dawna skrywane tajemnice, w końcu wyjdą na jaw, wprowadzają w życie głównego bohatera niemałe zamieszanie.\nIm dłużej o tej książce myślę, tym bardziej mi się ona podoba i zauważam kolejne drobne rzeczy, które tylko przemawiają na jej korzyść. Z reguły jestem bardzo wrażliwym na szczegóły czytelnikiem, przez co zwracam uwagę na rzeczy, które normalnemu czytelnikowi nie przeszkadzają, może nawet ich nie zauważa, a są to zazwyczaj drobnostki, które nie mają specjalnego wpływu na fabułę. Dlatego tym bardziej zaimponowało mi, że autor zadbał właśnie o wszelkie takie niewielkie rzeczy, wyjaśniając wszystko to, co mogłoby pozostać niejasne lub pominięte.\nDosłownie pochłonęłam tę książkę, tym bardziej cieszy mnie, że już w przygotowaniu jest drugi tom, a ostatecznie „Schronisko, które przestało istnieć” rozpoczyna trylogię. Po tej książce moje oczekiwania są naprawdę spore, ale po genialnym początku, wróżę Sławkowi Gortychowi naprawdę owocną literacką karierę! Mam nadzieję, że przekonałam Was do tej pozycji i śmiało po nią sięgniecie - naprawdę warto!",
+              "is_featured": true,
+              "rating": null
+            },
+            {
+              "username": "Martin",
+              "full_text": "Mega, polecam",
+              "is_featured": false,
+              "rating": 10
+            },
+            {
+              "username": "Ewi",
+              "full_text": "Znakomita, jak cała seria",
+              "is_featured": false,
+              "rating": 8
+            },
+            {
+              "username": "Agadziara",
+              "full_text": "Dużym plusem książki są wątki historyczne, szczególnie opisywana sytuacja po II Wojnie Światowej w Karnokoszach i okolicach.",
+              "is_featured": false,
+              "rating": 7
+            },
+            {
+              "username": "Paweł",
+              "full_text": "Fascynująca podróż przez szlaki Gór Olbrzymich. Świetnie prowadzone wątki. Bardzo doceniam wprowadzenie retrospekcji. Książka też dużo uczy o relacjach społecznych w czasie wojny i tuż powojennych.\nPostacie też nie były sztampowe. Akcja też nie jest bardzo przewidywalna. Naprawdę tą książkę zapamiętam na bardzo długo ♥️\nPolecam z całego serca",
+              "is_featured": false,
+              "rating": 9
+            },
+            {
+              "username": "AldonkaMiss",
+              "full_text": "Może być, ale nie było \"Wow\"...",
+              "is_featured": false,
+              "rating": 5
+            },
+            {
+              "username": "Andzelinka",
+              "full_text": "Niestety, ta książka zupełnie nie trafiła w mój gust. Niemieckie i czeskie nazwy sprawiały, że momentami ciężko było mi się odnaleźć, a sama fabuła wydała mi się mało ciekawa i mocno rozwleczona. Nie jestem fanką wątków historycznych, więc chwilami trudno było mi się wciągnąć.\nNa plus zdecydowanie opisy Karkonoszy i zakończenie, które zostawia niedosyt i zachęca do sięgnięcia po kolejną część. 📚",
+              "is_featured": false,
+              "rating": 4
+            },
+            {
+              "username": "marzec",
+              "full_text": "Przyjemna rozrywkowa lektura, można powspominać piękne szlaki w Karkonoszach. Duży plus za bogactwo informacji o przemilczanej dotychczas w Polsce (po)niemieckiej historii okolic. Fabularnie i narracyjnie dość nieskomplikowane, taka \"literatura młodzieżowa\", ale to nie jest wada.",
+              "is_featured": false,
+              "rating": 6
+            },
+            {
+              "username": "lucyferka",
+              "full_text": "Wciągający kryminał na tle historii Karkonoszy.",
+              "is_featured": false,
+              "rating": 9
+            },
+            {
+              "username": "Oteczka",
+              "full_text": "Zawsze mnie drażni, gdy współczesny autor pisze o przeszłości tak, jakby był w stanie zrozumieć, co przeżywali ówcześni ludzie. I dodatkowo pozwala sobie na pewne oceny i wypowiedziane ustami bohaterów opinie. Fajnie poczytać o Karkonoszach, ale powyższe plus dość proste rozwiązania fabularne mnie nie przekonały.",
+              "is_featured": false,
+              "rating": 5
+            },
+            {
+              "username": "Heisenberg",
+              "full_text": "Powieść ta chodziła za mną kiedyś dość intensywnie. Jednak z czasem zamierzenie to upadło, i pewnie nadal by tak było gdyby nie to, że dowiedziałem się nie tak dawno że w przyszłym roku powstanie serial na podstawie \"Schroniska...\". Jako że lubię polskie seriale kryminalne, i zapewne ten też obejrzę, to postanowiłem jednak przeczytać tą powieść. Lubię konfrontować słowo pisane i jego filmowy/serialowy odpowiednik. W Karkonoszach nigdy nie byłem, może się to kiedyś zmieni - nie wiem? I kiedy czytałem \"Schronisko...\", to dowiedziałem się dużo interesujących rzeczy w temacie. Tu nie ma się do czego przyczepić. Ale ja chciałem przeczytać KRYMINAŁ, a nie przewodnik po Karkonoszach i ich historii. A jako kryminał ta powieść wygląda niesamowicie blado i miałko. Dialogi w książce, zwłaszcza te pomiędzy Maksymilianem i Martą - kto to pisał, uczeń szkoły podstawowej??? Takiego płytkiego bredzenia to chyba jeszcze nie czytałem! Serio, poziom podstawówki! Postać głównego bohatera, wspomnianego Maksymiliana - no gość to jest wycięty z kartonu. Niektóre jego decyzje, jego przemyślenia.... Bełkot. Sam motyw zemsty jeszcze jakoś by się wybronił, ale jest to opisane tak, że jest w tym tyle napięcia co w finałowym meczu o mistrzostwo świata w szachach! A już jedna rzecz to mnie rozbawiło dokumentnie - odnalezienie pewnego artefaktu.... Prawie 60 lat nie odnalazł tego NIKT - a jest w powieści podkreślone kilka razy że setki ludzi chciały to odnaleźć; ludzi znających tereny i historię związaną z owym aretfaktem - a tymczasem nasi bohaterowie z kartonowym Maksymilianem na czele odnajdują to ot tak, na pstryknięcie palcami. Żenada do kwadratu. Ogólnie powieść ma u mnie trzy gwiazdki - jedną obligatoryjnie, drugą za te opisy Karkonoszy, i trzecią jaką zawsze ode mnie dostaje autor-debiutant. Nie zanosi żebym wrócił do cyklu, ale serial - obejrzę. Może on mnie bardziej zaciekawi...",
+              "is_featured": false,
+              "rating": 3
+            },
+            {
+              "username": "ZaaQazany",
+              "text": "Największym atutem książki jest tło, na którym rozgrywają się wydarzenia. Karkonosze, jako miejsce zdarzeń, są pieczołowicie podkreślane przez autora. Czuć sentyment pisarza do górskich szlaków. Poświęca sporo miejsca na opis widoków, co czyni z niej w pewnej mierze książkę podróżniczą.\n\nKsiążkę można też byłoby określić jako historyczną. Gortych nie oszczędza przestrzeni na opis wydarzeń, które miały miejsce na Dolnym Śląsku w pierwszych latach powojennych. Są nieco fabularyzowane na potrzeby treści, ale oddają sedno zdarzeń, które miały miejsce na Ziemiach Odzyskanych.\n\nW tych aspektach lekturę oceniam bardzo wysoko. Pozostaje jednak jeszcze wątek kryminalny, zgodnie z kategorią, do której Schronisko zostało przypisane.\n\nW tym zakresie Gortych w pełni korzysta z licentia poetica tworząc całkiem zręczną i jednocześnie szablonową fabułę. Poszczególne postacie zarysowane są zbyt szablonowo, co nie ujmuje im uroku a jednak jakoś je spłaszcza. Sama przygoda? Dobra na debiut, natomiast nie porywa.\n\nPrzeciętny kryminał nadrabiający przyrodniczym i historycznym tłem.",
+              "date": "2024-11-07 15:36:53.071491",
+              "rating": "7"
+            },
+            {
+              "username": "Arek Czytalski",
+              "text": "Niezaprzeczalnymi walorami powieści są żywy, zwięzły język, za którego sprawą autor buduje napięcie. Pozwala nam rozluźnić się by nagle zmrozić krew, scenami oddanymi z chirurgiczną precyzją, wyrzeźbionymi dłutem języka.\nNaturalne, konkretne i konsekwentne w zachowaniu postacie pomagają uwierzyć w tę literacką fikcję.\n\nZaśnieżone Karkonoskie stoki i wciśnięte między nie kotliny, posiadające unikatowy klimat są świetnie odmalowane piórem Sławka Gortycha.\n\nZ drugiej strony wydawniczy hit &quot;Schronisko, które przestało istnieć&quot; obraża Polaków fałszywymi sądami. W świetle kryminału osadzonego na bogatym tle historycznym, to Polacy zabijali i przesiedlili Niemców, z &quot;wiecznie niemieckich&quot; ziem Dolnego Śląska. O przesiedleniach nie my decydowaliśmy, a Konferencja Jałtańska.\nA biednych Niemców wciąż nie stać na reparacje wojenne.\n\nTutaj zbrodnia wydaje się nie do końca oczywista, motywy którymi kierują się sprawcy, z przeszłości i z teraz budzą moją litość.\n\nLiczne przekłamania odpychały mnie od lektury, stąd żywię wobec niej mieszane uczucia. Stawiam 6/10",
+              "date": "2025-05-01 19:51:53.674301",
+              "rating": "6"
+            },
+            {
+              "username": "Artur_Be",
+              "text": "Dobry, wciągający kryminał osadzony swą akcją w Karkonoszach z historycznym wątkiem sięgającym czasów końcówka II wojny światowej oraz wczesnych lat powojennych. To zawiła historia w której młody chłopak jedzie w Karkonosze do schroniska nad Śnieżnymi Kotłami, które prowadził do niedawna jego wuj, który zginął w wyniku nieszczęśliwego wypadku. Na miejscu Maksymilian odkrywa, że ta śmierć była w nieoczywistych okolicznościach, a sam wuj z jakiś przyczyn interesował się innym schroniskiem, które w tajemniczych okolicznościach spłonęło tuż po II wojnie światowej. Gdy chłopak zaczyna się coraz bardziej interesować tą historią nie tylko odkrywa nowe fakty rzucające światło na śmierć wuja i okoliczności pożaru schroniska ale również powoduje że sam stawia się w niebezpiecznym położeniu. W tej opowieści teraźniejszość co róż przeplata się z wątkami z przeszłości. \nAutor serwuje nam dużą dozę informacji historycznych o tym regionie, o mieszkańcach w przeszłości zamieszkujących te ziemie, o wysiedleniach Niemców w czasach powojennych, o trudnych stosunkach polsko-niemieckich w czasach tuż po drugiej wojnie światowej i wreszcie dużo ciekawej historii o schroniskach i ich właścicielach. To było dla mnie najbardziej ciekawe i wciągające w tej książce. Co do wątku kryminalnego, był ciekawy, przykuwający uwagę ale mimo wszystko dla mnie przewidywalny (niemalże od samego początku domyślałem się kto jest mordercą) aczkolwiek motywy działania mordercy poznajemy niemal do samego końca. Postacie w tej książce są słabo zarysowane, jednowymiarowe, główny bohater, bo za niego uważam Maksymiliana, jest bezbarwny. Książka jest interesująca ale styl pisania, zwłaszcza dialogi, przywodził mi na myśl powieści młodzieżowe o charakterze przygodowym, które dawno temu miałem okazję czytać jako chłopak. Teraz bym oczekiwał trochę więcej, ale jak na debiut autora to całkiem ok. Sięgnę po kolejną książkę z tego cyklu z ciekawością.",
+              "date": "2024-02-15 07:36:35.157514",
+              "rating": "6"
+            },
+            {
+              "username": "słoneczko",
+              "text": "Kolejny nowy pisarz w mojej biblioteczce i lekki czytelniczy zawód w tym roku. Nie do końca rozumiem dlaczego ta książka cieszy się tak wielką popularnością. Musiał dobrze zadziałać marketing i reklama. Debiut nie wyszedł zbyt okazale.\nPlusy:\n+ uwielbiam góry dlatego z zapałem sięgnąłem po książkę o tej tematyce;\n+ jeszcze tego regionu Karkonoszy w okolicach Szrenicy nie odwiedziłem;\n+ szczegółowe opisy gór, atrakcji i historii tych okolic od II wojny światowej; \n+ bardziej nadaje się na przewodnik turystyczno-historyczny niż typowy thriller;\n+ czuć klimat zaśnieżonych karkonoskich szczytów, zamglonych dolin;\n+ pokazanie co działo się po wojnie na ziemiach odzyskanych;\n+ czasami pragnienie zemsty jest tak wielkie, że tylko ono się liczy;\n+ najgorzej jeśli chęć odwetu zatruwa nam serce przez wiele lat;\n+ odkrycie przez Maksymiliana własnych wcale nie tak oczywistych korzeni;\n+ na pewno dam jeszcze kolejna szansę pisarzowi, może będzie lepiej.\nMinusy:\n- biedni Niemcy nie byli wysiedlani przez okrutnych Polaków, to ustalenia z Jałty;\n- niedoświadczony chłopak powala uzbrojonego faceta, ot tak znienacka;\n- rozwiązanie tajemnicy zaginionej skrzyni banalne, nikt przez tyle lat nie trafił na skrytkę, a oni odkryli ją w gęstej mgle bez większych poszukiwań.\nOgółem książka dobra, ale liczyłem na więcej.",
+              "date": "2025-07-30 08:51:02.157577",
+              "rating": "6"
+            },
+            {
+              "username": "Aleksandra",
+              "text": "Tegoroczny urlop spędziłam w Karkonoszach, co było świetną okazją do sięgnięcia po książkę, której akcja jest tam osadzona.\nKrótko o fabule: Minęło trochę czasu od śmierci Artura, który jakiś czas temu kupił i zamierzał otworzyć nieczynne schronisko na Śnieżnych Kotłach. Jego bratanek Maksymilian nie zdążył odwiedzić schroniska za życia Artura, dlatego postanawia wziąć urlop i wyjechać w Karkonosze. Tam dowiaduje się więcej o tym, co działo się w czasach wojny i po niej, a także zaczyna dostawać tajemnicze pogróżki. Sprawy komplikują się coraz bardziej, tajemnice zaczynają się mnożyć, robi się coraz niebezpieczniej...\n\nFabularnie książka jest bardzo dopracowana. Następuje ciąg zdarzeń, które mają wywołać w czytelniku zaskoczenie, niepewność, wciągnąć go w tę historię. Tajemnicze listy, pogróżki, historie z przeszłości - naprawdę wszystko jest tu przemyślane i poprawnie poprowadzone.\nZa największą zaletę książki uważam wplatanie prawdziwych wydarzeń, postaci, historii Dolnego Śląska, która pozwala czytelnikom lepiej poznać te tereny i dowiedzieć się, jak wyglądała ich powojenna historia. Mnóstwo ciekawostek, które dla mnie były nowością i pozwoliły lepiej poznać Karkonosze i okolice.\nA mimo to nie potrafiłam się wciągnąć w historię - i to nie tak, że mnie nie zainteresowała, wręcz przeciwnie. Ale jakoś nie czułam ekscytacji podczas czytania, żadnego dreszczyku emocji. No brakowało mi tego. Myślę, że to kwestia stylu autora, który momentami wydawał mi się sztywny i drętwy. Dialogi odebrałam jako nienaturalne. Przez to trochę ciężko mi się czytało.\nMimo tych wad historię odbieram pozytywnie i chętnie zapoznam się z kolejnymi tomami.",
+              "date": "2024-09-04 19:54:00.637294",
+              "rating": "5"
+            },
+            {
+              "username": "wCzepkuUrodzona",
+              "text": "&quot;Schronisko, które przestało istnieć&quot; Sławomir Gortych\nTom 1 „Karkonoskiej serii kryminalnej”\n\nSą takie książki, do których chce się wracać. Nie tylko ze względu na samą historię, ale również po to, żeby ponownie zanurzyć się w świecie bohaterów, tajemnic i miejsc, które po przeczytaniu zaczynają żyć własnym życiem. Tak właśnie jest w przypadku „Karkonoskiej serii kryminalnej” Sławomira Gortycha.\n\nPierwsze trzy tomy zaczęłam czytać już w ubiegłym roku. W tym roku planowałam sięgnąć po kolejne dwa, ale uznałam, że zanim ruszę dalej, warto wrócić do początku, żeby przypomnieć sobie wszystkie wydarzenia i być na bieżąco. I tak ponownie rozpoczęłam swoją przygodę od „Schroniska, które przestało istnieć”.\n\nTym razem książkę poznałam w aż trzech różnych formach. Zaczęłam od ebooka na Legimi, później, siedząc w fotelu, sięgałam po wydanie papierowe, a podczas jazdy samochodem towarzyszył mi audiobook z Woblink. Przyznam szczerze, że każda z tych form dała mi nieco inne doświadczenie. Ebook pozwalał wygodnie wrócić do historii w każdej chwili, papierowe wydanie dawało zupełnie inną przyjemność obcowania z książką, natomiast audiobook pozwalał zanurzyć się w karkonoskiej historii podczas podróży.\n\nA papierowe wydanie zdecydowanie zasługuje tutaj na osobne słowa. Luksusowa, twarda oprawa, barwione brzegi, kolorowa wyklejka, tasiemka oraz reprinty przedwojennych pocztówek sprawiają, że książka prezentuje się naprawdę pięknie. Jest to jedno z tych wydań, które aż chce się mieć na swojej półce. Dodatkowo znalazło się w nim miejsce na zbieranie pieczątek z górskich wędrówek, co jest niezwykle sympatycznym dodatkiem dla miłośników Karkonoszy i górskich wypraw.\n\nAle oczywiście najważniejsza pozostaje historia.\n\nMłody stomatolog Maksymilian Rajczakowski przyjeżdża w Karkonosze, chcąc odpocząć od rodzinnych problemów. Nie spodziewa się jednak, że zamiast spokoju czeka na niego tajemnica związana z wojenną przeszłością gór. Kiedy właściciel nieczynnego schroniska Nad Śnieżnymi Kotłami ginie w pozornie nieszczęśliwym wypadku, Maksymilian zaczyna interesować się tym, czym przed śmiercią zajmował się jego wujek.\n\nTrop prowadzi do innego schroniska, które tuż po II wojnie światowej spłonęło w niewyjaśnionych okolicznościach. Z każdym kolejnym odkryciem pojawia się coraz więcej pytań, a Maksymilian zaczyna podejrzewać, że śmierć wujka wcale nie była przypadkowa. Postanawia rozpocząć własne śledztwo. Problem w tym, że ktoś zdecydowanie nie chce, aby poznał prawdę.\n\nPogróżki, rodzinne sekrety, tajemnice z przeszłości, niewyjaśnione wydarzenia i legenda Ducha Gór tworzą historię, która potrafi zaciekawić i wciągnąć. Szczególnie podobało mi się połączenie kryminału z historią Karkonoszy. Gortych nie ogranicza się wyłącznie do zagadki kryminalnej – zabiera czytelnika na górskie szlaki i pozwala odkrywać miejsca, których historia kryje znacznie więcej, niż można byłoby przypuszczać.\n\n„Schronisko, które przestało istnieć” to nie tylko kryminał. To również podróż w przeszłość, w której legendy, wojenne tajemnice i ludzkie sekrety splatają się ze sobą. Karkonosze stają się tutaj czymś więcej niż tylko tłem wydarzeń. Są niemal osobnym bohaterem tej historii – tajemniczym, surowym i pełnym sekretów.\n\nCzytając tę książkę po raz drugi, zwracałam uwagę na inne szczegóły niż za pierwszym razem. Powrót do znanej już historii pozwolił mi spojrzeć na bohaterów i wydarzenia z nieco innej perspektywy. I chyba właśnie dlatego lubię wracać do rozpoczętych serii – można odkryć w nich coś, czego wcześniej się nie zauważyło.\n\nPolubiłam „Karkonoską serię kryminalną” i z zainteresowaniem będę poznawać kolejne tomy. Jest w niej coś, co sprawia, że chce się wiedzieć, co wydarzy się dalej, a jednocześnie ma się ochotę ruszyć w Karkonosze i samemu zobaczyć miejsca, o których opowiada autor.\n\n„Schronisko, które przestało istnieć” to dla mnie udane rozpoczęcie serii – pełne tajemnic, rodzinnych sekretów, górskiego klimatu i zagadek sięgających przeszłości.\n\nA o czym dokładnie jest ta historia i dokąd zaprowadzi Maksymiliana jego własne śledztwo? Przekonajcie się sami. Ja tymczasem ruszam dalej, bo przede mną kolejne karkonoskie tajemnice.",
+              "date": "2026-09-08 04:44:13.125957",
+              "rating": "10"
+            },
+            {
+              "username": "mommy_and_books",
+              "text": "&quot;Schronisko, które przestało istnieć&quot; to całkiem dobry debiut literacki Sławomira Gortycha. Tę książkę słuchałam pod postacią audiobooka. Porwała mnie jego akcja i niesamowita fabuła. Polubiłam głównego bohatera, który musiał odkryć pewną rodzinną tajemnicę, a to wszystko przez niespodziewaną śmierć jego stryja. \nPodobał mi się piękny górski klimat. Góry mają coś takiego magicznego w sobie, co przyciąga turystów. Oczywiście górskie klimaty lubię tylko w książkach. Realnie wolę morze. Wydaje mi się bezpieczniejsze. \nWracając do książki -koniecznie musicie ją poznać. \n&quot;Schronisko, które przestało istnieć&quot; to górski kryminał, którego akcja dzieje się w Karkonoszach. Przyznam szczerze, że byłam tam dwa razy w życiu. I byłam bardzo zachwycona. \nNaszym bohaterem jest stomatolog Maksymilian Rajczakowski. Przyjeżdża, żeby odpocząć i zobaczyć pozostawione po śmierci wuja nieczynne schronisko Nad Śnieżnymi Kotłami. Po pewnym czasie zaczyna otrzymywać pogróżki od tajemniczego Ducha Gór. Dlaczego? Czy śmierć jego wujka była tragicznym wypadkiem? Na te i wiele innych pytań odpowiedzi znajdziecie w tej książce. \nPowiem wam, że były emocje, niesamowite tajemnice, legendy i zagadki. Spotkałam tutaj ciekawych bohaterów. Akcja toczyła się dwutorowo. Z fabułą przemieszczamy się w czasie. Pierwszy jest rok 1945, a później przenosimy się do 2004 roku. \nJestem zadowolona z tej książki i już nie mogę się doczekać kolejnej części. \nGratuluję udanego debiutu. \nPs.\nNa samym końcu audiobooka znajdziecie niespodziankę od samego autora. To było świetne zaskoczenie.\nAudiobook &quot;Schronisko, które przestało istnieć&quot; czyta Aleksander Orsztynowicz-Czyż.",
+              "date": "2023-05-10 08:13:02.131995",
+              "rating": "9"
+            },
+            {
+              "username": "Eli1605",
+              "text": "Szału nie ma ale książka dość ciekawa. Fikcja literacka oparta na prawdziwych wydarzeniach i miejscach. Bardzo długie wprowadzenie w temat. Fajne zaś jest nawiązanie do końca II Wojny Światowej i kradzieży dział sztuki przez uciekających Niemców. Książka wciągnęła mnie dopiero po połowie. Wtedy akcja przyspieszyła i pojawiło się napięcie. Natomiast opisy Karkonoszy, szlaków i schronisk spowodowały, że chciałam wziąć plecak i natychmiast jechać w góry.",
+              "date": "2023-07-15 20:27:03.553767",
+              "rating": "6"
+            },
+            {
+              "username": "Buniaak",
+              "text": "Rozumiem, czemu może się podobać... Ale do mnie nie trafiło. \n\n&quot;Miastowy&quot; odziedziczył lokal na szczycie góry, po zagadkowej śmierci swojego wujka. W ten sposób wplątuje się w wydarzenia, których początek sięga II Wojny Światowej. Rzecz dzieje się na Dolnym Śląsku, więc inspiracji powojennych nie brakuje. Plusem są też dokładne opisy lokalizacji górskich. Czytelnik czuje się jak na wirtualnym spacerze. \n\nKsiążka dla zainteresowanych historią i wędrówkami. Z zagadką w tle i próbą odnalezienia własnych korzeni. \n\nNiby ma wszystko co potrzebne, ale postacie jednowymiarowe, a lektor dał im takie głosy, że wydawały się wręcz infantylne.",
+              "date": "2026-04-06 09:40:07.716517",
+              "rating": "6"
+            },
+            {
+              "username": "Ewa Kowalska",
+              "text": "Czytałam z dużym zainteresowaniem. Nie ze względu na wątek kryminalny, ani obyczajowy, czy delikatny romansik, rodzinne sekrety. Uwiodły mnie Karkonosze, ich historia, szczególnie ta krótko po wojnie, kultura, ludzie. Ponazistowskie klimaty, skarby, wysiedlenia, nie turystyczne, ale historyczne Karkonosze. Trochę mi ta powieść przypomina etnokryminały Kuźmińskich, trochę powieści Siembiedy. A dla lepszego poznania specyfiki regionu podpowiadam jeszcze „Nocami krzyczą sarny”. \n\nPrzeczytałam pierwszy (czyli ten) tom, bo drugi zwyciężył w plebiscycie LC, żeby zachować chronologię. Nie wiem, czy „Schronisko, które przetrwało&quot;, po które sięgnę niebawem to najlepsza książka sensacyjna ubiegłego roku, ale wreszcie mamy nowego zwycięzcę w tej kategorii w plebiscycie LC. Gratulacje dla autora.",
+              "date": "2024-05-03 09:20:45.866134",
+              "rating": "7"
+            },
+            {
+              "username": "_och_man_",
+              "text": "Sądziłam, że po lekturze moja nadmorska, syrenkowa osobowość choć trochę przeprosi się z górskimi klimatami, które od zawsze, nie wiedzieć czemu, trochę mnie nużyły. I co? Jestem beznadziejnym przypadkiem 😩 \nKsiążkę łyknęłam niemal na raz, choć bez żadnych większych emocji. Bardzo doceniam, z jak zgrabnym haftem mamy tu doczynienia. Na poły fikcja, na poły wspomnienia minionych zdarzeń, silnie osadzone w lokalnej świadomości wierzenia i ogromne pokłady miłości do tematu przewodniego - tę ostatnią czuć w każdym pieczołowicie nakreślonym opisie, każdą wplecioną legendą i pigułką wiedzy. \nNaprawdę chciałbym wsiąknąć w tę historię, tak na pełnej. Choćby z przeogromnej sympatii do autora. Nie wykluczam, że jeszcze kiedyś przetnę swoje szlaki (hehe!) z Maksymilianem i spółką.",
+              "date": "2026-03-21 22:51:37.82679",
+              "rating": "6"
+            },
+            {
+              "username": "Marzena",
+              "text": "&quot;To nie jest rozmowa na telefon&quot; - tak powinien brzmieć tytuł tej książki, która powinna się znaleźć w kategorii &quot;literatura górska&quot; tudzież &quot;literatura przyrodnicza&quot;, na pewno nie w dziale &quot;kryminał, sensacja, thriller&quot;.\nAutor jest niewątpliwie miłośnikiem wędrówek i historii Karkonoszy, pewnie dlatego niespełna 3/4 książki zajmują opisy gór, schronisk i widoków jakie rozciągają się od Bukowca po Szklarską Porębę przez granicę z Czechami i dalej jak okiem sięgnąć. Wszystko to osobom, które podzielają pasję autora być może przypadnie do gustu, gorzej będą się mieć fani kryminału.\nJako że zaliczam się właśnie do tych drugich jestem rozczarowana powieścią. Po pierwsze jak już wyżej wspominałam zawartość kryminału w kryminale jest nikła, a poza tym nie stanowi żadnej zagadki. Do tego dochodzą postaci bohaterów, którzy bardziej przypominają plastikowe lalki, niż prawdziwych ludzi. Chyba nawet w lalki, kiedy dać je dzieciom do zabawy, maluchy potrafią włożyć więcej życia, a już na pewno ożywią je dużo bardziej barwnymi dialogami niż to co na kartach książki.\nRozmowy bohaterów to po prostu dramat. Nie wierzę, że ktoś tak ze sobą rozmawia 🤦🏽‍♀️A już praktycznie każda rozmowa telefoniczna kończy się tym co napisałam na początku: &quot;to nie jest rozmowa na telefon&quot;. Jeśli to jest środek jaki autor wybrał sobie do stopniowania napięcia to pomylił napięcie z irytacją czytelnika. Twórca ma też kilka ulubionych słów, którymi namiętnie się posługuje, np. Marta wszystko co robi jest filuterne. Ja mam coś takiego, że kiedy jakaś piosenka wpadnie mi w ucho - potrafię ją śpiewać przez kilka dni z rzędu, autor ma tak, że umieszcza jedno i to samo słowo na kilku stronach pod rząd. W wypracowaniu szkolnym polonistka podkreśliła by to na czerwono i kazała zaopatrzyć się w słownik synonimów.\nDołączam się do tego, to będzie naprawdę dobra inwestycja 💪\nTymczasem nie odradzam lektury ani nie polecam. Czytacie na własną odpowiedzialność.",
+              "date": "2023-02-16 20:08:39.194201",
+              "rating": "3"
+            },
+            {
+              "username": "Wileta",
+              "text": "# Wyzwanie na listopad 2025r. – przeczytam książkę polskiego autora lub autorki wydaną po 2000 roku.\nDobry debiut polskiego autora z 2022 roku. Akcja kryminału rozgrywa się w Sudetach, na górskich szlakach i w sudeckich schroniskach.. Fabuła jest logiczna i interesująca. Powieść ma również wartość edukacyjną, gdyż autor wplata wątki bohaterów w dawną historię tych poniemieckich ziem, w latach 1945 - 2004. Główny bohater próbując rozwikłać przyczynę śmierci wujka &quot;sprzedaje&quot; czytelnikowi wiele informacji nt. sytuacji politycznej zaistniałej po zakończeniu II wojny światowej, wysiedlenia Niemców z Dolnego Śląska, panujących relacji pomiędzy rdzennymi mieszkańcami, a nowo przybyłymi przesiedleńcami ze Wschodu oraz pomiędzy żyjącymi tam Czechami. \nOgólnie książka ciekawa i warta poznania. Autor jedynie powinien popracować nad narracją, która nie jest doskonała, przez co książka momentami jest nudna i przewidywalna. To powieść, która nie porywa, ale zapewnia dobrą i spokojną rozrywkę dla fanów polskich kryminałów.",
+              "date": "2025-11-11 17:24:52.883579",
+              "rating": "6"
+            },
+            {
+              "username": "Jack_ Mc_sky",
+              "text": "OCENA - 8/10 REWELACJA\n\nRewelacyjna, przemyślana, ciekawa, takie słowa cisną się na usta zaraz po przeczytaniu powieści „SCHRONISKO, KTÓRE PRZESTAŁO ISTNIEĆ” Sławomira Gortycha. Jak na debiut książka zaskakuje swoją dojrzałością, a napisana została przez młodziutkiego autora, który zaczyna dopiero szlifować swoje umiejętności pisarskie. Trzeba otwarcie napisać, że powieść jest bardzo elektryzująca od pierwszych stron i czyta ją się z prawdziwą przyjemnością.\n\nCzego możemy się spodziewać po tej książce? Przede wszystkim dobrze przemyślanej fabuły, która jest świetnie skonstruowana i przyciąga czytelnika, dlatego nie dziwię się wysokim oceną na LC. Autor napisał książkę z prawdziwą pasją wykorzystał swoją wiedzę dlatego na każdym kroku czuje się jego fascynację Karkonoszami. Świetnie wplótł rys historyczny tego pasma górskiego w akcję, zabarwił ją dodatkowo mitami, wierzeniami, legendami, a wszystko podał w bardzo przystępny sposób. Brawo!!!.\n\nReasumując przeczytajcie bo naprawdę warto. Osoby kochające kryminały się nie zawiodą. Znakomicie przemyślana intryga, pełnokrwiści bohaterowie, dobre dialogi, teraźniejszość przenika się z przeszłością, nieco historii o Karkonoszach i Dolnym Śląsku do ostatniej strony czeka na czytelnika wiele emocji i wrażeń. Zdecydowanie polecam i w najbliższym czasie zabieram się za drugi tom tego cyklu. Pozdrawiam. Jack_",
+              "date": "2024-06-12 19:17:47.253917",
+              "rating": "8"
+            },
+            {
+              "username": "Mariola",
+              "text": "Karkonosze, legendy, tajemnicze śmierci.. Tak w tej książce jest fantastyczny mix, który sprawia, że nie można się oderwać od czytania. \nMaksymilian wyjeżdża w góry po niespodziewanej śmierci swojego wuja. Po nitce do kłębka mężczyzna domyśla się, że śmierć wuja być może nie była przypadkowa, a w Karkonoszach dzieją się dziwne rzeczy... Kim jest Duch Gór? Co działo się w Karkonoszach po II wojnie światowej? Jak te wydarzenia mogą być powiązane z życiem Maksymiliana?\n&quot;Schronisko, które przestało istnieć&quot; jest świetnym debiutem literackim Sławka Gortycha. Stworzył on historię, którą chce się poznać jak najszybciej, a jednocześnie myśl o jej końcu wywołuje smutek. Odpowiednio budowane napięcie, klimat naszych cudownych Karkonoszy i do tego magia miejscowych legend jest to połączenie, które bardzo mi odpowiada. Z pewnością w najbliższym czasie sięgnę po kolejne części trylogii. Już nie mogę doczekać się czym tym razem zaskoczy mnie autor.",
+              "date": "2024-07-19 15:57:13.502941",
+              "rating": "8"
+            },
+            {
+              "username": "Stokrotka",
+              "text": "„Schronisko, które przestało istnieć” ma rewelacyjną okładkę. Ponadto bazuje na bardzo ciekawej historii, która miała ogromny potencjał. Tajemnica skarbu z II wojny światowej sięgająca lat 60. i czasów współczesnych, w tle Karkonosze, trudne górskie szlaki, schroniska z wieloletnią tradycją. Niestety, autorowi nie udało się tego potencjału wykorzystać nawet w połowie. Styl pisania Sławomira Gortycha nie jest najlepszy i to się na każdym kroku czuje. Słabiutki, wręcz irytujący jest też główny bohater – Maksymilian Rajczakowski. Jego niefrasobliwość, lekceważenie oczywistych tropów, ciągłe niedowierzanie budzi zaskoczenie czytelnika i sprawia, że książkę czyta się dosyć opornie. Paradoksalnie, najciekawsze w tej powieści są początkowe rozdziały, zanim pojawi się główny bohater. Zachowanie 27-letniego stomatologa przywodzi mi na myśl 15-latka, który się buntuje, grymasi, obraża. A już rozmowa z ojcem w ostatnich rozdziałach przelała czarę goryczy i moja ocena książki uległa zmianie - jedna gwiazdka więcej poleciała w przepaść.",
+              "date": "2023-09-24 10:06:36.14494",
+              "rating": "5"
+            },
+            {
+              "username": "Joanie",
+              "text": "Pierwsza część karkonoskiej serii to książka, która w mojej obecnej sytuacji wejdzie jak złoto, ponieważ jej akcja dzieje się dokładnie tam, gdzie w tej chwili jestem - na spontanicznym wypadzie w Szklarskiej Porębie..\n\nGortych z zawodu jest stomatologiem, ale z miłości – absolutnym karkonoskim maniakiem. I to widać na każdej stronie, bo autor nie tylko opisuje szlaki, ale wręcz oddycha tymi górami. Czytając o dawnym schronisku nad Śnieżnymi Kotłami (tym z charakterystyczną wieżą, które dziś służy za stację przekaźnikową),stojąc prakrycznie u jego podnóża, mam już właściwie gwarantowaną gęsią skórkę z podekscytowania...\n\nKsiążka to kryminał z rozbudowanym tłem historycznym, gdzie akcja toczy się dwutorowo. Współcześnie Maksymilian próbuje rozwikłać zagadkę śmierci swojego wuja, dawnego goprowca, natomiast w retrospekcjach lądujemy w powojennych Karkonoszach. To czas, kiedy te tereny były prawdziwym &quot;Dzikim Zachodem&quot;, miejscem starć między wysiedlanymi Niemcami, polskimi osadnikami, szabrownikami i sowietami. Śnieżne Kotły to mój cel jutrzejszego wypadu więc idealnie się składa, bo to właśnie wokół ich surowego klimatu, mrocznych legend i dawnych tajemnic kręci się spora część intrygi.\nJeśli chodzi o minusy, to jako wytrawna czytelniczka mogłabym uznać samą zagadkę kryminalną za odrobinę przewidywalną, a styl autora momentami za nieco &quot;przewodnikowy&quot; jednak klimat nadrabia to z ogromną nawiązką.\n\nTa książka ma dla mnie w tej chwili zupełnie inny wręcz namacalny wymiar, kiedy czytam i patrzę na te same szczyty ze świadomością, że jutro stanę na ich wierzchołku...",
+              "date": "2026-06-14 21:07:39.401091",
+              "rating": "8"
+            },
+            {
+              "username": "Myszka",
+              "text": "Po tę książkę sięgnęłam celowo, pomimo kilku dość negatywnych opinii. Wiem, że każdy ma swój gust i jak to mówią: nie to jest ładne co jest ładne, ale co się komu podoba. Jeszcze jednym aspektem, dla którego zdecydowałam się przeczytać &quot;Schronisko, które przestało istnieć” jest miejsce fabuły. \nKilka razy byłam w tamtych okolicach i bardzo lubię czytać książki, których akcja dzieje się w miejscach, w których byłam, które chociaż trochę znam. Wtedy czuje się tak, jakbym to była bohaterem powieści, chodząc po znajomych trasach, bywać w znanym środowisku. Porównując swoje odczucia z odczuciami autora. Często się zgadzając albo i nie z jego postrzeganiem tych miejsc.\n\n&quot; Niebo nad Kotliną Jeleniogórską przypominało witraż, który nieustannie zmienia swoje barwy. Na granatowej z początku tafli ciemne kawałki szkła były stopniowo zastępowane pomarańczowymi, żółtymi i czerwonymi szkiełkami. Zza linii horyzontu nieśmiało wyłoniło się słońce. Swoimi promieniami obejmowało kolejne górskie hale, przyspieszając topnienie wciąż zalegającego na nich śniegu.&quot;\nMyślę, że książka „Schronisko, które przestało istnieć” to swego rodzaju misja mająca na celu zachęcanie czytelników do odwiedzin miejsc opisywanych przez autora. Wiem, że od wieków górale tatrzańscy walczą o palmę pierwszeństwa z góralami sudeckimi i karkonoskimi. Jedni i drudzy chcą aby jak najwięcej turystów do nich przybywało. Mnie podoba się i tu i tu, chociaż ostatnio na przykład Zakopane straciło według mnie swój urok, staje się takim typowym miejscem dla bogaczy spragnionych blichtru i wygody. Pod tym względem Karkonosze są jeszcze trochę bardziej dziewicze. I w tym właśnie tkwi ich urok. Nie jest to typowo rasowy kryminał, lecz mając na uwadze, ze to debiut młodego autora, to w sumie nie jest aż tak zły jak czytałam.\nOwszem, sam klimat Karkonoszy jest bardzo dobrze oddany, widać że autor zna doskonale temat, lecz co do przedstawienia bohaterów, to mam nieco do nich zastrzeżeń. Według mnie są oni jakby tak zbyt płasko nakreśleni, całkiem bez wyrazu, nie do końca wiarygodnie. Mam jeszcze zastrzeżenia do niektórych słów, moim zdaniem zbyt często używanych: &quot;ponoć&quot; oraz słowo &quot;kolego&quot; używane w stosunku do kochanej osoby, jakoś mi tu nie gra...\nNa plus mogę jednak zaliczyć oprócz opisów pięknej górskiej przyrody, dość ciekawą intrygę oraz historyczne wstawki o historii tych miejsc. Czasy powojenne z pewnością były bardzo trudne i dla mieszkających tam Niemców i dla przybywających Polaków. I jedni i drudzy czuli się źle, niekomfortowo.\n\nSławek Gortych na głównego bohatera wybrał młodego stomatologa z Wrocławia. Maksymilian Rajczakowski postanowił wybrać się na zaległy urlop w Karkonosze. Jego celem jest dawne schronisko Nad Śnieżnymi Kotłami, które należało do jego wujka Artura, który zginął tam w nieszczęśliwym wypadku. \nOjciec Maksymiliana odradza mu tę podróż, zdradzając część skrywanych rodzinnych tajemnic, lecz nie zdołał odwieść syna od podjętej decyzji.\nJako dziecko i nastolatek bywał kilkukrotnie w tamtych okolicach z wujkiem i rodzicami, bardzo dobrze wspomina tamte czasy, więc teraz chciałby poznać przyczynę, dla której wujek kupił to schronisko pół roku temu. \nJakie wrażenie na Maksymilianie sprawi to piękne miejsce? \nCo łączy to schronisko z niemieckim noblistą?\nJakie rodzinne tajemnice odkryje Maksymilian? \nCo wspólnego ze sobą mają wypadki, które wydarzyły się w okolicach Śnieżnych Kotłów?\nJaki wpływ na decyzje Maksymiliana będą miały odkryte przez niego fakty?\n\nMam nadzieję, że autor po pierwszych doświadczeniach bardziej przyłoży się do tworzenia następnej części tej historii, lepiej stworzy swój styl.\nJednak myślę, że dla amatorów górskich klimatów i tajemnic, ta książka będzie dobrym relaksem.",
+              "date": "2022-10-23 10:48:20.455635",
+              "rating": "7"
+            },
+            {
+              "username": "Joanna",
+              "text": "To pierwszy tom serii, której akcja toczy się w Karkonoszach i która zgłębia sekrety i tajemnice jak również legendy i historie związane z tymi górami. \nGłówny bohater powieści Maksymilian Rajczakowski, podobnie jak Autor jest z zawodu stomatologiem i fascynuje się Karkonoszami. By odetchnąć od zawodowych i prywatnych problemów wybiera się na urlop w Karkonosze, do nieczynnego schroniska, którego poprzednim właścicielem był zmarły w niewyjaśnionych okolicznościach jego wujek, brat ojca. \nNa miejscu spotyka go seria dziwnych i niewyjaśnionych wydarzeń. Próbując rozwiązać tajemnicze zagadki, Maksymilian musi sięgać do przeszłości, czasów drugiej wojny światowej. Pomaga mu m.in. lokalny doktor historii tych miejsc. \nBardzo ciekawa powieść kryminalna, pełna tajemnic i zagadek osadzona w trzech płaszczyznach czasowych: w maju 1945 roku, kiedy naziści ponoszą klęskę , w latach 1960 opisujących działalność różnych ugrupowań na terenach zamieszkanych przez różne narodowości oraz czasy współczesne, w których żyje Maksymilian. Odkrywane przez bohatera sekrety i tajemnice są niezwykle ciekawe i chyba do dzisiejszych czasów aktualne. To historie związane ze skarbami, cennymi dziełami sztuki ukrywanymi przez uciekających z Polski nazistów . Odkrywanie tego rodzaju tajemnic powiązane jest w powieści z dawnymi sekretami rodzinnymi głównego bohatera. Ich rozwiązanie okazuje się szokujące. \nPowieść czyta się szybko i płynnie, jednak ze względu na wartką akcję w większym skupieniu. Nad całością tematyki górskiej czuwa Duch Gór i jego przesłanie.",
+              "date": "2024-07-18 14:43:06.318455",
+              "rating": "7"
+            },
+            {
+              "username": "Gala",
+              "text": "„Czasami wracanie do starych spraw przynosi więcej szkód niż korzyści”.\n\nKochacie góry, czy wolicie morze? Ja kocham jedno i drugie, ale chyba przeważają góry. Jeździmy w nie głównie, po to, by podziwiać niesamowite widoki, poczuć klimat jedyny w swoim rodzaju, zachwycić się potęgą masywów górskich i naładować swoje akumulatory pozytywną energią. Teraz gdy moje zdrowie nie pozwala mi już na wędrówki po górskich szlakach, to tym bardziej doceniam ich majestat i piękno. Moje oczy nie są tak sprawne i zdrowe, jak kiedyś, ale górskie piękno nadal potrafię dostrzec i nim się zachwycić. Do Karkonoszy mamy w sumie nie tak daleko, bo około 200 kilometrów, to niecałe trzy godziny jazdy samochodem i niejednokrotnie zwiedzaliśmy już te rejony, ale o tym wszystkim, czego dowiedziałam się z powieści „Schronisko, które przestało istnieć” nie miałam pojęcia. Przed lekturą książki dopadły mnie lekkie obawy, bo wiadomo debiut i do tego autor jest z zawodu stomatologiem. Wydawało mi się, że taka profesja wyklucza możliwość napisania książki i do tego kryminału.\n\nTen stereotyp sprawił, że podeszłam do lektury książki z ograniczonym zaufaniem, chociaż lubię czytać debiuty, bo zazwyczaj jest to jakiś powiew świeżości w literaturze. Bardzo często udaje mi się natrafić na prawdziwe perełki, ale też niejednokrotnie okazywało się, że napisanie dobrej książki, zwyczajnie autora przerosło. Po lekturze „Schroniska…” mogę stwierdzić z całą odpowiedzialnością, że Sławomir Gortych napisał dość dobry kryminał, może niepozbawiony wad, ale jest to całkiem udany debiut. Młody autor bardzo pozytywnie mnie zaskoczył swoją wiedzą i niesamowitą miłością do Karkonoszy, którą przekazał w książce, co czuć w każdym słowie i w każdym zdaniu.\n\n\nCharakterystyczne cechy wyglądu zewnętrznego głównego bohatera a przede wszystkim jego zawód, jednoznaczne nasunęły mi skojarzenie, z tym że jego pierwowzorem, jest sam autor. Oczywiście w niczym mi to nie przeszkadzało, bo bardziej skupiłam się na fabule, w której znalazłam mnóstwo historii i trochę fikcji literackiej. Na końcu książki, Sławek Gortych wyjaśnia, co wydarzyło się naprawdę, a co było wytworem jego wyobraźni. Gdyby tego nie zrobił, skłonna byłabym uwierzyć we wszystko, o czym przeczytałam w powieści, tak przekonująco jest to przedstawione.\n\nSchronisko nad Śnieżnymi Kotłami od lat sześćdziesiątych jest nieczynne, którego nowym właścicielem nieoczekiwanie dla miejscowych, zostaje człowiek niezwiązany z górami Artur Rajczakowski. Pragnie on, nie tylko przywrócić schronisko do dawnej świetności, ale też poszukuje tu śladów swojej rodziny. Zanim uda mu się dotrzeć do konkretnych informacji, ginie w wypadku. Jego bratanek, młody stomatolog jedzie w Karkonosze, by odetchnąć od pracy i rodzinnych problemów. Chce odwiedzić schronisko, do którego wujek tak żarliwie go zapraszał, a Maksymilian nigdy nie miał na to czasu, by z niego skorzystać. Po przybyciu na miejsce chłopak dowiaduje się, że jego wuj z nieznanych przyczyn interesował się innym nieistniejącym schroniskiem, które w niewyjaśnionych okolicznościach spłonęło tuż po II wojnie światowej. Chłopaka zaintrygowało to niezwykłe zainteresowanie wujka i sam zaczyna zgłębiać tajemniczą historię schroniska im. Księcia Henryka, mającą korzenie w przeszłości. Im bliżej jest rozwikłania tej niezwykłej zagadki, tym ma coraz większe wrażenie, że grozi mu niebezpieczeństwo. To przekonanie zostaje ugruntowane przez pogróżki, jakie zaczyna otrzymywać od kogoś, kto podaje się za Ducha gór. Nie ustaje jednak w swoim prywatnym śledztwie, chociaż jest coraz bardziej przekonany, że może faktycznie grozić mu śmiertelne niebezpieczeństwo. Nabiera też podejrzeń, że jego wuj nie zginął w wyniku nieszczęśliwego wypadku, ale dlatego, że ktoś mu w tym pomógł. Na jaw powoli wychodzą tajemnice dotyczące nie tylko nieistniejącego schroniska, ale także te, które ukrywała przed nim przez lata rodzina, jest to tym bardziej intrygujące, że są ściśle ze sobą związane.\n\nAutor płynnie przechodzi od przeszłości do teraźniejszości, a wspaniałe i realistyczne opisy gór sprawiły, że zupełnie zapomniałam o otaczającym mnie świecie i oczami wyobraźni przeniosłam się do Karpat, spowitych listopadową mgłą, w której można dostrzec pana tych gór Karkonosza. Młody człowiek zaimponował mi swoją niesamowitą wiedzą historyczną i tym z jak ogromną pasją opowiada o swoich ukochanych górach piękną poprawną polszczyzną, której nie powstydziłby się nie jeden student polonistyki. Jest to taki rodzaj kryminału, który rzadko spotyka się na naszym rynku. Świetna książka, która przede wszystkim zachwyci fanów gór, ale nie tylko, bo jest to powieść także dla wszystkich tych, którzy uwielbiają zagadki kryminalne z historią w tle. Całość dopełniona jest niesamowitą górską scenerią, mnóstwem nawiązań do miejscowych legend, intrygującą historią ukrytego skarbu oraz zagadkowymi śmierciami. Zarówno tymi z przeszłości, które nie znalazły wyjaśnienia i współczesnymi morderstwami mającymi związek z przeszłością. Wszystko razem tworzy niepowtarzalny i jedyny w swoim rodzaju klimat. Na uwagę zasługuje też, bardzo interesująco przedstawiona powojenna historia tych terenów , o których mówi się mało, albo nie wiele. Może powodem tego jest fakt, że nie była ona zbyt chlubna, więc skoro nie ma się czym chwalić, to lepiej tej historii nie wspominać. Dlatego ukłon w stronę autora, że poszerzył moją skromną wiedzę w tym zakresie.\n\nFabuła kryminału jest świetnie skonstruowana, mnóstwo podejrzanych, wiele motywów, chociaż udało mi się domyślić, komu najbardziej mogło zależeć na tym, by powojenna prawda nie wyszła na jaw. Natomiast finał jest zaskakujący i perfekcyjny, nie takiego się spodziewałam.\n\nNa koniec trochę dziegciu, w tej beczce miodu. Chwilami miałam mały przesyt z powodu wywodów historycznych jednego z bohaterów, które skutecznie spowalniały akcję, chociaż miały one rację bytu i znaczenie dla fabuły. I na koniec jeszcze jeden taki mały szczegół. Pomimo że autor przywiązuje wielką wagę do słów i pięknie pisze, poprawną polszczyzną, nadużywa słowa „ponoć”, które w niektórych momentach znajduje się nawet w co drugim zdaniu, a istnieje przecież tyle jego synonimów. Nie jestem wytrawną znawczynią języka polskiego, więc wspominam o tym tylko dlatego, że podczas czytania mnie to zwyczajnie irytowało. I mały zarzut związany z charakterystyką bohaterów, pomimo że autor bardzo starał się ich wiarygodnie przedstawić, niestety wypadli płasko i papierowo. Nie potrafiłam się z nimi w żaden sposób utożsamić, ani ich polubić.\n\nTak ogólnie to bardzo dobry debiut i czuć ogromne predyspozycje Sławka Gortycha do pisania. Chętnie sięgnę po kontynuację, którą sugeruje nie tylko niedokończony wątek, ale także informacja o drugim tomie, znajdująca się na okładce.\n\n„Niby czasy się zmieniają, świat idzie do przodu, lecz w górach dużo rzeczy wciąż pozostaje takich samych…”\n\nKsiążkę przeczytałam dzięki uprzejmości Wydawnictwa Dolnośląskie",
+              "date": "2022-08-08 20:31:54.342503",
+              "rating": "7"
+            },
+            {
+              "username": "Anna-Maria",
+              "text": "Sławek Gortych przebojem wdarł się do świata polskich powieści kryminalnych, zajmując w nim solidną pozycję. Już pierwsza jego książka z akcją osadzoną w Karkonoszach okazała się być bestsellerem i zdobyła liczne nagrody, w tym tytuł Książki Roku LC w kategorii debiut 2022 i nagrodę na Festiwalu Górskim za najlepszą książkę fikcjonalną. Od dłuższego już czasu okupuje listę 100 najchętniej czytanych książek niniejszego portalu. Również kolejne części tego cyklu cieszą się dużym uznaniem. \n„Schronisko, które przestało istnieć” przeczytało już chyba pół Polski, a ja ciągle nie. Zobaczyłam jednak pana Sławka na gali Książka Roku, posłuchałam jego bardzo sympatycznego podziękowania, kierowanego do czytelników i pomyślałam, że tak miły człowiek musiał napisać coś wartego uwagi. Jeśli ktoś z takim szacunkiem i życzliwością mówi o swoich odbiorcach, to zapewne równie poważnie traktuje ich jako czytelników i zadbał o to, żeby jego książki miały poziom nieobrażający ludzkiej inteligencji. \nKarkonosze to teren literacko jeszcze mało wyeksploatowany. Kiedy byłam dzieckiem pojechałam kiedyś na wczasy z rodzicami i bratem do Karpacza. Zostały mi po nich zdjęcia, na których stoimy upozowani na tle świątyni Wang, przy jakimś wodospadzie i zajadamy lody oparci o dziwne formy skalne. W moich wspomnieniach Karkonosze to przede wszystkim turystyczne atrakcje z kiczowatymi ciupagami, niesmakującymi mi wtedy oscypkami i lodowatą wodą w strumieniu przepływającym obok domu wczasowego „Śnieżka”. Tymczasem Sławek Gortych dał mi zupełnie inne góry: tajemnicze, mroczne, pełne sekretów sięgających II wojny światowej, z Duchem Gór czuwającym nad wymierzaniem sprawiedliwości i ludźmi, którzy ten teren kochają, wspomagają się wzajemnie, ale i strzegą swoich tajemnic. \nProwadzenie fabuły w dwóch liniach czasowych nadaje tej powieści szczególnego wyrazu. Kiedy młody Maksymilian jedzie do schroniska Nad Śnieżnymi Kotłami, gdzie niedawno zginął jego wujek i nieświadomie wchodzi w sam środek niebezpiecznej rozgrywki, nie przypuszcza nawet, że jej początki sięgają wydarzeń z 1945 roku, kiedy w niewyjaśnionych okolicznościach spłonęło inne schronisko, a jego właściciel wraz z synami zaginął. Echo wydarzeń sprzed 60 lat daje o sobie znać tajemniczymi wiadomościami, telefonami i pojawiającą się sylwetką mężczyzny. Bohater postanawia dowiedzieć się więcej o sprawie, którą był zainteresowany jego nieżyjący wujek i wchodzi w sam środek niebezpiecznej intrygi z rodzinnymi tajemnicami w tle. Przy okazji autor funduje nam sporo historycznych informacji dotyczących czasów powojennych i tragicznych akcji wysiedlania niemieckich właścicieli karkonoskich schronisk i domów, a osadzania na ich miejsce Polaków. \nPowieść Sławka Gortycha przesiąknięta jest miłością autora do gór. Czuje się to w sposobie opisywania krajobrazów, które nie są milutkimi landszaftami, ale mają w sobie energię człowieka rozumiejącego ich kapryśny charakter, piękno podszyte grozą. Gortych niewątpliwie czuje też szczególną więź z mieszkańcami tych terenów, bo kreuje bohaterów bardzo barwnych, zahartowanych przez trudne warunki i rozumiejących ducha gór. Tworząc postać głównego bohatera puszcza nawet oczko do czytelnika- uśmiechnęłam się, czytając, że Maksymilian z zawodu jest dentystą, którego pacjenci nie traktują poważnie ze względu na zbyt młody wygląd i grzeczne okulary. Wystarczy spojrzeć na zdjęcie na skrzydełku okładki, a zorientujemy się, kogo miał na myśli (Sławek Gortych skończył medycynę i jest stomatologiem). \n„Schronisko, które przestało istnieć” to udany debiut. Być może autor mógłby dopracować trochę partie monologowe, by mniej przypominały akademickie wykłady historyczne, ale poza tym całość napisana jest sprawnie, z wyczuciem dramaturgii, co sprawia, że czytelnik angażuje się w fabułę. Ja byłam szczerze zainteresowana kolejnymi wydarzeniami i na pewno sięgnę po kolejne części serii karkonoskiej. Kto jeszcze nie czytał, a lubi kryminały z nutką regionalną to polecam.",
+              "date": "2026-04-27 21:16:17.476922",
+              "rating": "8"
+            },
+            {
+              "username": "Malwi",
+              "text": "O książce &quot;Schronisko, które przestało istnieć&quot; Sławka Gortycha na portalu Lubimy Czytać, jakiś czas temu było bardzo głośno. Wszyscy chwalili debiutancką powieść młodego pisarza. Zachęcona tymi rekomendacjami postanowiłam i ja po nią sięgnąć.\n\nSpodziewałam się kryminału, którego akcja toczy się w górach, konkretnie w Karkonoszach. Liczyłam na dynamiczną akcję i lepiej rozbudowaną stronę zagadki związanej, że śmiercią wuja Maksymiliana Rajczaka. Jednak autor postanowił pójść w trochę inną stronę pokazując nam piękno gór oraz rozbudował warstwę historyczną. Takie potraktowanie fabuły, niestety, nie przypadło mi do gustu.\n\nPodczas czytania odczuwało się, że autor bardzo dobrze czuje się w opisywanym temacie i łączy swoje pasje ze sobą. Niestety, nie tego oczekiwałam od tej książki. Jak się okazuje, preferencje autora nie są zgodne z moimi. Jednakże muszę przyznać, że widać dobre przygotowanie i ogromne zaangażowanie Pana Sławka w tę powieść. Bardzo dojrzały styl okraszony młodzieńczymi naleciałościami. Książkę czyta się szybko, choć jest sporo dłużyzn z powodu historycznych odniesień.\n\nBohaterowie niezbyt dobrze zarysowani, pomimopomimo że autor bardzo się starał przedstawiając koligacje rodzinne poszczególnych postaci. Niestety wypadli bardzo płasko, sztucznie. Widać dużą prywatę, a może powinnam napisać, rys biograficzny. Zarówno Maksymilian, jak i Pan Sławek są stomatologami, a ich wspólne drogi krzyżują się w Karkonoszach 😉.\n\nPodczas czytania czuje się klimat gór i opuszczonego schroniska, z którego wszędzie jest daleko i bez sprawnego samochodu z pełnym bakiem nigdzie nie sposób się ruszyć. Jedno muszę przyznać, po przeczytaniu tej książki ma się ochotę na wędrówkę po górach, z termosem ciepłej herbaty.\nTo jak dla mnie jest największą zaletą tej lektury.\n\nLubię, kiedy fabuła jest budowana na kilku płaszczyznach czasowych. Tak jest i w tej powieści. Wydarzenia z czasów II wojny światowej przeplatają się z bieżącymi.\n\nJest to z całą pewnością dobra powieść, ale z racji rozbieżności dotyczących zainteresowań i pasji nie przypadła mi do gustu.",
+              "date": "2022-08-06 15:35:27.940738",
+              "rating": "4"
+            },
+            {
+              "username": "basik",
+              "text": "Bardzo lubię, gdy fikcja literacka przeplata się z wydarzeniami historycznymi.\nTak jest w tej porywającej powieści, gdzie pożar schroniska im. Księcia Henryka z 1946 roku, stał się głównym wątkiem powieści a właściwie to, co się później wydarzyło.\nMaksymilian Rajczakowski przyjeżdża do opuszczonego schroniska Nad Śnieżnymi Kotłami, którego właściciel był jego wuj, który zginął kilka miesięcy wcześniej. Wie, że wuj szukał pewnych ludzi, ale wszystkie jego zapiski zniknęły.\nW poszukiwaniach pomaga mu Marta, która mieszka w sąsiednim schronisku i z którą nawiązuje romans.\nPrzeżywają też kilka chwil grozy, bo ktoś nie chce, żeby Maksymilian zamieszkał w schronisku.\nNie zabraknie w tej powieści legend o Liczykrupie czli Duchu Gór, faktów z przeszłości, zaginonego obrazu, zemsty po latach i ciekawej intrygi.\nBardzo podobała mi się ta powieść, pełna tajemnic zarówno tych obecnych jak i tych sprzed lat. \nAutor skrupulatnie opisuje każde schronisko zarówno te polskie jak i po czeskiej stronie i to mi sie bardzo podobało, bo od razu widać wiedzę na ten temat nie tą podręcznikową tylko tą z własnego doświadczenia.\nBardzo sie cieszę, że są kolejne części tej pasjonującej i pełnej emocji powieści.",
+              "date": "2024-04-09 14:18:23.37569",
+              "rating": "10"
+            },
+            {
+              "username": "Natalia",
+              "text": "Maksymilian wyjeżdża na urlop do schroniska, które kupił jego wujek Artur. Chłopak chce także sprawdzić, czy Artur rzeczywiście zmarł w wyniku wypadku... Po przyjeździe do schroniska Maksymilian dostaje pogróżki od Ducha Gór... Stomatolog zagłębia się coraz bardziej w historię przedwojennych właścicieli okolicznych schronisk... Rodzina Rajczakowskich także skrywa kilka sekretów...\nKsiążka kręci się wokół tajemnic sprzed lat, które Maksymilian stara się wyciągnąć na światło dzienne. Fabuła książki idzie powoli, ale płynnie do przodu. Powieść czyta się dobrze. Dla mnie na plus są retrospekcje z okresu II wojny światowej. Dodatkowo mamy wątek poszukiwań skarbu i romantyczny.",
+              "date": "2023-07-17 18:30:53.566871",
+              "rating": "7"
+            },
+            {
+              "username": "pebro",
+              "text": "Książka miała długi rozruch, nie wciągnęła mnie od razu, później było trochę lepiej. Poruszony temat pociągający i interesujący, bazujący na dawnych wydarzeniach, wzajemnych korelacjach między Czechami, Niemcami i Polakami. Historia miesza się z teraźniejszością. Opisy gór i szlaków ciekawe i realistyczne, czego nie można powiedzieć o bohaterach, którzy wydają się mało wyraźni. Duży plus dla autora, który na końcu pisze co jest faktem a co fikcją literacką.",
+              "date": "2022-08-29 07:28:20.39796",
+              "rating": "5"
+            },
+            {
+              "username": "MinasTirith",
+              "text": "Czy można napisać wciągający kryminał, pozbawiony brutalnych scen, makabrycznych opisów i mrocznego suspensu? W mojej recenzji spróbuje odpowiedzieć na to trudne pytanie. Ale zanim poruszę tą kwestię i opiszę moje wrażenia, po lekturze, chciałbym przybliżyć zarys fabularny powieści. Właściciel nieczynnego schroniska Nad Śnieżnymi Kotłami ginie w nieszczęśliwym wypadku. Niedługo po tej tragedii na miejsce przybywa jego bratanek Maksymilian. Mężczyzna dowiaduje się, że przed śmiercią wujek z niejasnych przyczyn interesował się losami górskiego schroniska, które tuż po II wojnie światowej spłonęło w niewyjaśnionych okolicznościach. Gdy na jaw wychodzą kolejne fakty, Rajczakowski nabiera podejrzeń, że śmierć wujka nie była nieszczęśliwym zrządzeniem losu. Powieść polskiego pisarza Sławka Gortycha pod tytułem „Schronisko, które przestało istnieć” okazała się sporym sukcesem na naszym rynku. Nie tylko doceniana przez krytyków, ale również przez społeczność „LC”. Dopiero teraz zapoznałem się z twórczością utalentowanego pisarza, i jak najbardziej moja zwłoka była niepotrzebna. Moje wrażenia są jak najbardziej pozytywne. Powieść w swojej konstrukcji fabularnej może nie jest złożona, członowa i wielowarstwowa, ale nie urąga to bynajmniej lekturze. Wręcz przeciwnie. Jej siła tkwi w prostocie, która sama w sobie jest błyskotliwa, nietuzinkowa i magiczna. Nie potrzeba wydumanej historii, aby porwać tłumy i zawładnąć wyobraźnią milionów. Kolejny atut powieści, to niewątpliwie wątek historyczny, który jest bardzo ważny dla konstrukcji fabularnej. Uspokajam nie jest nużący, ani nie zniechęcający. Bowiem został rozpisany w sposób bardzo zgrabny i „smaczny”. Dzięki świetnej narracji powieść powinna nie tylko trafić do moli książkowych, którzy lubią retrospekcje z przeszłości oraz poprowadzenia narracji w dwóch płaszczyznach czasowych. W książce są poruszane kwestie naszej historii, które dla niektórych czytelników mogą być nie znane. A z którymi warto się zapoznać. Natomiast podczas lektury miałem nieodparte wrażenie jakbym cofnął się do czasów młodzieńczych i na nowo odkrywał cykl Zbigniewa Nienackiego, opowiadający o przygodach „Pana Samochodzika”, czy czytał „Szatan z siódmej klasy” Kornela Makuszyńskiego. Ale to nie jedyny walor powieści. Książka jest bogata w kreacje bohaterów. Zostali oni świetnie rozpisani, zwłaszcza główny bohater Maksymilian. Jego dążenia do prawdy są obarczone wielkim ryzykiem. Jego poczynania śledziłem z zapartym tchem. Ale rozwiązanie wątku kryminalnego to tylko wierzchołek góry lodowej. Bowiem to nie jedyna zagadka, która stoi przed młodzieńcem. Prawdziwe wyzwanie, czeka go tkwiące w meandrach i zakamarkach historii, która dotyczy historii jego rodziny. Dzięki doskonałej narracji, książkę świetnie się czyta. Czuć było otoczkę oraz klimat miejsca akcji. Masyw gór Karkonoskich jego majestat i potęga zostały w sposób świetny opisany. Czułem namacalny respekt przed czym muszą codziennie mierzyć się mieszkańcy i amatorzy terenów górzystych. Natomiast muszę przyznać, że nastawiałem się na mroczna narracją. Ale gdy zdałem sobie sprawę, że powieść może nie jest „mięsistym” kryminałem, a akcenty są odciśnięte na innych „gamach” sztuki pisarskiej, to przyjemność z lektury, była ogromna. „Schronisko, które przestało istnieć”, to może nie kryminał, który porusza czytelnika krwawymi i brutalnymi opisami, mrocznym suspensem i niesamowitym plot twistem, ale jednak jest to rasowy kryminał, który przewyższa niejedną powieść sensacyjną, której narracja charakteryzuje się mroczniejszymi tonacjami. Podsumowując, „Schronisko, które przestało istnieć”, tylko zaostrzyło mój apetyt na więcej. Książka doceniana w naszym kraju, również osobiście mi przypadła do gustu. Kto jeszcze nie przeczytał tej perełki, niech wybierze się jak najszybciej do biblioteki lub księgarni, bowiem ta historia powinna być odkrywana i czytana, przez jak największe grono czytelników. Gorąco Polecam.",
+              "date": "2024-06-07 23:46:25.978424",
+              "rating": "8"
+            },
+            {
+              "username": "Kasia",
+              "text": "Świetna książka.\nHistoria pogranicza Polsko- niemiecko - czeskiego, w czasie wojny i po zmianie granic. Wciągająca akcja - można by powiedzieć, wypełnianie niepełnych kart historii, zarówno tej wielkiej, jak i nieco mniejszej, rodzinnej - w obliczu majestatu gór. \nMinusem dla mnie przemądrzały główny bohater.\nPolecam . Wciąga!",
+              "date": "2023-12-04 21:41:30.672241",
+              "rating": "7"
+            },
+            {
+              "username": "Alicja",
+              "text": "&quot; Czasami wracanie do starych spraw przynosi więcej szkód niż korzyści.&quot; (str53)\n\n&quot;Schronisko, które przestało istnieć&quot; to udany debiut autora, pasjonata górskich wędrówek i Karkonoszy. To połączenie kryminału, thrillera i górskich legend. Lektura wciąga od pierwszych stron i trzyma w napięciu do końca. \nBohaterem jest młody stomatolog z Wrocławia, który przyjeżdża w Karkonosze by odpocząć od napiętej atmosfery w pracy i rodzinnych problemów. Zamieszkał w nieczynnym schronisku w Śnieżnych Kotłach, które kupił jego wujek, który zginął miesiąc wcześniej. \n\n Wujek Artur, ku niezadowoleniu rodziny porzucił intratną pracę we Wrocławiu i udał się w Karkonosze. Jednak ktoś usilnie utrudniał mu tam życie. Odbierał głuche telefony i grożono mu. \n\nPoznajemy tajemnicę tego schroniska i innych w okolicy, których historia sięga czasów wojny i owiana jest legendą Ducha Gór. \nAkcja powieści rozpoczyna się w 1945 roku, kiedy z Wrocławia ucieka kat miasta Karl Hanke. Odwiedził niemieckiego noblistę Hauptmanna, który z nazistami nie chciał mieć nic wspólnego, i zostawił mu na przechowanie tajemniczą skrzynię, która przez lata była źródłem problemów. \n\nPóźniej przenosimy się do roku 1960, w którym poznajemy milicjanta Tomasza, służbistę, który nienawidził gór i Jeleniej Góry. Wiedział doskonale, że po wojnie wysiedlono z tych terenów Niemców, nie zawsze zgodnie z instrukcjami. Nie był lubiany przez Niemców i pracowników komendy. Był przebiegły i chytry. Świetnie zarabiał na handlu poniemieckim mieniem. \n\nAutor opisuje dramat ludzi zamieszkujących te tereny, których po wojnie na siłę wysiedlano. A ich gospodarstwa i cały dobytek przejmowali ludzie, którzy napływali tu z różnych krajów. Na tym terenie działało też niemieckie podziemie, które utrudniało nowo przybyłym życie. \n\nWspółcześnie Maks dowiedział się ,że wujek, z którym miał dobry kontakt był adoptowanym dzieckiem. I pojechał w Karkonosze by poznać prawdę i odszukać biologicznych rodziców. Tam Maks poznaje Martę dziewczynę, która kochała góry, pracowała w schronisku na Szrenicy i w wolnych chwilach była górskim przewodnikiem. Rozmawiając z różnymi ludźmi wiele dowiedział się o mrocznych historiach, które miały miejsce w Karkonoszach. W schronisku zaczęły dziać się dziwne rzeczy, które bardzo niepokoiły Maksa. Maks dowiedział się też, że wujek interesował się historią spalonego schroniska imienia księcia Henryka. \n\nSkładając w całość usłyszane informacje Maks był pewien, że wujek został zabity, a teraz on sam nie wiedzieć czemu, był w niebezpieczeństwie. W opowieściach znajomych było wiele kłamstw, a prawda była umiejętnie ukrywana. Kiedy elementy układanki wskakują na swoje miejsce, otrzymujemy prawdziwy obraz bohaterów powieści w okresie po wojnie, w latach 60tych i współcześnie. Sytuacja stawała się coraz bardziej dramatyczna. \n\nPoznajemy jak smakuje zemsta. &quot; Zemsta wymaga poświęceń. Im większe, tym bardziej będzie bolało.&quot; (str316) Jak tragiczne przeżycia z dzieciństwa mogą zmienić życie człowieka. A ból po stracie bliskich zniszczyć go. Jak ogromny wpływ wydarzenia z przeszłości miały na teraźniejszość. To także powieść o poszukiwaniu swojego miejsca na ziemi. Autor świetnie oddał listopadowy klimat w górach, To też literacka podróż po Dolnym Śląsku. W powieści fikcyjne wydarzenia, miejsca i bohaterowie mieszają się z autentycznymi.",
+              "date": "2025-11-25 20:19:08.709851",
+              "rating": "7"
+            }
+          ],
+          "language": "polski",
+          "rating_count": 16086
+        },
+        "quality": {
+          "complete": true,
+          "missing_required": [],
+          "available_fields": [
+            "title",
+            "authors",
+            "publisher",
+            "description",
+            "cover_url",
+            "language",
+            "categories",
+            "series",
+            "volume_number",
+            "avg_rating",
+            "rating_count",
+            "release_date",
+            "premiere_date",
+            "isbn",
+            "pages",
+            "format",
+            "reviews"
+          ],
+          "optional_absent": [
+            "narrators",
+            "duration_minutes",
+            "length_str",
+            "category",
+            "collections",
+            "release_year",
+            "original_title",
+            "translator",
+            "tags",
+            "why_worth_it"
+          ]
+        },
+        "cookies": null
+      },
+      {
+        "requested_url": "https://lubimyczytac.pl/ksiazka/5224611/szmaty",
+        "data": {
+          "url": "https://lubimyczytac.pl/ksiazka/5224611/szmaty",
+          "type": "ksiazka",
+          "external_id": 5224611,
+          "slug": "szmaty",
+          "title": "Szmaty",
+          "original_title": null,
+          "description": "Karolina Lewestam chce nam opowiedzieć o wszystkich swoich matkach: o kobietach, które zabierały ją w podróże po dolnośląskich lumpeksach i szpitalach; które na strychu, pijąc domowe wino, przymierzały używane ciuchy i inne możliwe życia; które trwały latami przy wszystkich potrzebujących opieki. O tych, które były dla niej wtedy „starymi babami” i którymi nigdy nie chciała zostać.\nDziś, będąc w ich wieku, stawia pytanie o to, gdzie przebiegają granice między byciem dziewczynką, kobietą i „starą babą”. I czemu tak trudno się ponad nimi porozumieć.\nOsią opowieści czyni ubrania – zwornik kobiecych rozmów, rekwizyt tworzenia tożsamości i wehikuł wspomnień. W centrum uwagi stawia kobiece ciało, które z ciała dziewczyny staje się ciałem matki. Które niepostrzeżenie zaczyna być walutą i towarem, by nagle przestać być obiektem pożądania. Które zdaje się być niezwyciężone, a potem nieuchronnie zawodzi.\nW tej intymnej, pełnej absurdalnego humoru opowieści Lewestam staje obok Miry Marcinów, Elizy Kąckiej i Katarzyny Sobczuk. Poddaje własne życie literackiemu namysłowi, mierząc się z kulturowym obrazem kobiecej młodości i starości.",
+          "avg_rating": 7.6,
+          "cover_url": "https://s.lubimyczytac.pl/upload/books/5224000/5224611/1335976-352x500.jpg",
+          "authors": [
+            {
+              "name": "Karolina Lewestam"
+            }
+          ],
+          "categories": [
+            {
+              "name": "reportaż"
+            }
+          ],
+          "publisher": {
+            "name": "Czarne"
+          },
+          "series": null,
+          "pages": 168,
+          "duration_minutes": null,
+          "release_date": "2026-03-18",
+          "premiere_date": "2026-03-18",
+          "isbn": "9788383962665",
+          "translator": null,
+          "format": "papier",
+          "volume_number": null,
+          "reviews": [
+            {
+              "username": "Oficjalna Recenzja",
+              "full_text": "Karolina Lewestam w błyskotliwy sposób analizuje i komentuje kulturowe przekonania dotyczące kobiecości. Ten szkic to naprawdę coś wyjątkowego. Z jednej strony dowcipny, a jednocześnie czuły obraz rodziny bohaterki, o której opowiada jej matka, a z drugiej intelektualny i podszyty filozofią dyskurs ze społecznymi oczekiwaniami wobec kobiet i ich roli w świecie. Pretekstem do tej opowieści stają się ubrania ze szmateksów, wokół których gromadzą się ciotki i matki, by wzorem pradawnych wiedźm snuć swoje historie i zaklinać własną rzeczywistość.\nAutorka podejmuje temat w naszej kulturze drażliwy, bo jak zauważa, kobiecość najczęściej sprowadzana jest do cielesności, a ta, jak wszystko, ma swoją datę przydatności. Młodość to czas rozkwitu ciała i powszechnego zachwytu. Ale to też czas dla młodej dziewczyny niebezpieczny. Jej pączkujące ciało wyzwala w mężczyznach samcze instynkty, przez co jego posiadaczka musi albo odpierać nachalne umizgi śliniących się wujków, albo mierzyć się z konsekwencjami wykorzystania jej przez mężczyzn, za którymi stoi władza. Kiedy ciało osiąga swoją dojrzałość, kobieta mierzy się z trudami porodu i macierzyństwa. A później staje się niewidoczna, a dzięki temu paradoksalnie bezpieczna. Młode ciało nie zawodzi, jest sprawne i zdrowe, na kolejnych etapach życia musimy się mierzyć z jego zawodnością.\nBardzo boleśnie odczułam te fragmenty, gdy narratorka dotyka problemu społecznych oczekiwań wobec kobiet. Oczywistym jest, że powinny one wziąć na siebie obowiązek opieki nad chorymi, niesprawnymi i starzejącymi się członkami rodziny. Dlatego ciotka Lalka poświęca życie na zajmowanie się umierającym mężem- zdrajcą i wiarołomcą; ciotka Malinka opiekuje się starzejącą się teściową, a ciotka Arletka samotnie wychowuje dwójkę dzieci. One same narzucają sobie te powinności, choć nie zawsze powinny. Ale tak trzeba.\nMatka bohaterki stawia też pytanie o to, dlaczego będąc młodymi dziewczynami tak usilnie, wręcz rozpaczliwie odcinamy się od „starych bab”, zarzekając się, że nigdy nie będziemy takie jak one, a po osiągnięciu pewnego wieku ze zdumieniem zauważamy, że takie właśnie się stałyśmy. I o ile za młodu za nic na świecie nie chcemy włożyć na siebie rekomendowanej nam przez matkę różowej bluzy wygrzebanej w stercie ciuchów na wagę, to następuje taki moment, gdy to robimy. Nie dlatego, że nagle się nam zaczęła podobać. Ta bluza to symbol kobiecej rezygnacji, zaakceptowania tego, co nieuniknione- zniewolenia. Zniewolenia przez nasze ciało, które wraz z pierwszymi zmarszczkami i cellulitem traci swoją moc; zniewolenia przez wzorce kulturowe, zgodnie z którymi powinnyśmy być męczennicami i strażniczkami ogniska.\nKarolina Lewestam inkrustuje swoją opowieść o życiu współczesnych kobiet odniesieniami do mitów, dzieł literackich, czy popkultury. Pisząc o relacjach matczyno- córczanych przywołuje historię o Demeter i Persefonie, swoje ciotki grzebiące w Wielkiej Kupie Ubrań porównuje do mitologicznych Mojr, a dywagując na temat młodości i starości kobiet odwołuje się do sceny z „Pana Tadeusza”, kiedy tytułowy bohater zauważa, że Telimena, którą omyłkowo wziął za młodą dziewczynę swoją świeżość zawdzięcza, o zgrozo!, pudrowi i różowi. Stworzony przez autorkę termin „telimenoza” rozbawił mnie i zachwycił.\nPrzemyślenia autorki na temat kobiet i ich roli w społeczeństwie są bardzo interesujące, a sposób ich podania lekki, swobodny i dowcipny. Trzeba jednak być wyposażonym w pewne kompetencje kulturowe, by w pełni odczytać sens tego szkicu. Przyda się wiedza z zakresu filozofii, literatury, historii. Jeśli ktoś lubi takie wyzwania to serdecznie polecam pracę Karoliny Lewestam. Oceniam ją bardzo wysoko jako ciekawy głos w sprawie feminizmu.",
+              "is_featured": true,
+              "rating": null
+            },
+            {
+              "username": "EwaZygmunt",
+              "full_text": "Bardzo dobra książka. Najpierw czułam w niej dużo smutku i ciężaru. Ciężaru historii bohaterek (i bohaterów. Mężczyźni są w książce całkowicie na drugim planie, ale chyba jeszcze bardziej niż kobiety podlegają historii albo losowi. Świetnie napisany obraz kobiecości i człowieczeństwa, łączenia pokoleń, które odbywa się drogą rozłamu. Przez dziury i rozprucia w tytułowych Szmatach (ciuchach - jak to się dzisiaj mówi - z drugiego obiegu) widzimy trochę metafizyki i transcendencji. A wszystko to podane dobrą, zwartą prozą, z kontrapunktem z poczucia humoru.",
+              "is_featured": false,
+              "rating": 8
+            },
+            {
+              "username": "pulcinella",
+              "full_text": "Świetna. Czule dotyka wszystkich bolesnych miejsc naszej kobiecej duszy i ciała, nie zostawia złudzeń, ale daje siłę. Świetnie skrojona eseistyczna narracja.",
+              "is_featured": false,
+              "rating": 8
+            },
+            {
+              "username": "mela",
+              "full_text": "Muszę przyznać, że z solidnej przędzy te s/Szmaty.\nZ początku podchodziłam nieufnie do ich jakości, bałam się, że tkanina powieści się rozlezie ze względu na wielość nitek osnowy, ale ostatecznie wątek się nie zgubił i dobił ładnie do celu.\nMyślę, że jak ta różowa bluza z maminej sterty ciuchów, tak i Szmaty przetrwają próbę czasu",
+              "is_featured": false,
+              "rating": 8
+            },
+            {
+              "username": "wrona",
+              "full_text": "Króciutka książka napisana w formie listu matki do córki zawierająca rozważania na temat kobiecości i przemijania. W centrum opowieści jest wielka kupa ubrań zdobytych w przygranicznych lumpeksach, która pozwala na metamorfozę szarej codzienności. Obsiadające ją kobiety z początku są Mojrami, prawie boginkami mającymi moc tworzenia, jednak czas czyni z nich Wiedźmy, istoty zależne od coraz bardziej ciążącej cielesności. Autorka w lekkiej formie, z humorem ale i dużą dawką czułości, pisze o roli kobiety w społeczeństwie, o stereotypach i trzeszczącej rzeczywistości.",
+              "is_featured": false,
+              "rating": 7
+            },
+            {
+              "username": "kjuik",
+              "full_text": "Wzięło mnie ostatnio na krótsze formy i cieszę się, że jedna z pierwszych były właśnie \"Szmaty\". Forma opowiadania nawarstwiających się historii (niby zwyczajna, a momentami dojmująco smutna) poruszyła we mnie czuła strunę. Trochę zazdrościłam bohaterce tych matek wokoło. Trochę współczułam kobietom, niezależnie od wieku.",
+              "is_featured": false,
+              "rating": 7
+            },
+            {
+              "username": "Anna-Maria",
+              "full_text": "Karolina Lewestam w błyskotliwy sposób analizuje i komentuje kulturowe przekonania dotyczące kobiecości. Ten szkic to naprawdę coś wyjątkowego. Z jednej strony dowcipny, a jednocześnie czuły obraz rodziny bohaterki, o której opowiada jej matka, a z drugiej intelektualny i podszyty filozofią dyskurs ze społecznymi oczekiwaniami wobec kobiet i ich roli w świecie. Pretekstem do tej opowieści stają się ubrania ze szmateksów, wokół których gromadzą się ciotki i matki, by wzorem pradawnych wiedźm snuć swoje historie i zaklinać własną rzeczywistość.\nAutorka podejmuje temat w naszej kulturze drażliwy, bo jak zauważa, kobiecość najczęściej sprowadzana jest do cielesności, a ta, jak wszystko, ma swoją datę przydatności. Młodość to czas rozkwitu ciała i powszechnego zachwytu. Ale to też czas dla młodej dziewczyny niebezpieczny. Jej pączkujące ciało wyzwala w mężczyznach samcze instynkty, przez co jego posiadaczka musi albo odpierać nachalne umizgi śliniących się wujków, albo mierzyć się z konsekwencjami wykorzystania jej przez mężczyzn, za którymi stoi władza. Kiedy ciało osiąga swoją dojrzałość, kobieta mierzy się z trudami porodu i macierzyństwa. A później staje się niewidoczna, a dzięki temu paradoksalnie bezpieczna. Młode ciało nie zawodzi, jest sprawne i zdrowe, na kolejnych etapach życia musimy się mierzyć z jego zawodnością.\nBardzo boleśnie odczułam te fragmenty, gdy narratorka dotyka problemu społecznych oczekiwań wobec kobiet. Oczywistym jest, że powinny one wziąć na siebie obowiązek opieki nad chorymi, niesprawnymi i starzejącymi się członkami rodziny. Dlatego ciotka Lalka poświęca życie na zajmowanie się umierającym mężem- zdrajcą i wiarołomcą; ciotka Malinka opiekuje się starzejącą się teściową, a ciotka Arletka samotnie wychowuje dwójkę dzieci. One same narzucają sobie te powinności, choć nie zawsze powinny. Ale tak trzeba.\nMatka bohaterki stawia też pytanie o to, dlaczego będąc młodymi dziewczynami tak usilnie, wręcz rozpaczliwie odcinamy się od „starych bab”, zarzekając się, że nigdy nie będziemy takie jak one, a po osiągnięciu pewnego wieku ze zdumieniem zauważamy, że takie właśnie się stałyśmy. I o ile za młodu za nic na świecie nie chcemy włożyć na siebie rekomendowanej nam przez matkę różowej bluzy wygrzebanej w stercie ciuchów na wagę, to następuje taki moment, gdy to robimy. Nie dlatego, że nagle się nam zaczęła podobać. Ta bluza to symbol kobiecej rezygnacji, zaakceptowania tego, co nieuniknione- zniewolenia. Zniewolenia przez nasze ciało, które wraz z pierwszymi zmarszczkami i cellulitem traci swoją moc; zniewolenia przez wzorce kulturowe, zgodnie z którymi powinnyśmy być męczennicami i strażniczkami ogniska.\nKarolina Lewestam inkrustuje swoją opowieść o życiu współczesnych kobiet odniesieniami do mitów, dzieł literackich, czy popkultury. Pisząc o relacjach matczyno- córczanych przywołuje historię o Demeter i Persefonie, swoje ciotki grzebiące w Wielkiej Kupie Ubrań porównuje do mitologicznych Mojr, a dywagując na temat młodości i starości kobiet odwołuje się do sceny z „Pana Tadeusza”, kiedy tytułowy bohater zauważa, że Telimena, którą omyłkowo wziął za młodą dziewczynę swoją świeżość zawdzięcza, o zgrozo!, pudrowi i różowi. Stworzony przez autorkę termin „telimenoza” rozbawił mnie i zachwycił.\nPrzemyślenia autorki na temat kobiet i ich roli w społeczeństwie są bardzo interesujące, a sposób ich podania lekki, swobodny i dowcipny. Trzeba jednak być wyposażonym w pewne kompetencje kulturowe, by w pełni odczytać sens tego szkicu. Przyda się wiedza z zakresu filozofii, literatury, historii. Jeśli ktoś lubi takie wyzwania to serdecznie polecam pracę Karoliny Lewestam. Oceniam ją bardzo wysoko jako ciekawy głos w sprawie feminizmu.",
+              "is_featured": false,
+              "rating": 9
+            },
+            {
+              "username": "yksikaksi",
+              "full_text": "Wyjątkowa",
+              "is_featured": false,
+              "rating": 9
+            },
+            {
+              "username": "Z_błyskiem_w_oku",
+              "full_text": "Jeśli lubiłaś chodzić po szmateksach lub ich nienawidziłaś, to książka dla Ciebie:) Tytułowe szmaty, czyli ubrania ze szmateksu, są elementem, wokół którego toczy się cała opowieść: ubrania pomagają marzyć o innym życiu, zakrywać, to czego \"nie wypada\" pokazywać, troszczyć się o innych. Wokół Wielkiej Kupy Ubrań spotykają się matki, ciotki, przyjaciółki i córka. Rozmawiają, opiekują się innymi, godzą z losem i buntują. Świetnie napisana historia!",
+              "is_featured": false,
+              "rating": 10
+            },
+            {
+              "username": "Ola Lichocka",
+              "full_text": "Bardzo nie chciałam, żeby się kończyła… jedna z najcelniejszych i przy tym bezpretensjonalnie erudycyjnych książek na temat: macierzyństwa, kobiecości, ciała i przy okazji jeszcze kilku spraw.",
+              "is_featured": false,
+              "rating": 9
+            },
+            {
+              "username": "MalinKa",
+              "full_text": "Wspaniała książka. Napisana przez kobietę pośrodku swojego życia w formie listu matki do córki, albo może do siebie samej w wieku dojrzewania. \"Kochana córko,(...) Przeczuwam w sobie moją matkę, ale też pamiętam w sobie ciebie. I, co tu dużo mówić, ta pamięć trochę mnie boli. Ale – wstyd się przyznać – ból nie wynika ze współczucia dla cierpień, przez które teraz przechodzisz. Najgorsze jest podejrzenie, że teraz ty patrzysz na mnie tak, jak ja patrzyłam na swoją matkę. I to jest, moja córko, trudne do zniesienia. Przecież ja tak bardzo nie chciałam być nią.... \" Autorka pisze, że z wiekiem zaczęła rozumieć swoją matkę i prosi, aby córka dla niej była wyrozumiała. Bo taka jest kolej rzeczy w przyrodzie, że jeśli stajemy się matkami inaczej patrzymy na swoje matki. Książka mnie wzruszyła, ale też momentami się śmiałam, bo miała w sobie czarny humor. Filozoficzna, pełna przemyśleń, poetycka, napisana z wielkim talentem. Widziałam te wszystkie barwne postaci, ciotki, ich mężów, matki i babki. Historie opisane raz dosadnie, a raz subtelnie, nie wprost. Uwielbiam takie książki, chcę więcej!",
+              "is_featured": false,
+              "rating": 10
+            },
+            {
+              "username": "Anna-Maria",
+              "text": "Karolina Lewestam w błyskotliwy sposób analizuje i komentuje kulturowe przekonania dotyczące kobiecości. Ten szkic to naprawdę coś wyjątkowego. Z jednej strony dowcipny, a jednocześnie czuły obraz rodziny bohaterki, o której opowiada jej matka, a z drugiej intelektualny i podszyty filozofią dyskurs ze społecznymi oczekiwaniami wobec kobiet i ich roli w świecie. Pretekstem do tej opowieści stają się ubrania ze szmateksów, wokół których gromadzą się ciotki i matki, by wzorem pradawnych wiedźm snuć swoje historie i zaklinać własną rzeczywistość. \nAutorka podejmuje temat w naszej kulturze drażliwy, bo jak zauważa, kobiecość najczęściej sprowadzana jest do cielesności, a ta, jak wszystko, ma swoją datę przydatności. Młodość to czas rozkwitu ciała i powszechnego zachwytu. Ale to też czas dla młodej dziewczyny niebezpieczny. Jej pączkujące ciało wyzwala w mężczyznach samcze instynkty, przez co jego posiadaczka musi albo odpierać nachalne umizgi śliniących się wujków, albo mierzyć się z konsekwencjami wykorzystania jej przez mężczyzn, za którymi stoi władza. Kiedy ciało osiąga swoją dojrzałość, kobieta mierzy się z trudami porodu i macierzyństwa. A później staje się niewidoczna, a dzięki temu paradoksalnie bezpieczna. Młode ciało nie zawodzi, jest sprawne i zdrowe, na kolejnych etapach życia musimy się mierzyć z jego zawodnością. \nBardzo boleśnie odczułam te fragmenty, gdy narratorka dotyka problemu społecznych oczekiwań wobec kobiet. Oczywistym jest, że powinny one wziąć na siebie obowiązek opieki nad chorymi, niesprawnymi i starzejącymi się członkami rodziny. Dlatego ciotka Lalka poświęca życie na zajmowanie się umierającym mężem- zdrajcą i wiarołomcą; ciotka Malinka opiekuje się starzejącą się teściową, a ciotka Arletka samotnie wychowuje dwójkę dzieci. One same narzucają sobie te powinności, choć nie zawsze powinny. Ale tak trzeba. \nMatka bohaterki stawia też pytanie o to, dlaczego będąc młodymi dziewczynami tak usilnie, wręcz rozpaczliwie odcinamy się od „starych bab”, zarzekając się, że nigdy nie będziemy takie jak one, a po osiągnięciu pewnego wieku ze zdumieniem zauważamy, że takie właśnie się stałyśmy. I o ile za młodu za nic na świecie nie chcemy włożyć na siebie rekomendowanej nam przez matkę różowej bluzy wygrzebanej w stercie ciuchów na wagę, to następuje taki moment, gdy to robimy. Nie dlatego, że nagle się nam zaczęła podobać. Ta bluza to symbol kobiecej rezygnacji, zaakceptowania tego, co nieuniknione- zniewolenia. Zniewolenia przez nasze ciało, które wraz z pierwszymi zmarszczkami i cellulitem traci swoją moc; zniewolenia przez wzorce kulturowe, zgodnie z którymi powinnyśmy być męczennicami i strażniczkami ogniska. \nKarolina Lewestam inkrustuje swoją opowieść o życiu współczesnych kobiet odniesieniami do mitów, dzieł literackich, czy popkultury. Pisząc o relacjach matczyno- córczanych przywołuje historię o Demeter i Persefonie, swoje ciotki grzebiące w Wielkiej Kupie Ubrań porównuje do mitologicznych Mojr, a dywagując na temat młodości i starości kobiet odwołuje się do sceny z „Pana Tadeusza”, kiedy tytułowy bohater zauważa, że Telimena, którą omyłkowo wziął za młodą dziewczynę swoją świeżość zawdzięcza, o zgrozo!, pudrowi i różowi. Stworzony przez autorkę termin „telimenoza” rozbawił mnie i zachwycił. \nPrzemyślenia autorki na temat kobiet i ich roli w społeczeństwie są bardzo interesujące, a sposób ich podania lekki, swobodny i dowcipny. Trzeba jednak być wyposażonym w pewne kompetencje kulturowe, by w pełni odczytać sens tego szkicu. Przyda się wiedza z zakresu filozofii, literatury, historii. Jeśli ktoś lubi takie wyzwania to serdecznie polecam pracę Karoliny Lewestam. Oceniam ją bardzo wysoko jako ciekawy głos w sprawie feminizmu.",
+              "date": "2026-09-03 19:19:39.592648",
+              "rating": "9"
+            },
+            {
+              "username": "Kasia",
+              "text": "♥️,,Najdroższa córko (…) Jak mogę Ci wyjaśnić, że będziesz się starzeć, a jednocześnie sprawić, że nie zapragniesz sama siebie odrzucić?”\nTen fragment ustawia ton całej książki, uważny, przenikliwy i odważny w podejmowaniu trudnych tematów. \n,,Szmaty” Karoliny Lewestam to dla mnie opowieść, która skupia się na doświadczeniu, emocjach i znaczeniach wykraczających daleko poza samą historię. I muszę przyznać ta książka była mi bardzo bliska od samego początku.\nSiłą książki jest język, świadomy, precyzyjny, a jednocześnie lekki i płynny. \nAutorka Karolina Lewestam łączy ironię z czułością oraz dystans z emocjonalną intensywnością, dzięki czemu styl nie tylko prowadzi narrację, ale też nadaje jej głębię i znaczenie. Połączenie refleksyjności z humorem i obrazowością sprawia, że opowieść o starzeniu się, przemijaniu i rolach społecznych jest spójna, autentyczna i bardzo wyrazista.\n☺️Motyw ubrań stanowi oś tej opowieści i punkt wyjścia do refleksji nad kobiecością, dziedziczeniem ról oraz społecznymi oczekiwaniami. „Szmaty” stają się symbolem tego, co noszone na zewnątrz i przechowywane wewnątrz pamięci, doświadczeń, przekonań i tożsamości.\n♥️Szczególne miejsce zajmuje relacja matki i córki, pokazana jako złożony, zmieniający się w czasie proces budowania więzi. \nTo opowieść o bliskości, napięciach i wzajemnym poznawaniu się, głęboko osadzona w emocjach i doświadczeniu.\n,,Szmaty” Karoliny Lewestam to książka która otwiera przestrzeń do namysłu nad wpływem przeszłości i nad tym, jak kształtuje ona sposób widzenia świata.\nDla mnie to świetna lektura. Polecam♥️\n\nPiękna okładka 🙂 Projekt Kira Pietrek",
+              "date": "2026-05-10 17:26:01.802589",
+              "rating": "9"
+            },
+            {
+              "username": "wrona",
+              "text": "Króciutka książka napisana w formie listu matki do córki zawierająca rozważania na temat kobiecości i przemijania. W centrum opowieści jest wielka kupa ubrań zdobytych w przygranicznych lumpeksach, która pozwala na metamorfozę szarej codzienności. Obsiadające ją kobiety z początku są Mojrami, prawie boginkami mającymi moc tworzenia, jednak czas czyni z nich Wiedźmy, istoty zależne od coraz bardziej ciążącej cielesności. Autorka w lekkiej formie, z humorem ale i dużą dawką czułości, pisze o roli kobiety w społeczeństwie, o stereotypach i trzeszczącej rzeczywistości.",
+              "date": "2026-09-11 16:02:10.455312",
+              "rating": "7"
+            },
+            {
+              "username": "ByMagdalena",
+              "text": "Sięgnęłam po tę książkę przez wzmiankę w jednym artykule, która wprowadziła mnie w zupełny błąd. Spodziewałam się socjologiczno-psychologicznej treści o ubraniach, a dostałam strumień świadomości, wyimaginowany monolog do córki, w którym ubrania są, owszem, ale są one pretekstem do mówienia o ciałach, przemijaniu, kobiecości, oczekiwaniach i ich spełnianiu, obowiązku, roli kobiety... Dużo tych wątków mogę z tej pozycji wyciągnąć. Widzę tu ogromną zabawę słowem, pióro sarkastyczne ale i z humorem, z pewnym dystansem, a jednocześnie takie bardzo osobiste jest to wszystko. Książka jest króciutka, a jednak i tak w jej połowie już byłam zmęczona tą treścią i czułam, jakbym w kółko czytała to samo. Albo nie to samo, ale wnioski miałam wciąż te same, tak samo interpretowałam to, co czytam. \n\nZ tego powodu więc połowę książki oceniam naprawdę dobrze, ale druga połowa to było dla mnie za dużo.",
+              "date": "2026-05-20 22:36:49.756489",
+              "rating": "4"
+            },
+            {
+              "username": "Kasia Bieniaszewska",
+              "text": "Gdyby nie @Aga Szynal pewnie bym po tą książkę nie sięgnęła, bo tytuł kojarzył mi się raczej z wulgarnym określeniem kobiet niż ze szmatami czyli używanymi ubraniami. To sterta ubrań na strychu w rodzinnym domu autorki, wokół której co jakiś czas gromadziły się bliskie sobie kobiety stała się miejscem centralnym miejscem spotkań i rozmowy &quot;matek&quot;. Dlaczego matki a nie jedna matka? Bo kiedy przypomnimy sobie nasze dzieciństwo (a mówiąc nasze mam na myśli osoby pamiętające &quot;Teleranek&quot; i &quot;Piątek z Pankracym&quot;) to tak naprawdę każdy z nas znalazłby w swoim otoczeniu siostrę, kuzynkę czy przyjaciółkę matki, która w ten czy inny sposób włączała się w nasze wychowanie. Książka, moim zdaniem, dzieli się na dwie części: przed narodzeniem własnej córki i po i jest bardzo szczerym i trafnym opisem naszego stosunku do matek. A ten zmienia się często diametralnie kiedy na świecie pojawiają się nasze dzieci, bo pozwala nam spojrzeć na mamy z zupełnie nowej perspektywy, zmienić punkt widzenia i surową czasami ocenę ich zachowania, zrozumieć motywy jej postępowania. Napisana z humorem, świetnym językiem pozwala nam samym zastanowić się czy jeszcze jesteśmy &quot;dziewczynami&quot; czy już &quot;starymi babami&quot; :) Dla wszystkich mam i córek &lt;3",
+              "date": "2026-07-29 14:32:21.529163",
+              "rating": "8"
+            },
+            {
+              "username": "kjuik",
+              "text": "Wzięło mnie ostatnio na krótsze formy i cieszę się, że jedna z pierwszych były właśnie &quot;Szmaty&quot;. Forma opowiadania nawarstwiających się historii (niby zwyczajna, a momentami dojmująco smutna) poruszyła we mnie czuła strunę. Trochę zazdrościłam bohaterce tych matek wokoło. Trochę współczułam kobietom, niezależnie od wieku.",
+              "date": "2026-09-05 14:22:05.00454",
+              "rating": "7"
+            },
+            {
+              "username": "ciagle_czytam",
+              "text": "Szmaty \nKarolina Lewestam\n@wydawnictwoczarne \nProjekt okładki Kira Pietrek\nWspółpraca \n\nPrzy tak napisanej książce, jak mam opisać to, co czuję?\n\nZacznę może od tego, że jestem zachwycona okładką. Muszę przyznać, że im bardziej zagłębiałam się w podaną mi historię, tym bardziej przemawiał do mnie projekt tej okładki. Jak naczynia powiązane. Obraz i słowo bardzo do siebie pasują.\n\nNastępnie, to o czym chciałabym tu wspomnieć, to punkt najważniejszy. Słowa, słowa i jeszcze raz słowa. Czytając tę książkę, odnosi się wrażenie, że napisaniej jej było nie lada wyzwaniem, a jednocześnie odczuwa się taką lekką zdolność i plastyczność w jej tworzeniu.\n\nPrzede wszystkim treść i mądrość z niej płynąca przyczynia się do bardzo dobrego jej odbioru. O czym jest? Tytułowe Szmaty to nic innego jak okrycia ciał, ubiór, zakrycie tego co niewygodne i uwypuklenie tego co piękne. To również relacja, jakże trudna. Matki z córką, która jest Matką i pisze do córki. Pisze o kobietach w jej życiu, ich wyborach i życiowych przymuszeniach do odgrywania narzuconych ról. Ról, które pragną młodości, ról które idą ku starości. O śmierci i życiu i o tym, że to życie nie takie piękne, jak ta młodość, chociaż upragnione i kochane. Każda z kobiet ma swoją rolę. Córka odrywa się od Matki, potem do niej dąży. Obie są połączone, obie uczą się siebie. Nie zawsze właściwie zrozumiane, ale kochające.\n\nJeszcze jedno. Fantastyczny styl i obrana forma. Poważnie, ale z dozą humoru. Z dystansem, a jednak angażująco. Momentami wzruszająco i smutno. Wiarygodnie, z przemycanymi mądrościami. Powrót do tego, co było. Zachęta aby skorzystać z tego co daje doświadczenie i obecność kobiet w naszym życiu.\n\nTo moja własna interpretacja tej historii. Na pewno rozczulająca, angażująca. Rozmowa z tą kobietą, którą jesteś Ty i którą jest Ona, ta obecna obok.",
+              "date": "2026-04-17 20:20:24.893783",
+              "rating": "7"
+            },
+            {
+              "username": "Swiezakksiazkowy",
+              "text": "Szmaty. Karolina Lewestam\n\nTytułowe szmaty stają się w powieści symbolem. Symbolem kobiecości, przeszłości, rodziny, ale też walki o własną tożsamość.\n\nAutorka w tym ciekawym tekście łączącym powieść, dziennik, esej i wspomnienia nakreśla obraz swojej rodziny poprzez stosunek do ubrań, i wartość, jaka została przypisana tytułowym szmatom. Poprzez humorystyczny początek odnoszący się do kultu ubrań z zachodnich szmateksów dochodzimy do gorzkich rozważań na temat roli kobiety, czasów transformacji, zawiłości życia rodzinnego, w którym dynamika związku pomiędzy kobietą i mężczyzną bardzo często wyznaczana była przez ustrój i sytuację społeczno socjalną. Jest to gorzka historia kobiet, które noszą ubrania niczym oręż w walce dnia codziennego i próbują sprostać przytłaczającej rzeczywistości. \n\nTekst robi wrażenie, gdyż jest on naszpikowany wartością i wiwiwsekcją czasów, z których spuścizną nadal się mierzymy. Pokazuje on jak pomimo upływu czasu nadal tkwią w nas przekonania wyniesione z domu i jak długa linia przodków potrafi wpłynąć na nasze postrzeganie rzeczywistości. Pod powierzchnią ironii i humoru kryje się słodkogorzka relacja z przeszłością, którą lekko romantyzujemy, ale też patrzymy na nią z politowaniem. \n\nCiekawy tekst, z którym warto się zapoznać.\n\nWspółpraca barterowa z wydawnictwem Czarne",
+              "date": "2026-04-05 08:16:59.326026",
+              "rating": "9"
+            },
+            {
+              "username": "Kamila",
+              "text": "Zwykle tego typu książki (autobiograficzne, nieco oniryczne, bawiące się językiem żeby w nietuzinkowy sposób opisać nasze uniwersalne doświadczenia: kobiece, rodzinne, z czasu dorastania) do mnie nie przemawiają. Takie są trochę o niczym i zwykle je kończę myśląc że niewiele to wniosło. Ale nie tu. Tu jednak te opowieści, wyolbrzymione, karykaturalne, naturalistycznie ukazujące beznadzieję bycia starą kobietą i przerażenie młodej że starą się stanie... Coś to we mnie poruszyło. Ale nie jestem pewna czy tak poruszona być chciałam, bo jednak odczucie jest mocno w stronę że życie jest bez sensu, po co mieć dzieci jak i tak i ja i one w końcu staną się tymi pożałowania godnymi starymi babami które nic tylko muszą wszystkim usługiwać i nic z tego nie mają...",
+              "date": "2026-04-15 02:44:12.138899",
+              "rating": "7"
+            },
+            {
+              "username": "Z_błyskiem_w_oku",
+              "text": "Jeśli lubiłaś chodzić po szmateksach lub ich nienawidziłaś, to książka dla Ciebie:) Tytułowe szmaty, czyli ubrania ze szmateksu, są elementem, wokół którego toczy się cała opowieść: ubrania pomagają marzyć o innym życiu, zakrywać, to czego &quot;nie wypada&quot; pokazywać, troszczyć się o innych. Wokół Wielkiej Kupy Ubrań spotykają się matki, ciotki, przyjaciółki i córka. Rozmawiają, opiekują się innymi, godzą z losem i buntują. Świetnie napisana historia!",
+              "date": "2026-08-26 08:31:23.307889",
+              "rating": "10"
+            },
+            {
+              "username": "Elżbieta",
+              "text": "Świetny esej o kobietach, kobiecym ciele, o kobiecej młodości i starości.\nO postrzeganiu kobiet....&quot;Popatrzył na swoją żonę z uwagą, która była głębsza niż zwykle (...)potem wzniósł toast......'Wiecie, zdałem sobie właśnie sprawę z czegoś: że z taką starą babą to jeszcze nigdy nie spałem.&quot;\nNiestety (...)&quot;jedyną walutą kobiet jest atrakcyjne ciało.&quot;\nO sile kobiet.....(...)&quot;nigdy nie miała za grosz cierpliwości dla facetów brandzlujących się swoją władzą.&quot;\nPrzez całą powieść przewijają się tytułowe szmaty......na początku zmian ustrojowych &quot;(...)ubrania były katalizatorem wolności(...) ubrania są przebraniem albo kamuflażem.&quot;\nDodatkowo autorka operuje pięknym językiem, wiele nawiazań do znanych utworów.\nWarto!",
+              "date": "2026-06-13 18:57:56.86342",
+              "rating": "7"
+            },
+            {
+              "username": "Mimbla",
+              "text": "Dawno nie dałam tak wysokiej oceny, ale to jest po prostu świetne w każdym aspekcie- jeżeli chodzi o język, postaci, historię, różne kulturowe nawiązania, a nawet okładkę. Kojarzy mi się trochę ze ,,Szczelinami istnienia&quot;, książkami Bator i Masłowskiej, ale to jest jest absolutnie własny niepowtarzalny styl. Mam nadzieję, że trafi do finału Nike.",
+              "date": "2026-04-29 07:44:06.147337",
+              "rating": "9"
+            },
+            {
+              "username": "Nika",
+              "text": "Ta książka porusza niezwykle ważne tematy: przemijanie, relacje, cielesność. Niestety nie odpowiada mi sposób w jaki się z tymi zagadnieniami rozprawia. Turpizm w czystej postaci. Wolałabym więcej empatii, zrozumienia i spojrzenia pełnego miłości na niedoskonałości człowieka. Po co sobie &quot;dowalać&quot;?",
+              "date": "2026-06-30 11:22:46.155762",
+              "rating": "5"
+            },
+            {
+              "username": "mariuszowelektury",
+              "text": "Opowieść o dorastaniu na Dolnym Śląsku w latach 90. jest punktem wyjścia do eseistycznej refleksji nad kobiecością - jak jest ona kształtowana przez kulturę, społeczne oczekiwania, spojrzenie innych, a wszystko ujęte w symbolice szmat.\n\nTytułowe szmaty, czyli ubrania z second handów dla narratorki - nastolatki nie są jedynie odzieżą. To przepustka do świata marzeń, aspiracji, zachodniego stylu życia. Pozwalały one budować tożsamość, wyróżniać się, być bliżej świata oglądanego w TV.\n\nAutobiograficzna narracja staje się pretekstem do stworzenia wielowymiarowego eseju o kobietach. Obok narratorki pojawia się matka, ciotki, siostry - kobiety próbujące odnaleźć, zamanifestować własną tożsamość, podmiotowość, przełamać stereotypy i oczekiwania narzucane przez otoczenie. \nNie ma w tej historii mężczyzn (prawie),a jednak ich ogląd świata unosi się nad sposobem patrzenia na rzeczywistość przez bohaterki. Stanowią kulturową normę, system wartości, wobec którego muszą one zająć jakiekolwiek stanowisko.\n\nLewestam w swojej opowieści przywołuje konteksty literackie, mitologiczne, uzasadniając tym samym, że role kulturowe kształtowane są od zarania dziejów. \n\n“Szmaty” to nie tylko kolejna sentymentalna podróż w ostatnie dziesięciolecie XX wieku, to refleksja o dojrzewaniu, starzeniu, relacjach między kobietami i o tym, że życie toczy się wokół ról, oczekiwań, spojrzeń innych, a zwyczajne przedmioty mogą stać się punktem wyjścia do rozmowy o opresji lub samostanowieniu.",
+              "date": "2026-07-23 20:28:47.11782",
+              "rating": "8"
+            },
+            {
+              "username": "Wiosna",
+              "text": "Jest to książka absolutnie wybitna. Gęsta intertekstualnie, poruszająca najgłębsze tkanki kobieco-dziewczęcego jestestwa. Czyta się niewymuszenie. Smakuje metafory. Będę o niej jeszcze dużo myślała, i to z wielką wdzięcznością. Pomogła mi inaczej spojrzeć na matkę własną i matkę w sobie.",
+              "date": "2026-08-07 16:46:00.26497",
+              "rating": "10"
+            },
+            {
+              "username": "Lia",
+              "text": "Hymn pokolenia. Ta książka powinna być na skierowaniu razem z cytologią. I powinna też mieć naklejkę &quot;Tylko dla starych bab&quot;. Prawdopodobnie moja książka roku. Wyżarła mi z mózgu rzeczy, o których myślałam, że mam je na wyłączność. A nie mam. Petarda.",
+              "date": "2026-08-13 18:13:09.516506",
+              "rating": "10"
+            },
+            {
+              "username": "Magda",
+              "text": "Właśnie skończyłam czytać i... jestem pod wrażeniem. Kiedy zobaczyłam tę książkę, pomyślałam &quot;Taka cieniutka, połknę ją w dwa wieczory&quot;. Tak się nie stało. Nie potrafiłam jej połknąć, musiałam przystanąć i pomyśleć, przetrawić.\nNapisana w sposób, który mnie się spodobał i pasował do treści.\nNiektórzy piszą w recenzjach, że dużo przy niej śmiechu. Ja momentami też się uśmiechałam pod nosem, a czasem się śmiałam, ale jako całość jest raczej smutna. A może odbieram ją tak, bo jestem na takim a nie innym etapie życia? Bo staję się (albo już jestem) &quot;starą babą&quot; i nie mogę się z tym pogodzić. A autorka pięknie te wszystkie procesy i zmiany zachodzące w kobiecym życiu opisała.\nNie jest to lektura łatwa i przyjemna, ale polecam!\nNo i ta cudowna okładka.",
+              "date": "2026-08-15 08:07:28.550486",
+              "rating": "7"
+            },
+            {
+              "username": "babu22",
+              "text": "Niesamowita książka; opowieść o matkach, opowieść dla córki. \nCzytanie tej ładnie wydanej książki (jakże trafna okładka) wymaga pewnego wysiłku, ale przykłady, cytaty, wnioski/sugestie, porównania, nowe słowa są tego warte.\nTą książkę dołączam do ,,Małej empirii'' Katarzyny Sobczuk; będę do nich wracać otwierając na losowej stronie.",
+              "date": "2026-05-09 20:46:28.228166",
+              "rating": "9"
+            },
+            {
+              "username": "kynka",
+              "text": "Bardzo do mnie trafiła ta książka, porusza wszystkie te nostalgiczne struny (autorka - mój rocznik),w dodatku wywołuje zazdrość z powodu erudycji. Ten szereg odwołań do innych dziel literackich i krytycznych, te historie kobiet ubranych w ciało i z ciała próbujących się wydostać. Taka mała książeczka a tyle istotnych spostrzeżeń.",
+              "date": "2026-05-23 13:07:55.386059",
+              "rating": "7"
+            },
+            {
+              "username": "MalinKa",
+              "text": "Wspaniała książka. Napisana przez kobietę pośrodku swojego życia w formie listu matki do córki, albo może do siebie samej w wieku dojrzewania. &quot;Kochana córko,(...) Przeczuwam w sobie moją matkę, ale też pamiętam w sobie ciebie. I, co tu dużo mówić, ta pamięć trochę mnie boli. Ale – wstyd się przyznać – ból nie wynika ze współczucia dla cierpień, przez które teraz przechodzisz. Najgorsze jest podejrzenie, że teraz ty patrzysz na mnie tak, jak ja patrzyłam na swoją matkę. I to jest, moja córko, trudne do zniesienia. Przecież ja tak bardzo nie chciałam być nią.... &quot; Autorka pisze, że z wiekiem zaczęła rozumieć swoją matkę i prosi, aby córka dla niej była wyrozumiała. Bo taka jest kolej rzeczy w przyrodzie, że jeśli stajemy się matkami inaczej patrzymy na swoje matki. Książka mnie wzruszyła, ale też momentami się śmiałam, bo miała w sobie czarny humor. Filozoficzna, pełna przemyśleń, poetycka, napisana z wielkim talentem. Widziałam te wszystkie barwne postaci, ciotki, ich mężów, matki i babki. Historie opisane raz dosadnie, a raz subtelnie, nie wprost. Uwielbiam takie książki, chcę więcej!",
+              "date": "2026-08-16 08:29:50.965838",
+              "rating": "10"
+            },
+            {
+              "username": "Alicja",
+              "text": "Doskonałe! W samo sedno problemów, które mnie również toczą, a nie chcę ich nawet we własnej głowie wypowiedzieć. Napisane takim językiem, że śmiałam się w głos i czytałam fragmenty bliskim. Kapitalne postaci, wielowimiarowe. Może przeszkadzać fakt, że nie wiadomo, co wydarzyło się naprawdę, a co jest podkolorowane i jak, ale dla mnie było w tym coś intrygującego. Zabrakło mi trochę wyjaśnienia, co ostatecznie zmieniło perspektywę autorki na &quot;starobabieństow&quot;. Pogodzenie się z losem? Rezygnacja? Mądrość płynąca z doświadczenia macierzyństwa? Obserwacja, że ktoś to musi zrobić i swoich warunkach nie miały innej możliwości, niż stać się takimi, jakimi się stały? Już planuję nią obdarować nią bliskie mi przyszłe stare baby.",
+              "date": "2026-04-15 14:18:32.923842",
+              "rating": "10"
+            },
+            {
+              "username": "mela",
+              "text": "Muszę przyznać, że z solidnej przędzy te s/Szmaty. \nZ początku podchodziłam nieufnie do ich jakości, bałam się, że tkanina powieści się rozlezie ze względu na wielość nitek osnowy, ale ostatecznie wątek się nie zgubił i dobił ładnie do celu. \nMyślę, że jak ta różowa bluza z maminej sterty ciuchów, tak i Szmaty przetrwają próbę czasu",
+              "date": "2026-09-12 21:14:36.454111",
+              "rating": "8"
+            },
+            {
+              "username": "Marta",
+              "text": "Kobiece doświadczenia opowiedziane przez pryzmat ubrań, ciuchów, szmat. Nie jest to bynajmniej ujęcie trywialne, spłycające aspekty kobiecych aktywności. Bohaterka odnajduje w tytułowych &quot;szmatach&quot; swoisty azyl, umożliwiający wchodzenie w dowolne role. Jest to też historia o kobiecej solidarności, wspólnocie, dzieleniu przeżyć.",
+              "date": "2026-05-03 20:57:19.37256",
+              "rating": "8"
+            },
+            {
+              "username": "Marta",
+              "text": "Cztery pokolenia kobiet (choć to czwarte w domyśle, bo do córki adresuje swoją wypowiedź narratorka) na tle zmieniającej się rzeczywistości. I nieustanne rozmowy bohaterek, także przy kupowaniu, oglądaniu tytułowych szmat, przypominających zawsze o cielesności, od której nie da się uciec. Interesująca lektura.",
+              "date": "2026-06-16 14:51:40.420387",
+              "rating": "7"
+            },
+            {
+              "username": "Aga Kaczorowska",
+              "text": "Dojrzała literatura o starych babach (czyli najlepiej),matkach i córkach. Wielka Kupa Ubrań, która śmierdzi już lata, wżarła się w dywan i napędza oparami matczyny instynkt. Amputacja!!&gt;_! czy warto, bo w sumie to bio, szkoda wyrzucać, a jeśli już to Wielka Kupa Ubrań, która śmierdzi już lata [...]",
+              "date": "2026-04-12 13:31:51.513718",
+              "rating": "8"
+            },
+            {
+              "username": "EwaZygmunt",
+              "text": "Bardzo dobra książka. Najpierw czułam w niej dużo smutku i ciężaru. Ciężaru historii bohaterek (i bohaterów. Mężczyźni są w książce całkowicie na drugim planie, ale chyba jeszcze bardziej niż kobiety podlegają historii albo losowi. Świetnie napisany obraz kobiecości i człowieczeństwa, łączenia pokoleń, które odbywa się drogą rozłamu. Przez dziury i rozprucia w tytułowych Szmatach (ciuchach - jak to się dzisiaj mówi - z drugiego obiegu) widzimy trochę metafizyki i transcendencji. A wszystko to podane dobrą, zwartą prozą, z kontrapunktem z poczucia humoru.",
+              "date": "2026-10-03 17:58:06.40725",
+              "rating": "8"
+            }
+          ],
+          "language": "polski",
+          "rating_count": 150
+        },
+        "quality": {
+          "complete": true,
+          "missing_required": [],
+          "available_fields": [
+            "title",
+            "authors",
+            "publisher",
+            "description",
+            "cover_url",
+            "language",
+            "categories",
+            "avg_rating",
+            "rating_count",
+            "release_date",
+            "premiere_date",
+            "isbn",
+            "pages",
+            "format",
+            "reviews"
+          ],
+          "optional_absent": [
+            "narrators",
+            "duration_minutes",
+            "length_str",
+            "category",
+            "collections",
+            "series",
+            "volume_number",
+            "release_year",
+            "original_title",
+            "translator",
+            "tags",
+            "why_worth_it"
+          ]
+        },
+        "cookies": null
+      }
+    ]
+  }
+}

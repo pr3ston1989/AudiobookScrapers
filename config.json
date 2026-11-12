@@ -1,0 +1,30 @@
+{
+  "databases": {
+    "audioteka": "data\\audioteka.db",
+    "storytel": "data\\storytel.db",
+    "empik": "data\\empik.db",
+    "lubimyczytac": "data\\lubimyczytac.db",
+    "nexto": "data\\nexto.db",
+    "publio": "data\\publio.db",
+    "bookbeat": "data\\bookbeat.db",
+    "woblink": "data\\woblink.db",
+    "legimi": "data\\legimi.db",
+    "wolnelektury": "data\\wolnelektury.db",
+    "virtualo": "data\\virtualo.db"
+  },
+  "requests_per_second": 1.0,
+  "http_retries": 3,
+  "timeout": 30,
+  "refresh_limit": 50,
+  "max_listing_pages": 2000,
+  "backup": false,
+  "browser_headless": false,
+  "catalog_page_budget": 5,
+  "news_page_budget": 5,
+  "sitemap_page_budget": 2,
+  "work_batch_size": 100,
+  "full_catalog_days": 7,
+  "lc_id_batch": 250,
+  "repair_limit": 100,
+  "parallel_services": 4
+}
