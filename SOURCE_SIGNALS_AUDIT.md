@@ -21,12 +21,12 @@ Sprawdzono 11 lokalnych baz. Dla 10 aktywnych serwisów pobrano po trzy aktualne
 | Storytel | Linki kategorii i własne dane strukturalne | Tagi książki | Sekcja „Książki podobne do…” |
 | Empik | Kategorie produktu, bez ogólnych pozycji „Audiobooki” i „Audiobooki i Ebooki” | Wszystkie spany tagów, także ukryte | `SimilarProducts`, bez pozostałych karuzel |
 | LubimyCzytać | Pełna nazwa własnej kategorii, przecinki pozostają | Tagi książki | „Czytelnicy … przeczytali również”; linki do opinii zachowane bez zgadywania ID książki |
-| Publio | Wszystkie kategorie z tabeli własnej publikacji | Nie potwierdzono osobnej listy tagów w próbkach | Istnieje dynamiczny kontener Luigi’s Box; nie potwierdzono jego listy wyników. Próba renderowania zwróciła 403 |
+| Publio | Wszystkie kategorie z tabeli własnej publikacji | Nie potwierdzono osobnej listy tagów w próbkach | Publiczne API `/rest/v3/catalog/product/{id}/similar`; potwierdzono 19, 27 i 15 relacji na trzech kartach |
 | BookBeat | Pełna lista gatunków własnej książki | `content_type` oraz istniejące etykiety ocen książki i narracji | Publiczna lista „Inni też lubią”, zweryfikowana przez ID książki |
 | Woblink | Gatunki produktu, breadcrumb wyłącznie jako fallback | Tagi własnego produktu | Sekcja „Podobne do…” |
 | Legimi | `primaryCategory` i `additionalCategories` własnej książki | Nie potwierdzono osobnych tagów w próbkach | Sekcja „Podobne”, z informacją o dostępności audio z ikon formatów |
 | Wolne Lektury | Gatunki z API | Epoki i rodzaje literackie jako oddzielne rodzaje etykiet | `parent` i `children` pozostają metadanymi struktury utworu, nie są udawanym podobieństwem |
-| Virtualo | Kategorie z tabeli produktu | Nie potwierdzono osobnych tagów w próbkach | `products_top_view` to kontener listy top; nie przypisano go jako podobieństwa. Renderowanie próby zostało zablokowane |
+| Virtualo | Kategorie z tabeli produktu | Nie potwierdzono osobnych tagów w próbkach | W trzech wyrenderowanych kartach `products_top_view` to „BESTSELLERY”; nie przypisano ich jako podobieństwa |
 | Nexto | Brak kategorii w trzech próbkach archiwalnych | Nie potwierdzono tagów | Brak potwierdzonej listy relacji |
 
 Słowa kluczowe JSON-LD są dodatkowym fallbackiem tagów tylko dla zweryfikowanego własnego produktu. Ogólne metatagi SEO nie są traktowane jako tagi tematyczne. Brak danych nie jest uzupełniany przez odgadywanie kategorii z opisu lub tagów.
@@ -91,7 +91,7 @@ na zapisanych próbkach wszystkich serwisów. Pełna paginacja publicznej listy
 BookBeat została również sprawdzona na trzech rzeczywistych książkach:
 po 30 relacji w dwóch partiach, `complete = true`, bez następnej strony.
 Tryb pełny nie miesza świeżych danych z historycznymi etykietami archiwum.
-Ograniczenia dostępności dynamicznych sekcji Publio i Virtualo pozostają aktualne;
+Późniejszą weryfikację dynamicznych sekcji Publio i Virtualo opisano poniżej;
 nie są zastępowane odgadywanymi listami podobieństw.
 
 Dodatkowo usunięto pobieranie autorów z obcych obiektów JSON-LD LC,
@@ -102,3 +102,40 @@ Potwierdzone aliasy są zapisywane pod kanonicznym ID; rozbieżność tytułu w 
 z tytułem zweryfikowanego odczytu wymaga sprawdzenia i blokuje przypisanie danych.
 Końcowa walidacja tej aktualizacji: pełny zestaw 221 testów oraz 24 testy
 modułu tożsamości i GUI — wynik OK. Produkcyjnego pełnego pobierania nie uruchamiano.
+
+
+## Potwierdzenie Publio i Virtualo — 15.11.2026
+
+Publio sprawdzono ponownie przez pełną ścieżkę `fetch_book`, ze świeżym HTTP
+zarówno karty, jak i publicznego API podobnych produktów:
+
+| Produkt | Kategorie własnego produktu | Relacje |
+|---|---|---:|
+| 911672 — Mitologia: Grecja | Mitologie; Dla młodzieży; Lektury szkolne; Szkoła, edukacja, lektury | 19 |
+| 2775312 — Gustaw i Gadająca żaba | Literatura współczesna; Powieść, opowiadanie | 27 |
+| 247092 — Mitologia | Mitologie; Dla młodzieży | 15 |
+
+Sprawdzany jest dokładny adres API źródłowego ID, ID i adres każdego celu,
+tytuł i zgodność formatów. Dane autorów i kategorii polecanych pozycji nie
+zasilają produktu źródłowego. Błąd API nie uruchamia przeglądarki, nie blokuje
+domeny dla kart i nie jest uznawany za poprawną pustą listę. `scope = api_response`,
+`complete = NULL`: potwierdzono zwróconą listę, bez deklaracji kompletności
+całego algorytmu. Wszystkie trzy badane listy wskazywały audiobooki MP3.
+
+Virtualo sprawdzono na trzech aktualnych kartach po wykonaniu JavaScriptu:
+Morelowy Las (631575, Fantasy i realizm magiczny), Café Museum (155270,
+Wakacje i podróże) oraz W poszukiwaniu światła. Opowieść o Marii Skłodowskiej-Curie
+(303852, Nauka i wiedza). Autorzy i kategorie pozostały przypisane do właściwych
+tytułów mimo obecności kart innych książek. Widżet `products_top_view`
+ma nagłówek BESTSELLERY i pobiera `/api/v1/products/product/top/`; nie jest
+traktowany jako rekomendacja podobieństwa. Kontekst `data-product-id` widżetu
+jest dodatkowo porównywany z ID otwartej książki.
+
+W tych trzech przykładach każdego serwisu nie znaleziono osobnych tagów produktu.
+Nie jest to twierdzenie o wszystkich kartach katalogu. Nowe próbki i 10 testów
+obejmują zgodność ID, formatów, błędne przekierowania, błędy API, izolację
+metadanych i zapis relacji do tymczasowej bazy. Produkcyjnych baz w tym kroku
+nie zmieniano. GUI: „Pełne uzupełnienie i weryfikacja danych”, wybrane serwisy,
+limit 0, „Uruchom”.
+
+Pełna walidacja po tej zmianie: 232 testy, wynik OK.

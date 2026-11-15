@@ -99,3 +99,59 @@ def bookbeat_related(client, data, *, all_pages=False):
             "next_url": next_url, "source_url": first_url}
     except Exception as exc:
         data["recommendation_coverage"] = {"complete": False, "error": str(exc)}
+
+
+def publio_related(client, data):
+    """Read the product-specific public similar-list API without importing target metadata."""
+    from urllib.parse import urlsplit
+    from recommendation_parsers import normalized_link
+    from product_validation import validate_record
+
+    try:
+        key = validate_record("publio", data)
+        path = f"/rest/v3/catalog/product/{key}/similar"
+        source_url = "https://publio.pl" + path
+        get = getattr(client, "get_optional_json", None) or getattr(client, "get_optional", client.get)
+        response = get(source_url)
+        if response.status_code != 200:
+            raise ValueError(f"Publio: HTTP {response.status_code} podczas odczytu rekomendacji")
+        final = urlsplit(response.url)
+        if (final.scheme != "https" or final.netloc not in ("publio.pl", "www.publio.pl")
+                or final.path.rstrip("/") != path or final.query):
+            raise ValueError("Publio: odpowiedź rekomendacji dotyczy innego produktu")
+        value = json.loads(response.text)
+        if not isinstance(value, list):
+            raise ValueError("Publio: brak poprawnej listy podobnych produktów")
+        links, seen = [], set()
+        audio_formats = {"MP3", "M4B", "OPUS", "OGG", "WAV", "FLAC"}
+        for product in value:
+            if not isinstance(product, dict) or not str(product.get("id", "")).isdigit():
+                raise ValueError("Publio: brak ID podobnego produktu")
+            target = str(product["id"])
+            href = product.get("productUrl")
+            if not isinstance(href, str) or identity("publio", href) != target:
+                raise ValueError("Publio: ID podobnego produktu nie odpowiada jego adresowi")
+            if product.get("productOrIssueId") is not None and str(product["productOrIssueId"]) != target:
+                raise ValueError("Publio: niespójne identyfikatory podobnego produktu")
+            title = product.get("title")
+            if not isinstance(title, str) or not title.strip():
+                raise ValueError("Publio: brak tytułu podobnego produktu")
+            formats = product.get("formatList")
+            if not isinstance(formats, list) or any(not isinstance(item, str) for item in formats):
+                raise ValueError("Publio: nieprawidłowa lista formatów podobnego produktu")
+            audio_format = bool({item.upper() for item in formats} & audio_formats)
+            section = product.get("section")
+            if section == "AUDIOBOOK" and formats and not audio_format or section == "EBOOK" and audio_format:
+                raise ValueError("Publio: sprzeczny typ i format podobnego produktu")
+            audio = True if section == "AUDIOBOOK" or audio_format else False if section == "EBOOK" else None
+            item = normalized_link("publio", {"url": href, "title": title.strip(),
+                                            "relation_kind": "similar", "audio_available": audio})
+            if item and target != key and target not in seen:
+                links.append(item)
+                seen.add(target)
+        data["related_links"] = links
+        data["related_urls"] = [item["url"] for item in links]
+        data["recommendation_coverage"] = {"scope": "api_response", "complete": None,
+            "collected": len(links), "next_url": None, "source_url": source_url}
+    except Exception as exc:
+        data["recommendation_coverage"] = {"complete": False, "error": str(exc)}

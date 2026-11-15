@@ -64,6 +64,11 @@ def validate_download(site, html, response_url, requested_url, data):
             evidence.append("product_state")
         if site == "legimi" and final_key in aliases:
             evidence.append("product_state")
+        if site == "virtualo":
+            for widget in soup.select("#products_top_view[data-product-id]"):
+                if widget["data-product-id"] != final_key:
+                    raise BookValidationError("Virtualo: kontekst listy produktów dotyczy innego tytułu")
+                evidence.append("product_widget_context")
         if not evidence:
             raise BookValidationError(f"Brak potwierdzenia ID produktu w treści strony: {requested_url}")
         heading = soup.select_one({"empik": 'h1[data-ta="title"]', "lubimyczytac": "h1.book__title",

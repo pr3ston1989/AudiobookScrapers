@@ -97,6 +97,9 @@ def fetch_book(client, site, url, *, include_reviews=True, all_recommendations=F
             raise BookValidationError(f"Przekierowanie poza żądany audiobook: {url}")
         from product_validation import validate_download
         validate_download(site, response.text, response.url, url, data)
+        if site == 'publio':
+            from dynamic_metadata import publio_related
+            publio_related(client, data)
         if site == 'bookbeat':
             from dynamic_metadata import bookbeat_related
             bookbeat_related(client, data, all_pages=True) if all_recommendations else bookbeat_related(client, data)

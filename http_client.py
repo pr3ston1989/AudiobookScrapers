@@ -122,6 +122,15 @@ class Client:
         """Bound optional review requests so they cannot stall bibliographic metadata."""
         return self.get(url, timeout=self.settings.get('review_timeout', 8), retries=1)
 
+    def get_optional_json(self, url):
+        """Read optional public JSON once without changing browser or host-access state."""
+        self.throttle()
+        response = self.session.get(url, headers={"Accept": "application/json"},
+                                    timeout=self.settings.get("recommendation_timeout", 8))
+        if response.status_code != 200:
+            raise HTTPError(url, response.status_code)
+        return Response(str(response.url), response.content, response.status_code)
+
     def browser_get(self, url):
         """Reuse a browser profile, dismiss consent and wait for dynamic details."""
         self.throttle()

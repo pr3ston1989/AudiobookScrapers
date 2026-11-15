@@ -89,6 +89,16 @@ metadanych katalogowych i pobrania okładki, a nie wyczerpania wszystkich opinii
 W audycie Publio zwróciło poprawne trzy karty przez HTTP, ale zablokowało świeżą
 przeglądarkę stroną Cloudflare. Blokada jest rozpoznawana jako błąd dostępu.
 Nie potwierdzono tam pełnego porównania danych po wykonaniu JavaScriptu.
+Osobno potwierdzono publiczne API podobnych produktów Publio na trzech kartach
+(19, 27 i 15 relacji). Jest odczytywane automatycznie podczas aktualizacji
+i pełnego uzupełniania w GUI, z kontrolą ID źródła oraz ID i adresów celów.
+Błąd tej opcjonalnej listy jest raportowany i nie blokuje pobierania karty.
+Zakres `api_response` nie deklaruje kompletności całego algorytmu rekomendacji.
+
+Virtualo potwierdzono na trzech wyrenderowanych kartach: kategorie pochodzą
+z właściwego produktu. Widżet „BESTSELLERY” nie jest listą podobnych tytułów
+i nie trafia do relacji. W tych próbkach Publio i Virtualo nie znaleziono
+osobnych tagów produktu; słowa SEO nie są używane jako ich zamiennik.
 
 ## Bazy i okładki
 
@@ -344,7 +354,7 @@ wcześniej zapisanej kategorii. `--recheck` jest potrzebny do ponownego pobrania
 kart już sprawdzonych przez starszy parser.
 
 Relacje `similar` pochodzą z odpowiednich sekcji Storytela, Empiku, Woblinka
-i Legimi. `read_also` to sekcja czytelników LC, a `also_liked` to publiczna lista
+i Legimi oraz publicznej listy podobnych produktów Publio. `read_also` to sekcja czytelników LC, a `also_liked` to publiczna lista
 BookBeat. LC często podaje link do opinii: wtedy `related_links.target_key`
 pozostaje `NULL`; ID książki nie jest zgadywane z adresu okładki ani ID opinii.
 Nieznana dostępność audiobooka ma `audio_available = NULL`; wartość `0`
