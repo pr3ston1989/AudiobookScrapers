@@ -239,7 +239,12 @@ def parse_extra(site, html, url):
             elif label.rstrip(':') in ('seria', 'cykl'):
                 data['collections'] = linked or [value]
                 data['series'] = (data['collections'] or [None])[0]
-        breadcrumbs = next((obj for obj in source_objects if isinstance(obj, dict) and obj.get('@type') == 'BreadcrumbList'), {})
+        def breadcrumb_url(item):
+            target = item.get('item') or {}
+            return item.get('url') or (target.get('@id') if isinstance(target, dict) else target) or ''
+        breadcrumbs = next((obj for obj in source_objects if isinstance(obj, dict) and obj.get('@type') == 'BreadcrumbList'
+                            and any(isinstance(item, dict) and identity(site, urljoin(url, breadcrumb_url(item))) == key
+                                    for item in obj.get('itemListElement', []))), {})
         categories = []
         for item in breadcrumbs.get('itemListElement', []):
             target = item.get('item') or {}

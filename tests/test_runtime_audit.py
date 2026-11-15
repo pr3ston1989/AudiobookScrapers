@@ -129,7 +129,8 @@ class RuntimeAuditTests(unittest.TestCase):
     def test_audioteka_verified_typo_alias_still_rejects_other_targets(self):
         source = "https://audioteka.com/pl/audiobook/projet-hail-mary/"
         target = "https://audioteka.com/pl/audiobook/projekt-hail-mary/"
-        client = SimpleNamespace(get=lambda *args, **kwargs: Response(target, fixture("audioteka").encode()))
+        html = f'<link rel="canonical" href="{target}"><h1>Projekt Hail Mary</h1>'
+        client = SimpleNamespace(get=lambda *args, **kwargs: Response(target, html.encode()))
         with patch("main.parse", return_value={"url": target, "title": "Projekt Hail Mary"}):
             self.assertEqual(fetch_book(client, "audioteka", source)["url"], target)
         self.assertFalse(audioteka_product_redirect(source, "https://audioteka.com/pl/audiobook/other/"))

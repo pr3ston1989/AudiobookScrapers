@@ -102,6 +102,8 @@ class Recommendations:
             raise
 
     def save(self, site, data, *, tags_checked=False, recommendations_checked=False, only_missing=False, replace_labels=False):
+        from product_validation import validate_record
+        validate_record(site, data)
         url = canonical(site, data["url"])
         key = identity(site, url) if url else None
         if not key:
@@ -251,9 +253,23 @@ class ArchivedSignals:
             return {}
         paths = ",".join(f"'$.{field}'" for field in ARCHIVE_FIELDS)
         slots = ",".join("?" for _ in keys)
-        rows = self.conn.execute(f"""SELECT product_key,json_extract(data,{paths}) FROM metadata
+        rows = self.conn.execute(f"""SELECT product_key,json_extract(data,'$.url','$.external_id','$.source_identity',{paths}) FROM metadata
             WHERE site=? AND product_key IN ({slots}) AND json_valid(data)""", (self.site, *keys))
-        return {key: dict(zip(ARCHIVE_FIELDS, json.loads(raw))) for key, raw in rows}
+        from product_validation import validate_record
+        from parse_books import BookValidationError
+        result = {}
+        for key, raw in rows:
+            url, external_id, proof, *values = json.loads(raw)
+            record = {"url": url or "", "external_id": external_id}
+            if proof is not None:
+                record["source_identity"] = proof
+            try:
+                if validate_record(self.site, record) != key:
+                    continue
+            except BookValidationError:
+                continue
+            result[key] = dict(zip(ARCHIVE_FIELDS, values))
+        return result
 
     def empty_tag_keys(self):
         if "empty_tag_checks" not in self.tables:

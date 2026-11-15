@@ -226,7 +226,7 @@ class Database:
         if limit <= 0:
             return [], after_id
         with self.engine.connect() as conn:
-            fields = "id,url,external_id" if self.site == "lubimyczytac" else "id,url"
+            fields = "id,url,title,external_id" if self.site == "lubimyczytac" else "id,url,title"
             rows = conn.execute(text(f"SELECT {fields} FROM books WHERE id>:after ORDER BY id LIMIT :limit"),
                                 {"after": after_id, "limit": limit}).all()
             if not rows:
@@ -322,14 +322,18 @@ class Database:
     def save_categories(self, book_id, data):
         """Replace verified category fields only; leave unavailable source labels unchanged."""
         from parse_books import names
+        from product_validation import validate_record
+        validate_record(self.site, data)
         labels = names(names(data.get("categories")) + names(data.get("category")))
         if not labels:
             return False
         primary = (names(data.get("category")) or labels)[0]
         with self.engine.begin() as conn:
-            row = conn.execute(text("SELECT id FROM books WHERE id=:book"), {"book": book_id}).first()
+            fields = "id,url,title,external_id" if self.site == "lubimyczytac" else "id,url,title"
+            row = conn.execute(text(f"SELECT {fields} FROM books WHERE id=:book"), {"book": book_id}).mappings().first()
             if not row:
                 return False
+            validate_record(self.site, data, row)
             changed = False
             if "category_id" in self.columns["books"]:
                 category_id = self.name_id(conn, "categories", primary)
@@ -342,7 +346,8 @@ class Database:
 
     def save(self, data, cover=None, *, fill_book_id=None):
         """Upsert a product, or fill gaps in a specific existing book."""
-        key = identity(self.site, data["url"])
+        from product_validation import validate_record
+        key = validate_record(self.site, data)
         only_missing = fill_book_id is not None
         if key is None or (not only_missing and not data.get("title")):
             raise ValueError("Brak identyfikatora lub tytułu książki")
@@ -354,10 +359,17 @@ class Database:
                 prior = conn.execute(text("SELECT * FROM books WHERE id=:id"), {"id": fill_book_id}).mappings().first()
                 if prior is None:
                     return "skipped"
+                validate_record(self.site, data, prior)
                 existing_id = fill_book_id
             elif self.site == "lubimyczytac":
                 row = conn.execute(text("SELECT id,url FROM books WHERE external_id=:external_id"), {"external_id": int(key)}).first()
                 existing_id = row.id if row else None
+            if not only_missing and existing_id is not None:
+                fields = "id,url,title,external_id" if self.site == "lubimyczytac" else "id,url,title"
+                target = conn.execute(text(f"SELECT {fields} FROM books WHERE id=:book"), {"book": existing_id}).mappings().first()
+                if target is None:
+                    raise ValueError("Brak docelowego rekordu książki")
+                validate_record(self.site, data, target)
             # Dane puste nie nadpisują poprawnych metadanych i powiązań.
             values = {k: v for k, v in data.items() if k in self.columns["books"] and k not in ("id", "url") and v is not None and v != "" and not isinstance(v, (dict, list))}
             if not only_missing and self.site == "lubimyczytac" and row and identity(self.site, row.url) != key:
@@ -369,6 +381,8 @@ class Database:
                           if k not in ("external_id", "slug", "created_at") and
                           (prior[k] is None or isinstance(prior[k], str) and not prior[k].strip()
                            or k == "duration_minutes" and prior[k] <= 0)}
+                if data.get("source_identity") and identity(self.site, prior["url"]) != key:
+                    values["url"] = canonical(self.site, data["url"])
             for field, table in (("publisher", "publishers"), ("category", "categories"), ("series", "series")):
                 raw = data.get(field)
                 names = raw if isinstance(raw, list) else [raw]
@@ -409,6 +423,7 @@ class Database:
                     conn.execute(text("UPDATE books SET cover_local_path=:path WHERE id=:book"), {"path": cover["local_path"], "book": book_id})
                     changed = True
         if only_missing:
+            self.known[key] = book_id
             return "updated" if changed else "skipped"
         if self.review_index:
             self.review_index.flush()

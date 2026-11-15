@@ -75,3 +75,30 @@ Drugi tryb odczytuje ponownie wszystkie istniejące rekordy aktywnych serwisów,
 Testy obejmują schematy wszystkich serwisów, 15 fragmentów aktualnych sekcji rekomendacji, własność danych strukturalnych, dokładne kategorie, ukryte tagi, odświeżanie etykiet, błędy API, wznowienie, migrację bazy rekomendacji i zmianę wyłącznie kategorii w istniejących rekordach. Pełne lokalne HTML i raporty są w `reports\tag_category_audit` i nie są publikowane w repozytorium.
 
 Do `recommendations.db` zapisano także 30 aktualnie zweryfikowanych próbek i 357 ich relacji. Przed tym zapisem utworzono kopię bazy rekomendacji. Bazy źródłowe nie były w tym kroku zmieniane. Końcowy pełny zestaw: 198 testów, wynik OK.
+
+
+## Dodatkowa kontrola przypisania danych
+
+Po audycie dodano domyślny tryb GUI „Pełne uzupełnienie i weryfikacja danych”.
+Niepewne dane są odrzucane przed zapisem: weryfikowane są ID w odpowiedzi,
+spójność canonical/OG, tytuł właściwego nagłówka, aliasy i docelowy rekord SQLite.
+Wydanie audio z JSON-LD nie może dostarczać metadanych innej książki.
+Karta podobnego produktu Empiku musi mieć ID zgodne z linkiem, a sekcja wskazująca
+tytuł źródłowy musi dotyczyć otwartej książki. Raport i GUI pokazują odrzucone dane.
+
+Przeprowadzono ponowną kontrolę 30 zapisanych aktualnych kart oraz testy
+na zapisanych próbkach wszystkich serwisów. Pełna paginacja publicznej listy
+BookBeat została również sprawdzona na trzech rzeczywistych książkach:
+po 30 relacji w dwóch partiach, `complete = true`, bez następnej strony.
+Tryb pełny nie miesza świeżych danych z historycznymi etykietami archiwum.
+Ograniczenia dostępności dynamicznych sekcji Publio i Virtualo pozostają aktualne;
+nie są zastępowane odgadywanymi listami podobieństw.
+
+Dodatkowo usunięto pobieranie autorów z obcych obiektów JSON-LD LC,
+wydawców z dowolnych części strony i kategorii z breadcrumbów innego produktu.
+Archiwum jest sprawdzane względem klucza książki przed użyciem jego danych.
+Nieprawidłowe historyczne adresy są raportowane zamiast cichego pomijania.
+Potwierdzone aliasy są zapisywane pod kanonicznym ID; rozbieżność tytułu w bazie
+z tytułem zweryfikowanego odczytu wymaga sprawdzenia i blokuje przypisanie danych.
+Końcowa walidacja tej aktualizacji: pełny zestaw 221 testów oraz 24 testy
+modułu tożsamości i GUI — wynik OK. Produkcyjnego pełnego pobierania nie uruchamiano.

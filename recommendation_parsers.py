@@ -63,13 +63,34 @@ def related_signals(site, soup, url):
     if not sections:
         return {}
     result, seen = [], set()
+    from bs4 import Comment
+    from product_validation import title_key
+    from parse_books import BookValidationError
+    product_heading = soup.select_one("h1")
+    product_titles = set()
+    if product_heading:
+        direct = " ".join(part.strip() for part in product_heading.find_all(string=True, recursive=False)
+                          if not isinstance(part, Comment) and part.strip())
+        product_titles = {title_key(direct), title_key(product_heading.get_text(" ", strip=True))}
     for section, heading, kind, selector in sections:
+        named_title = None
+        if site == "storytel" and heading.casefold().startswith("książki podobne do "):
+            named_title = heading[len("Książki podobne do "):]
+        elif site == "woblink":
+            named_title = heading[len("Podobne do "):]
+        elif site == "empik" and re.search(r"\s[-–—]\s*podobne produkty$", heading, re.I):
+            named_title = re.sub(r"\s[-–—]\s*podobne produkty$", "", heading, flags=re.I)
+        if named_title and product_titles and title_key(named_title) not in product_titles:
+            raise BookValidationError("Sekcja podobnych produktów dotyczy innego tytułu")
         for link in section.select(selector):
             title = link.get("aria-label") or link.get_text(" ", strip=True) or None
             audio = None
             if site == "empik":
                 card = link.find_parent(attrs={"data-ta": "product"})
                 title = card.get("data-product-name") if card else title
+                declared_id = card.get("data-product-id") if card else None
+                if declared_id and declared_id.removeprefix("p") != identity(site, link["href"]):
+                    raise BookValidationError("ID karty podobnego produktu Empiku nie odpowiada linkowi")
                 if title and re.search(r"-\s*audiobook\s*$", title, re.I):
                     audio = True
                 elif title and re.search(r"-\s*ebook\s*$", title, re.I):

@@ -104,9 +104,12 @@ class Coverage:
 
     def save_metadata(self, data, *, only_missing=False):
         """Keep every parsed field, including fields unsupported by legacy schemas."""
-        key = identity(self.site, data["url"])
+        from product_validation import validate_record
+        key = validate_record(self.site, data)
         row = self.conn.execute("SELECT data FROM metadata WHERE site=? AND product_key=?", (self.site, key)).fetchone()
         merged = json.loads(row[0]) if row else {}
+        if identity(self.site, merged.get("url", "")) != key:
+            merged = {}
         merged.update({field: value for field, value in data.items() if value is not None and value != "" and value != []
                        and (not only_missing or merged.get(field) in (None, "", [], {}))})
         self.conn.execute("INSERT OR REPLACE INTO metadata VALUES (?,?,?,?)",

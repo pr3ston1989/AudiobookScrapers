@@ -18,6 +18,13 @@ def fetch_tags(client, site, url):
     response = client.get(url, render=True) if site == "empik" else client.get(url)
     if identity(site, response.url) != identity(site, url):
         raise BookValidationError(f"Przekierowanie poza żądaną książkę: {response.url}")
+    from bs4 import BeautifulSoup
+    from parse_books import BOOK_TITLE_SELECTORS
+    from product_validation import validate_download
+    soup = BeautifulSoup(response.text, "lxml")
+    heading = soup.select_one(BOOK_TITLE_SELECTORS[site])
+    title = heading.get_text(" ", strip=True) if heading else ""
+    validate_download(site, response.text, response.url, url, {"url": response.url, "title": title})
     return parse_tags(site, response.text, response.url)
 
 
@@ -28,7 +35,8 @@ def backfill(db, client, ledger, store, archive, args, settings, root, report, f
     local_only = getattr(args, "local_only", False)
     recheck = getattr(args, "recheck", False)
     sync_categories = getattr(args, "sync_categories", False)
-    metadata = not (args.tags_only or recommendations)
+    complete = getattr(args, "complete", False)
+    metadata = complete or not (args.tags_only or recommendations)
     if args.tags_only and not tags:
         raise ValueError(f"Uzupełnianie tagów nie jest obsługiwane dla serwisu {site}.")
 
@@ -53,6 +61,8 @@ def backfill(db, client, ledger, store, archive, args, settings, root, report, f
         mode = ("tags-recheck" if recheck else "tags") if args.tags_only else "metadata"
     if sync_categories:
         mode += "-categories"
+    if complete:
+        mode = "complete-verified-v1"
     last_id = db.last_book_id()
     cursor = min(store.checkpoint(db, mode), last_id) if book_id is None else 0
     if cursor == last_id:
@@ -61,7 +71,7 @@ def backfill(db, client, ledger, store, archive, args, settings, root, report, f
     checked = set()
     if supplemental and not (local_only or recheck or args.url or sync_categories):
         checked = store.checked_keys(site, tags_only=not recommendations)
-    report.update(attempted=0, downloaded=0, signals=0, tagged=0, without_tags=0, scanned_through=cursor)
+    report.update(complete_mode=complete, attempted=0, downloaded=0, signals=0, tagged=0, without_tags=0, scanned_through=cursor)
 
     legacy_empty = archive.empty_tag_keys() if tags and not (local_only or recheck or args.url) else set()
     consecutive_errors = 0
@@ -76,12 +86,16 @@ def backfill(db, client, ledger, store, archive, args, settings, root, report, f
         for row in rows:
             url = db.book_url(row)
             key = identity(site, url or "")
+            if not key and complete:
+                reason = f"Rekord {row.id} nie ma poprawnego adresu własnego produktu"
+                report.setdefault("identity_rejections", []).append({"url": url, "book_id": row.id, "reason": reason})
+                report["errors"].append(reason)
             if key and (row.missing_metadata or supplemental and key not in checked):
                 work.append((row, url, key))
         if args.limit:
             work = work[:args.limit - report["attempted"]]
-        local = db.stored_signals([row.id for row, _, _ in work]) if supplemental else {}
-        cached = archive.get([key for _, _, key in work]) if supplemental else {}
+        local = db.stored_signals([row.id for row, _, _ in work]) if supplemental and not complete else {}
+        cached = archive.get([key for _, _, key in work]) if supplemental and not complete else {}
         if mode == "local":
             with store.conn:
                 for row, url, key in work:
@@ -110,9 +124,17 @@ def backfill(db, client, ledger, store, archive, args, settings, root, report, f
                     if row.missing_metadata or recommendations:
                         report["downloaded"] += 1
                         if recommendations:
-                            fetched = fetch_book(client, site, url, include_reviews=False)
+                            if complete:
+                                fetched = fetch_book(client, site, url, all_recommendations=True)
+                                cover = None
+                                if row.missing_cover_row and fetched.get("cover_url") and not args.no_covers:
+                                    cover = download_cover(client, fetched["cover_url"], root / "media" / site, key)
+                                result = db.save(fetched, cover, fill_book_id=row.id)
+                            else:
+                                fetched = fetch_book(client, site, url, include_reviews=False)
                             if sync_categories:
-                                result = "updated" if db.save_categories(row.id, fetched) else "skipped"
+                                if db.save_categories(row.id, fetched):
+                                    result = "updated"
                                 ledger.save_metadata(fetched)
                         else:
                             fetched = fetch_book(client, site, url)
@@ -121,7 +143,7 @@ def backfill(db, client, ledger, store, archive, args, settings, root, report, f
                                 cover = download_cover(client, fetched["cover_url"], root / "media" / site, key)
                             result = db.save(fetched, cover, fill_book_id=row.id)
                             ledger.save_metadata(fetched, only_missing=True)
-                        data = merge_signals(data, fetched, fresh=True)
+                        data = merge_signals({}, fetched, fresh=True)
                         tags_checked = "tags" in fetched or bool(data["tags"])
                         parsed_card = True
                         labels_fetched = {kind for field, kind in LABEL_FIELDS.items() if field in fetched}
@@ -130,6 +152,7 @@ def backfill(db, client, ledger, store, archive, args, settings, root, report, f
                         recommendations_checked = not fetched.get("recommendation_coverage", {}).get("error")
                         if not recommendations_checked:
                             report["warnings"].append(f"{url}: {fetched['recommendation_coverage']['error']}")
+                            report.setdefault("unresolved_signals", []).append(url)
                     else:
                         if recheck or args.url or not data["tags"] and key not in legacy_empty:
                             report["downloaded"] += 1
@@ -138,7 +161,7 @@ def backfill(db, client, ledger, store, archive, args, settings, root, report, f
                         data = {"tags": data["tags"]}
                         tags_checked = True
                     with store.conn:
-                        saved = store.save(site, {**data, "url": url}, tags_checked=tags_checked,
+                        saved = store.save(site, {**data, "url": data["url"] if parsed_card else url}, tags_checked=tags_checked,
                                            recommendations_checked=recommendations_checked,
                                            replace_labels=labels_fetched)
                         if book_id is None:
@@ -150,6 +173,12 @@ def backfill(db, client, ledger, store, archive, args, settings, root, report, f
                     if (recommendations and parsed_card) or (not recommendations and tags_checked):
                         checked.add(key)
                     consecutive_errors = 0
+                except BookValidationError as exc:
+                    report.setdefault("identity_rejections", []).append({"url": url, "reason": str(exc)})
+                    report["errors"].append(f"Odrzucono niepotwierdzone dane {url}: {exc}")
+                    consecutive_errors = consecutive_errors + 1 if complete else 0
+                    if consecutive_errors >= 5:
+                        report["stopped_on_identity_conflicts"] = True
                 except NotAudiobook:
                     report["skipped"] += 1
                     consecutive_errors = 0

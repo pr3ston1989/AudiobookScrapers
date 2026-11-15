@@ -127,6 +127,10 @@ def apply_structured(data, soup, site):
         examples = obj.get("workExample", [])
         examples = examples if isinstance(examples, list) else [examples]
         audio = next((e for e in examples if isinstance(e, dict) and "Audiobook" in e.get("@type", "")), {})
+        if audio.get("name") and obj.get("name"):
+            from product_validation import title_key
+            if title_key(audio["name"]) != title_key(obj["name"]):
+                raise BookValidationError("Wydanie audio w JSON-LD dotyczy innego tytułu")
         details = {**obj, **audio}
         for field, schema_field in (("authors", "author"), ("narrators", "readBy"), ("publisher", "publisher")):
             extracted = names(details.get(schema_field))

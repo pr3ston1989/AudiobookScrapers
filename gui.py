@@ -17,7 +17,8 @@ ROOT = Path(__file__).resolve().parent
 SERVICES = {"audioteka": "Audioteka", "storytel": "Storytel", "empik": "Empik", "lubimyczytac": "LubimyCzytać"}
 from sources import SOURCES, TAG_SITES
 SERVICES.update({site: source["label"] for site, source in SOURCES.items() if source["active"]})
-MODES = {"Aktualizuj wszystkie bazy": [], "Szybkie sprawdzenie nowości": ["--fast"],
+FULL_MODE = "Pełne uzupełnienie i weryfikacja danych"
+MODES = {FULL_MODE: ["backfill", "--complete"], "Aktualizuj wszystkie bazy": [], "Szybkie sprawdzenie nowości": ["--fast"],
          "Wznów kolejkę": ["--resume"], "Przegląd katalogów i uzupełnianie braków": ["--full-catalog"],
          "Sprawdź parsowanie (bez zapisu)": ["diagnose", "--samples", "3"], "Statystyki baz": ["stats"],
          "Audyt brakujących metadanych": ["audit"]}
@@ -86,6 +87,10 @@ class ScraperGUI:
         ttk.Label(options, text="Serwisy jednocześnie").grid(row=4, column=2, sticky="w", pady=(8, 0))
         ttk.Combobox(options, textvariable=self.workers, values=list(range(1, len(SERVICES) + 1)), state="readonly", width=5).grid(row=4, column=3, sticky="w", padx=8, pady=(8, 0))
         ttk.Checkbutton(options, text="Zrób kopię baz przed uruchomieniem (opcjonalnie)", variable=self.backup).grid(row=5, column=0, columnspan=4, sticky='w', pady=(8, 0))
+        self.mode_description = tk.StringVar()
+        ttk.Label(options, textvariable=self.mode_description, wraplength=1000).grid(row=6, column=0, columnspan=4, sticky="w", pady=(8, 0))
+        self.mode.trace_add("write", lambda *_: self.describe_mode())
+        self.describe_mode()
         buttons = ttk.Frame(frame)
         buttons.pack(fill="x", pady=(0, 12))
         self.run_button = ttk.Button(buttons, text="Uruchom", command=self.start)
@@ -111,6 +116,16 @@ class ScraperGUI:
         self.root.protocol("WM_DELETE_WINDOW", self.close)
         self.root.after(100, self.poll)
         self.load_counts()
+
+    def describe_mode(self):
+        """Explain the scope and rejection policy without exposing internal command arguments."""
+        self.mode_description.set(
+            "Sprawdza istniejące rekordy wybranych serwisów, uzupełnia braki, kategorie, tagi i rekomendacje. "
+            "Limit 0 obejmuje całą bazę. Niepotwierdzone lub sprzeczne dane nie zostaną zapisane; "
+            "wynik pokaże odrzucone rekordy i niepełne odczyty."
+            if self.mode.get() == FULL_MODE else
+            "Zakres zależy od wybranego trybu. Postęp jest zapisywany i można go wznowić."
+        )
 
     def load_counts(self):
         """Read every book count off the UI thread without opening the scraper."""
@@ -284,7 +299,11 @@ class ScraperGUI:
                 if event.get("errors"):
                     values[4] += f"; błędy: {len(event['errors'])} (raport)"
             elif event.get("errors"):
-                if event.get('stopped_on_access_limit'):
+                if event.get("identity_rejections"):
+                    values[4] = f"Nie zapisano niepotwierdzonych danych: {len(event['identity_rejections'])}; sprawdź raport"
+                    if event.get("stopped_on_identity_conflicts"):
+                        values[4] += "; wstrzymano serwis"
+                elif event.get('stopped_on_access_limit'):
                     values[4] = 'Serwis odmawia dostępu (HTTP 403); kolejka zapisana'
                 elif event.get("stopped_on_rate_limit"):
                     values[4] = "Serwis ogranicza żądania (HTTP 429); kolejka zapisana"
@@ -294,6 +313,10 @@ class ScraperGUI:
                     values[4] = f"Przebieg zakończony; błędy: {len(event['errors'])} (szczegóły w raporcie)"
                 else:
                     values[4] = f"Błąd: {event['errors'][-1]}"
+            elif event.get("unresolved_signals"):
+                values[4] = f"Niepełne rekomendacje: {len(event['unresolved_signals'])}; sprawdź raport"
+            elif event.get("complete_mode") and event.get("metadata_gaps", {}).get("incomplete_books"):
+                values[4] = f"Sprawdzono {event['attempted']}; nadal braki danych: {event['metadata_gaps']['incomplete_books']}"
             elif "attempted" in event:
                 values[4] = (f"Sprawdzono {event['attempted']}; pobrano {event['downloaded']}; "
                              f"z danymi: {event['signals']}; z tagami: {event['tagged']}")

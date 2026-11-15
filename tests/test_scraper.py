@@ -188,7 +188,9 @@ class ParserTests(unittest.TestCase):
     def test_uuid_redirect_is_allowed_but_foreign_or_unrelated_redirects_are_rejected(self):
         source = "https://audioteka.com/pl/audiobook/7a8a297f-e998-4f6d-8521-e9deb9992b68/"
         target = "https://audioteka.com/pl/audiobook/roj-dronow-odcinek-1/"
-        html = b'<h1 class="product-top_title">Test</h1>'
+        html = (f'<link rel="canonical" href="{target}"><h1 class="product-top_title">Test</h1>'
+                '<script type="application/json">' + json.dumps({"slug": "roj-dronow-odcinek-1",
+                 "reference_id": "7a8a297f-e998-4f6d-8521-e9deb9992b68", "tracks_duration_in_ms": 60000}) + '</script>').encode()
         client = SimpleNamespace(get=lambda *args, **kwargs: Response(target, html))
         self.assertEqual(fetch_book(client, "audioteka", source)["url"], target)
         for requested, final in ((source, "https://evil.test/pl/audiobook/other/"),
@@ -269,7 +271,7 @@ class DatabaseTests(unittest.TestCase):
         def get(url):
             if url not in responses:
                 raise HTTPError(url, 429)
-            return Response(url, responses[url])
+            return Response(url, f'<link rel="canonical" href="{url}">'.encode() + responses[url])
 
         with patch("main.Client") as client:
             client.return_value.get.side_effect = get
@@ -304,12 +306,12 @@ class DatabaseTests(unittest.TestCase):
         tagged = empty + '<span class="ProductTags-module__productTag--new ProductTags-module__hidden--new">Nowy tag</span>'.encode()
         with patch("main.Client") as client:
             get = client.return_value.get
-            get.return_value = Response(urls[1], empty)
+            get.return_value = Response(urls[1], f'<link rel="canonical" href="{urls[1]}">'.encode() + empty)
             report = run_site("empik", settings, self.backfill_args(), {})
             self.assertEqual(report["tagged"], 1)
             get.assert_called_once_with(urls[1], render=True)
             get.reset_mock()
-            get.return_value = Response(urls[0], tagged)
+            get.return_value = Response(urls[0], f'<link rel="canonical" href="{urls[0]}">'.encode() + tagged)
             with patch("recommendations.ArchivedSignals.empty_tag_keys", return_value={"1", "2"}):
                 first = run_site("empik", settings, self.backfill_args(recheck=True, limit=1), {})
             self.assertEqual(first["downloaded"], 1)
@@ -319,7 +321,7 @@ class DatabaseTests(unittest.TestCase):
             failed = run_site("empik", settings, self.backfill_args(recheck=True), {})
             self.assertTrue(failed["stopped_on_rate_limit"])
             get.side_effect = None
-            get.return_value = Response(urls[1], empty)
+            get.return_value = Response(urls[1], f'<link rel="canonical" href="{urls[1]}">'.encode() + empty)
             resumed = run_site("empik", settings, self.backfill_args(recheck=True), {})
             self.assertEqual(resumed["downloaded"], 1)
             self.assertEqual(resumed["without_tags"], 1)
@@ -415,7 +417,7 @@ class DatabaseTests(unittest.TestCase):
         db.save({"url": url, "title": "Zapisany tytuł"})
         original = db.path.read_bytes()
         settings = self.backfill_settings(db)
-        cards = """<section data-card-list-section="true"><h2>Książki podobne do Test</h2>
+        cards = """<section data-card-list-section="true"><h2>Książki podobne do The Wealth Gap Is a Knowledge Gap</h2>
             <ol><li><a href="/pl/books/podobna-100">Pierwsza</a></li>
             <li><a href="/pl/books/alias-100">Duplikat</a></li>
             <li><a href="/pl/books/druga-200">Druga</a></li>
@@ -724,6 +726,8 @@ class DatabaseTests(unittest.TestCase):
                 args = SimpleNamespace(command="update", url=None, resume=True, full_catalog=False,
                                        no_backup=True, refresh_limit=0, limit=0, no_covers=True)
                 data["url"] = target
+                data["source_identity"] = {"site": "audioteka", "product_key": identity("audioteka", target),
+                                           "requested_key": identity("audioteka", alias), "evidence": ["verified_alias"]}
                 with patch("main.fetch_book", return_value=data):
                     report = run_site("audioteka", settings, args, {})
                 self.assertEqual(report["inserted"], 0)

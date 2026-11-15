@@ -85,7 +85,7 @@ def load_settings(path):
     return settings
 
 
-def fetch_book(client, site, url, *, include_reviews=True):
+def fetch_book(client, site, url, *, include_reviews=True, all_recommendations=False):
     requested = url
     if site == "wolnelektury":
         requested = BASES[site] + "/api/books/" + identity(site, url) + "/?format=json"
@@ -95,9 +95,11 @@ def fetch_book(client, site, url, *, include_reviews=True):
         requested_id = identity(site, url)
         if requested_id != identity(site, response.url) and requested_id not in data.get("source_ids", []):
             raise BookValidationError(f"Przekierowanie poza żądany audiobook: {url}")
+        from product_validation import validate_download
+        validate_download(site, response.text, response.url, url, data)
         if site == 'bookbeat':
             from dynamic_metadata import bookbeat_related
-            bookbeat_related(client, data)
+            bookbeat_related(client, data, all_pages=True) if all_recommendations else bookbeat_related(client, data)
         if site == 'bookbeat' and include_reviews:
             from dynamic_metadata import bookbeat_reviews
             bookbeat_reviews(client, data)
@@ -107,7 +109,8 @@ def fetch_book(client, site, url, *, include_reviews=True):
     if identity(site, response.url) != identity(site, url) and not (site == "audioteka" and audioteka_product_redirect(url, response.url)):
         raise ValueError(f"Przekierowanie poza żądaną książkę: {response.url}")
     data = parse(site, response.text, response.url)
-    return data
+    from product_validation import validate_download
+    return validate_download(site, response.text, response.url, url, data)
 
 
 def run_site(site, settings, args, state):
@@ -382,6 +385,7 @@ def run_site(site, settings, args, state):
                         report["stopped_on_rate_limit"] = True
                         consecutive_errors = 5
             except BookValidationError as exc:
+                report.setdefault("identity_rejections", []).append({"url": item["url"], "reason": str(exc)})
                 db.mark(item["id"], "error", failed=True)
                 report["errors"].append(f"{item['url']}: {exc}")
                 if ledger:
@@ -526,6 +530,7 @@ def main():
     backups.add_argument("--no-backup", action="store_true")
     parser.add_argument("--no-covers", action="store_true")
     signals = parser.add_mutually_exclusive_group()
+    signals.add_argument("--complete", action="store_true", help="Zweryfikuj wszystkie istniejące rekordy i uzupełnij metadane, kategorie, tagi oraz rekomendacje")
     signals.add_argument("--tags-only", action="store_true", help="W trybie backfill uzupełniaj tylko tagi LubimyCzytać, Storytela, Empiku i Woblinka")
     signals.add_argument("--recommendations", action="store_true", help="W trybie backfill zbieraj dane do rekomendacji")
     parser.add_argument("--local-only", action="store_true", help="Eksportuj dane do rekomendacji z lokalnych baz i zapisanych metadanych")
@@ -533,6 +538,10 @@ def main():
     parser.add_argument("--sync-categories", action="store_true", help="W trybie rekomendacji zapisz sprawdzone kategorie także do baz serwisów")
     parser.add_argument("--interval-hours", type=float, help="Powtarzaj pełny cykl co N godzin")
     args = parser.parse_args()
+    if args.complete:
+        if args.command != "backfill" or args.local_only:
+            parser.error("--complete wymaga backfill z pobieraniem kart")
+        args.recommendations = args.recheck = args.sync_categories = True
     if args.catalog_page_budget is not None and args.catalog_page_budget <= 0:
         parser.error("--catalog-page-budget musi być większe od zera")
     if any(value is not None and value < 0 for value in (args.lc_id_start, args.lc_id_end, args.lc_id_batch)):

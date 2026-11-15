@@ -58,34 +58,13 @@ def _split_ga_list(value: Optional[str]) -> List[str]:
     return [part.strip() for part in value.split(",") if part.strip()]
 
 
-def _extract_jsonld_authors(soup) -> List[str]:
-    """Extract book authors from top-level JSON-LD Book objects."""
-    names: List[str] = []
-    for tag in soup.find_all("script", attrs={"type": "application/ld+json"}):
-        raw = tag.string or tag.get_text() or ""
-        if '"Book"' not in raw:
-            continue
-        try:
-            data = json.loads(raw)
-        except (ValueError, TypeError):
-            continue
-        candidates = data if isinstance(data, list) else [data]
-        for obj in candidates:
-            if not isinstance(obj, dict) or obj.get("@type") != "Book":
-                continue
-            author = obj.get("author")
-            items = author if isinstance(author, list) else [author]
-            for a in items:
-                if isinstance(a, dict) and a.get("name"):
-                    names.append(a["name"].strip())
-                elif isinstance(a, str) and a.strip():
-                    names.append(a.strip())
-            if names:
-                return names
-    return names
+def _extract_jsonld_authors(soup, url) -> List[str]:
+    """Read authors only from the schema object belonging to the requested book."""
+    from parse_books import structured_product, names
+    return names(structured_product(soup, "lubimyczytac", url).get("author")) if url else []
 
 
-def extract_authors(soup) -> List[Dict[str, Any]]:
+def extract_authors(soup, url=None) -> List[Dict[str, Any]]:
     """Extract authors only from book metadata and its heading, never recommendations."""
     authors: List[Dict[str, Any]] = []
     seen = set()
@@ -96,13 +75,13 @@ def extract_authors(soup) -> List[Dict[str, Any]]:
             authors.append({"name": name})
 
     # 1) JSON-LD - najpewniejsze, niezalezne od ukladu HTML.
-    for name in _extract_jsonld_authors(soup):
+    for name in _extract_jsonld_authors(soup, url):
         _add(name)
     if authors:
         return authors
 
     # 2) atrybut data-ga-book-authors.
-    ga = soup.select_one("[data-ga-book-authors]")
+    ga = soup.select_one("#container-book[data-ga-book-authors]")
     if ga is not None:
         for name in _split_ga_list(ga.get("data-ga-book-authors")):
             _add(name)
@@ -110,9 +89,10 @@ def extract_authors(soup) -> List[Dict[str, Any]]:
             return authors
 
     # 3) Fallback - zakres ograniczony do naglowka ksiazki.
+    heading_scope = soup.select_one(".book__desc")
     scope = None
     for selector in AUTHOR_CONTAINER_SELECTORS:
-        scope = soup.select_one(selector)
+        scope = heading_scope.select_one(selector) if heading_scope else None
         if scope is not None:
             break
 
@@ -120,9 +100,9 @@ def extract_authors(soup) -> List[Dict[str, Any]]:
         candidate_links = scope.select("a[href*='/autor/']")
     else:
         # 4) Ostatecznosc - tylko jawnie oznaczone linki, nigdy cala strona.
-        candidate_links = soup.select(
+        candidate_links = heading_scope.select(
             "span.author a[href*='/autor/'], a.link-name[href*='/autor/']"
-        )
+        ) if heading_scope else []
 
     for a in candidate_links:
         _add(a.get_text(strip=True))
@@ -182,7 +162,7 @@ def extract_book_info(html: str, url: str) -> Optional[Dict[str, Any]]:
         data['avg_rating'] = clean_float(rating.get_text())
 
     # Autorzy - WYLACZNIE z naglowka ksiazki (patrz extract_authors).
-    data['authors'] = extract_authors(soup)
+    data['authors'] = extract_authors(soup, url)
 
     # Szczegoly ksiazki (tabela dt/dd)
     details_div = soup.select_one("#book-details")
@@ -227,13 +207,13 @@ def extract_book_info(html: str, url: str) -> Optional[Dict[str, Any]]:
                         data['series'] = {"name": raw_series}
 
     # Wydawnictwo - najpierw atrybut data-ga-book-publishers (wiarygodny),
-    # potem fallback do pierwszego linku /wydawnictwo/.
-    ga_pub = soup.select_one("[data-ga-book-publishers]")
+    # potem wyłącznie link w szczegółach właściwej książki.
+    ga_pub = soup.select_one("#container-book[data-ga-book-publishers]")
     pub_names = _split_ga_list(ga_pub.get("data-ga-book-publishers")) if ga_pub else []
     if pub_names:
         data['publisher'] = {"name": pub_names[0]}
     else:
-        pub = soup.select_one("a[href*='/wydawnictwo/']")
+        pub = soup.select_one("#book-details a[href*='/wydawnictwo/']")
         if pub:
             data['publisher'] = {"name": pub.get_text(strip=True)}
 

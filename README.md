@@ -243,6 +243,26 @@ niepełnych rekordów na serwis (`repair_limit`), z trwałym kursorem.
 
 ### Uzupełnianie istniejących rekordów
 
+W GUI domyślnym trybem jest **Pełne uzupełnienie i weryfikacja danych**.
+Zaznacz serwisy, pozostaw limit rekordów `0` i kliknij **Uruchom**.
+Tryb przechodzi po istniejących rekordach, uzupełnia brakujące metadane
+oraz sprawdza od nowa kategorie, tagi i rekomendacje. BookBeat odczytuje
+w tym trybie wszystkie publiczne partie rekomendacji z walidacją każdej strony.
+Nie przepisuje istniejących tytułów i autorów. Pracuje na świeżych odczytach,
+bez dopisywania starych sygnałów z archiwum. Pozostałe tryby pozostają dostępne.
+
+Każdy pobrany produkt musi potwierdzić swoje ID w treści strony/API.
+Nagłówek i metadane muszą być zgodne; aliasy wymagają jawnego potwierdzenia.
+Przy zapisie do istniejącego rekordu ID jest sprawdzane ponownie.
+Rozbieżność pobranego tytułu z tytułem w bazie również wymaga sprawdzenia;
+nie jest automatycznie uznawana za zmianę nazwy książki.
+Niezgodność oznacza brak zapisu i pozycję **Nie zapisano niepotwierdzonych danych**
+w GUI. Pięć kolejnych niezgodności w pełnej weryfikacji wstrzymuje dany serwis.
+Braki oraz błędy opcjonalnych rekomendacji nie są przedstawiane jako pełny odczyt.
+To kontrola spójności danych dostawcy, nie gwarancja poprawności samej treści
+opublikowanej przez zewnętrzny serwis ani odporności na każdą przyszłą zmianę strony.
+
+
 **Uzupełnij wszystkie braki w bazach** przechodzi po istniejących książkach
 z brakami wykrywanymi w audycie oraz sprawdza tagi LubimyCzytać, Storytela, Empiku i Woblinka.
 Przy pobraniu karty uzupełnia także puste pola opcjonalne, które mają wartość
@@ -332,7 +352,9 @@ oznacza wyraźną informację źródła o formatach bez audio. Relacje mogą pro
 do pozycji spoza lokalnego katalogu, w tym ebooków. Nokturn powinien uwzględnić
 dostępność audio i własne dopasowanie książek przed użyciem ich do rekomendacji.
 
-BookBeat pobiera pierwszą publiczną partię do 25 pozycji. Dalsza paginacja
+Zwykła aktualizacja BookBeat pobiera pierwszą publiczną partię do 25 pozycji.
+Domyślny pełny tryb GUI pobiera kolejne partie aż do końca listy;
+`scope = 'all_api_pages'` i `complete = 1` potwierdzają zakończoną paginację. Dalsza paginacja
 jest zapisana w `recommendation_coverage.next_url`; `complete = 0` oznacza,
 że istnieje następna partia. Dla sekcji HTML `scope = 'page_section'` i
 `complete = NULL` oznaczają wyłącznie odczyt pozycji obecnych w dokumencie.

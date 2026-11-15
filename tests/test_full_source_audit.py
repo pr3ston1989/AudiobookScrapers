@@ -62,7 +62,8 @@ class HiddenMetadataTests(unittest.TestCase):
             [{"@type":"Product","name":"Test","genre":["Thriller","Sensacja"]},
             {"@type":"BreadcrumbList","itemListElement":[
             {"name":"Audiobooki","item":"https://woblink.com/katalog/audiobooki"},
-            {"item":{"@id":"https://woblink.com/katalog/audiobooki/kryminal","name":"Kryminał"}}]}]
+            {"item":{"@id":"https://woblink.com/katalog/audiobooki/kryminal","name":"Kryminał"}},
+            {"item":{"@id":"https://woblink.com/audiobook/test-123","name":"Test"}}]}]
             </script>"""
         data = parse("woblink", html, url)
         self.assertEqual(data["categories"], ["Thriller", "Sensacja"])
