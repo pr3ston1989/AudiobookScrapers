@@ -225,6 +225,12 @@ class GuiTests(unittest.TestCase):
             gui.event({"event": "summary", "site": "audioteka", "after": {"books": 75600},
                        "errors": ["HTTP 503"], "stopped_on_errors": True})
             self.assertIn("Zatrzymano po 5", gui.table.item("audioteka", "values")[4])
+            gui.mode.set("Sprawdź ponownie wszystkie tagi Empiku")
+            tag_command = gui.command()
+            self.assertIn("--tags-only", tag_command)
+            self.assertIn("--recheck", tag_command)
+            selected = tag_command[tag_command.index("--services")+1:tag_command.index("--limit")]
+            self.assertEqual(selected, ["empik"])
             gui.mode.set("Napraw miniaturki Audioteki")
             repair_command = gui.command()
             self.assertIn("repair-covers", repair_command)

@@ -56,6 +56,41 @@ class HiddenMetadataTests(unittest.TestCase):
         self.assertIn('Literatura piękna', data['categories'])
         self.assertTrue(data['source_details']['czas słuchania'])
 
+    def test_woblink_accepts_nested_breadcrumb_items_without_losing_genres(self):
+        url = "https://woblink.com/audiobook/test-123"
+        html = """<h1>Test</h1><script type="application/ld+json">
+            [{"@type":"Product","name":"Test","genre":["Thriller","Sensacja"]},
+            {"@type":"BreadcrumbList","itemListElement":[
+            {"name":"Audiobooki","item":"https://woblink.com/katalog/audiobooki"},
+            {"item":{"@id":"https://woblink.com/katalog/audiobooki/kryminal","name":"Kryminał"}}]}]
+            </script>"""
+        data = parse("woblink", html, url)
+        self.assertEqual(data["categories"], ["Thriller", "Sensacja"])
+        self.assertEqual(data["category"], "Thriller")
+        self.assertEqual(data["source_metadata"]["category_breadcrumbs"], ["Kryminał"])
+
+    def test_original_parsers_keep_multiple_category_links(self):
+        for site, url, html in (
+            ("storytel", "https://www.storytel.com/pl/books/test-123",
+             '<h1 class="x_styledTitle">Test</h1><dl><dt>Kategoria</dt><dd><a>Thriller</a><a>Sensacja</a></dd></dl>'),
+            ("audioteka", "https://audioteka.com/pl/audiobook/test/",
+             '<h1 class="product-top_title">Test</h1><dl id="audiobook-more-info"><dt>Kategoria</dt><dd><a>Thriller</a><a>Sensacja</a></dd></dl>'),
+        ):
+            with self.subTest(site=site):
+                data = parse(site, html, url)
+                self.assertEqual(data["categories"], ["Thriller", "Sensacja"])
+                self.assertEqual(data["category"], "Thriller")
+
+    def test_woblink_collects_only_product_tags_including_promotional_labels(self):
+        from parse_books import parse_tags
+        manifest = json.loads((FIXTURES / 'new_sources/manifest.json').read_text(encoding='utf-8'))
+        stem, url, _ = manifest['woblink'][0]
+        html = (FIXTURES / f'new_sources/{stem}.html').read_text(encoding='utf-8')
+        html += '<a href="/tag/menu-only">Obcy tag z menu</a>'
+        expected = ["Wirtualne targi audiobookow", "Audiobooki do 19,99", "Plebiscyt Lubimy Czytać 2025"]
+        self.assertEqual(parse("woblink", html, url)["tags"], expected)
+        self.assertEqual(parse_tags("woblink", html, url), expected)
+
     def test_public_review_batch_keeps_identity_and_remaining_pages(self):
         data = {'url': 'https://www.bookbeat.com/pl/book/test-123', 'reviews': []}
         value = {'_embedded': {'reviews': [{'id': 'abc', 'bookid': 123, 'reviewername': 'Reader', 'reviewtext': 'Full review', 'bookrating': 4}]},

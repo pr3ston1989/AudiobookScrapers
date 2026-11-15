@@ -47,7 +47,11 @@ class EmpikParser:
 
         # 3. Kategorie
         cat_els = self.soup.select('a[data-ta="breadcrumb-category"]')
-        data['category'] = cat_els[-1].text.strip() if cat_els else None
+        data['categories'] = list(dict.fromkeys(
+            label for el in cat_els if (label := el.get_text(" ", strip=True))
+            and label not in {"Audiobooki", "Audiobooki i Ebooki", "Strona główna", "Empik"}
+        ))
+        data['category'] = data['categories'][-1] if data['categories'] else None
 
         # 4. Ocena
         score_el = self.soup.select_one('span[data-ta="rating-count"]')

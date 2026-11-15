@@ -73,8 +73,8 @@ def parse_audioteka_page(html, url):
                 elif "format" in lab: data["format"] = dd.get_text(strip=True)
                 elif "język" in lab: data["language"] = dd.get_text(strip=True)
                 elif "kategoria" in lab: 
-                    cat_a = dd.find('a')
-                    if cat_a: data["category"] = cat_a.get_text(strip=True)
+                    data["categories"] = list(dict.fromkeys(a.get_text(" ", strip=True) for a in dd.select("a") if a.get_text(strip=True)))
+                    data["category"] = (data["categories"] or [dd.get_text(" ", strip=True)])[0] or None
 
         for c in soup.select('[class*="collections_list"] a'):
             data["collections"].append(c.get_text(strip=True))

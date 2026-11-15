@@ -6,25 +6,35 @@ from pathlib import Path
 
 from parse_books import names
 from urls import canonical, identity
+from recommendation_parsers import normalized_link
 
 
-LABEL_FIELDS = {"tags": "tag", "categories": "category", "epochs": "epoch", "literary_kinds": "literary_kind"}
+LABEL_FIELDS = {"tags": "tag", "categories": "category", "epochs": "epoch", "literary_kinds": "literary_kind", "content_types": "content_type"}
 DETAIL_FIELDS = ("language", "duration_minutes", "avg_rating", "rating_count", "rating_scale",
                  "narration_rating", "narration_rating_count")
 ARCHIVE_FIELDS = (*LABEL_FIELDS, *DETAIL_FIELDS, "category", "series", "volume_number",
-                  "related_urls", "collections", "series_position", "source_metadata")
+                  "related_urls", "related_links", "related_readings_url", "recommendation_coverage", "collections", "series_position", "source_metadata")
 
 
 def recommendations_path(settings):
     return Path(settings.get("recommendations_database") or Path(settings["coverage_database"]).with_name("recommendations.db"))
 
 
-def merge_signals(local, archived):
+def merge_signals(local, archived, *, fresh=False):
     """Combine source labels; prefer explicit series information over inferred collections."""
     data = {**local, **{key: value for key, value in archived.items() if value not in (None, "", [], {})}}
     for field in LABEL_FIELDS:
-        data[field] = list(dict.fromkeys(names(local.get(field)) + names(archived.get(field))))
-    data["categories"] = list(dict.fromkeys(data["categories"] + names(local.get("category")) + names(archived.get("category"))))
+        data[field] = (names(archived[field]) if fresh and field in archived else
+                       list(dict.fromkeys(names(local.get(field)) + names(archived.get(field)))))
+    if fresh and ("categories" in archived or "category" in archived):
+        data["category"] = archived.get("category")
+        data["categories"] = names(names(archived.get("categories")) + names(archived.get("category")))
+    else:
+        data["categories"] = names(data["categories"] + names(local.get("category")) + names(archived.get("category")))
+    if fresh:
+        for field in ("related_links", "related_urls"):
+            if field in archived:
+                data[field] = archived[field]
     if not data.get("series") and data.get("series_position"):
         data["series"] = (names(data.get("collections")) or [None])[0]
     return data
@@ -39,7 +49,7 @@ class Recommendations:
             tables = {name for (name,) in self.conn.execute(
                 "SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%'"
             )}
-            if tables - {"titles", "labels", "similar_titles", "checkpoints", "title_details"}:
+            if tables - {"titles", "labels", "similar_titles", "checkpoints", "title_details", "related_links", "recommendation_coverage"}:
                 raise sqlite3.DatabaseError(f"Plik ma inny schemat niż baza rekomendacji: {path}")
             self.conn.execute("PRAGMA foreign_keys=ON")
             self.conn.executescript("""
@@ -62,6 +72,19 @@ class Recommendations:
                     PRIMARY KEY(site, product_key, similar_key),
                     FOREIGN KEY(site, product_key) REFERENCES titles(site, product_key) ON DELETE CASCADE
                 );
+                CREATE TABLE IF NOT EXISTS related_links (
+                    site TEXT NOT NULL, product_key TEXT NOT NULL, target_url TEXT NOT NULL,
+                    target_key TEXT, relation_kind TEXT NOT NULL, position INTEGER NOT NULL,
+                    title TEXT, source_heading TEXT, audio_available INTEGER,
+                    PRIMARY KEY(site, product_key, target_url),
+                    FOREIGN KEY(site, product_key) REFERENCES titles(site, product_key) ON DELETE CASCADE
+                );
+                CREATE TABLE IF NOT EXISTS recommendation_coverage (
+                    site TEXT NOT NULL, product_key TEXT NOT NULL, source_url TEXT,
+                    scope TEXT NOT NULL, complete INTEGER, collected INTEGER NOT NULL, next_url TEXT,
+                    PRIMARY KEY(site, product_key),
+                    FOREIGN KEY(site, product_key) REFERENCES titles(site, product_key) ON DELETE CASCADE
+                );
                 CREATE TABLE IF NOT EXISTS title_details (
                     site TEXT NOT NULL, product_key TEXT NOT NULL,
                     language TEXT, duration_minutes INTEGER, avg_rating REAL,
@@ -78,11 +101,12 @@ class Recommendations:
             self.conn.close()
             raise
 
-    def save(self, site, data, *, tags_checked=False, recommendations_checked=False, only_missing=False):
+    def save(self, site, data, *, tags_checked=False, recommendations_checked=False, only_missing=False, replace_labels=False):
         url = canonical(site, data["url"])
         key = identity(site, url) if url else None
         if not key:
             raise ValueError("Brak identyfikatora książki dla danych rekomendacji")
+        prior = self.conn.execute("SELECT tags_checked FROM titles WHERE site=? AND product_key=?", (site, key)).fetchone()
         series = (names(data.get("series")) or [None])[0]
         volume = data.get("volume_number")
         volume = (str(volume).strip() or None) if volume is not None else None
@@ -119,7 +143,14 @@ class Recommendations:
             if target and target != key:
                 related.setdefault(target, canonical(site, item))
 
-        has_signals = bool(series or volume or details or related or any(labels.values()))
+        links = {}
+        for raw in data.get("related_links") or []:
+            item = normalized_link(site, raw)
+            if item and item["target_key"] != key:
+                links.setdefault(item["target_key"] or item["url"], item)
+        if "related_links" in data:
+            related = {item["target_key"]: item["url"] for item in links.values() if item["target_key"]}
+        has_signals = bool(series or volume or details or related or links or any(labels.values()))
         if not (has_signals or tags_checked or recommendations_checked):
             return False
 
@@ -137,21 +168,48 @@ class Recommendations:
                 recommendations_checked=MAX(titles.recommendations_checked,excluded.recommendations_checked)""",
             (site, key, url, series, volume,
              int(tags_checked), int(recommendations_checked)))
-        self.conn.executemany("INSERT OR IGNORE INTO labels VALUES (?,?,?,?)",
-                              ((site, key, kind, label) for kind, values in labels.items() for label in values))
+        for kind, values in labels.items():
+            if only_missing and ((kind == "tag" and prior and prior[0]) or self.conn.execute(
+                "SELECT 1 FROM labels WHERE site=? AND product_key=? AND kind=? LIMIT 1", (site, key, kind)
+            ).fetchone()):
+                continue
+            explicit_tags = kind == "tag" and "tags" in data
+            replace_kind = replace_labels is True or (replace_labels and kind in replace_labels)
+            if replace_kind and not only_missing and (values or explicit_tags):
+                self.conn.execute("DELETE FROM labels WHERE site=? AND product_key=? AND kind=?", (site, key, kind))
+            self.conn.executemany("INSERT OR IGNORE INTO labels VALUES (?,?,?,?)",
+                                  ((site, key, kind, label) for label in values))
         if details:
             columns = ",".join(details)
             slots = ",".join("?" for _ in details)
             assignments = ",".join(f"{field}={coalesce('title_details', field)}" for field in details)
             self.conn.execute(f"""INSERT INTO title_details(site,product_key,{columns}) VALUES (?,?,{slots})
                 ON CONFLICT(site,product_key) DO UPDATE SET {assignments}""", (site, key, *details.values()))
-        if related and not (only_missing and self.conn.execute(
+        if (related or "related_links" in data) and not (only_missing and self.conn.execute(
             "SELECT 1 FROM similar_titles WHERE site=? AND product_key=? LIMIT 1", (site, key)
         ).fetchone()):
             self.conn.execute("DELETE FROM similar_titles WHERE site=? AND product_key=?", (site, key))
             self.conn.executemany("INSERT INTO similar_titles VALUES (?,?,?,?,?)",
                                   ((site, key, target, target_url, position)
                                    for position, (target, target_url) in enumerate(related.items(), 1)))
+        coverage = data.get("recommendation_coverage")
+        if isinstance(coverage, dict) and not coverage.get("error") and "scope" in coverage:
+            insert = "INSERT OR IGNORE" if only_missing else "INSERT OR REPLACE"
+            complete = coverage.get("complete")
+            self.conn.execute(f"{insert} INTO recommendation_coverage VALUES (?,?,?,?,?,?,?)",
+                              (site, key, coverage.get("source_url"), coverage["scope"],
+                               int(complete) if isinstance(complete, bool) else None,
+                               int(coverage.get("collected", 0)), coverage.get("next_url")))
+        if "related_links" in data and not (only_missing and self.conn.execute(
+            "SELECT 1 FROM related_links WHERE site=? AND product_key=? LIMIT 1", (site, key)
+        ).fetchone()):
+            self.conn.execute("DELETE FROM related_links WHERE site=? AND product_key=?", (site, key))
+            self.conn.executemany("""INSERT INTO related_links
+                (site,product_key,target_url,target_key,relation_kind,position,title,source_heading,audio_available)
+                VALUES (?,?,?,?,?,?,?,?,?)""",
+                ((site, key, item["url"], item["target_key"], item["relation_kind"], position,
+                  item["title"], item["source_heading"], item["audio_available"])
+                 for position, item in enumerate(links.values(), 1)))
         return has_signals
 
     def checked_keys(self, site, *, tags_only):

@@ -14,7 +14,6 @@ from sqlalchemy.engine import URL
 
 from urls import canonical, identity
 from events import check_stop
-from sources import TAG_SITES
 from recommendations import DETAIL_FIELDS
 
 log = logging.getLogger(__name__)
@@ -104,6 +103,11 @@ class Database:
         if self.site == 'wolnelektury':
             # API wielu utworów nie publikuje nawet fragmentu opisu.
             checks.pop('description')
+        if "category_id" in self.columns["books"] and "categories" in self.tables:
+            checks["category"] = "NOT EXISTS (SELECT 1 FROM categories c WHERE c.id=b.category_id AND TRIM(c.name)<>'')"
+        elif {"categories", "book_categories"}.issubset(self.tables):
+            checks["category"] = ("NOT EXISTS (SELECT 1 FROM book_categories bc JOIN categories c ON c.id=bc.category_id "
+                                  "WHERE bc.book_id=b.id AND TRIM(c.name)<>'')")
         if "cover_url" in self.columns["books"]:
             checks["cover_url"] = "COALESCE(TRIM(b.cover_url),'')=''"
         else:
@@ -283,7 +287,7 @@ class Database:
             ("categories", "categories", "book_categories", "category_id"),
             ("tags", "tags", "book_tags", "tag_id"),
         ):
-            if field == "tags" and self.site in TAG_SITES:
+            if field == "tags" and self.site in ("lubimyczytac", "storytel"):
                 continue
             if junction not in self.tables or table not in self.tables:
                 continue
@@ -293,6 +297,12 @@ class Database:
             if not names:
                 continue
             params = {"book": book_id}
+            if field == "categories" and not only_missing:
+                existing = {row[0] for row in conn.execute(text(
+                    f'SELECT c.name FROM "{junction}" bc JOIN "{table}" c ON c.id=bc."{foreign}" WHERE bc.book_id=:book'
+                ), params)}
+                if existing != names:
+                    changed |= bool(conn.execute(text(f'DELETE FROM "{junction}" WHERE book_id=:book'), params).rowcount)
             if only_missing and field != "tags" and conn.execute(
                 text(f'SELECT 1 FROM "{junction}" WHERE book_id=:book LIMIT 1'), params
             ).first():
@@ -308,6 +318,27 @@ class Database:
                     self.insert(conn, junction, link)
                     changed = True
         return changed
+
+    def save_categories(self, book_id, data):
+        """Replace verified category fields only; leave unavailable source labels unchanged."""
+        from parse_books import names
+        labels = names(names(data.get("categories")) + names(data.get("category")))
+        if not labels:
+            return False
+        primary = (names(data.get("category")) or labels)[0]
+        with self.engine.begin() as conn:
+            row = conn.execute(text("SELECT id FROM books WHERE id=:book"), {"book": book_id}).first()
+            if not row:
+                return False
+            changed = False
+            if "category_id" in self.columns["books"]:
+                category_id = self.name_id(conn, "categories", primary)
+                changed |= bool(conn.execute(text("""UPDATE books SET category_id=:category
+                    WHERE id=:book AND (category_id IS NULL OR category_id<>:category)"""),
+                    {"category": category_id, "book": book_id}).rowcount)
+            if "book_categories" in self.tables:
+                changed |= self.save_links(conn, book_id, {"categories": labels}, only_missing=False)
+            return changed
 
     def save(self, data, cover=None, *, fill_book_id=None):
         """Upsert a product, or fill gaps in a specific existing book."""

@@ -238,11 +238,10 @@ def extract_book_info(html: str, url: str) -> Optional[Dict[str, Any]]:
             data['publisher'] = {"name": pub.get_text(strip=True)}
 
     # Kategorie
-    for cat in soup.select("a.book__category"):
-        items = [c.strip() for c in cat.get_text(strip=True).split(',')]
-        for c in items:
-            if c and {"name": c} not in data['categories']:
-                data['categories'].append({"name": c})
+    for cat in soup.select(".book__desc a.book__category"):
+        label = cat.get_text(" ", strip=True)
+        if label and {"name": label} not in data['categories']:
+            data['categories'].append({"name": label})
 
     # Okladka
     cover = soup.select_one("a#js-lightboxCover")

@@ -48,6 +48,29 @@ class SourceParserTests(unittest.TestCase):
                     quality = assess(site, data)
                     self.assertEqual(quality["missing_required"], ["duration_minutes"] if site == "nexto" else [])
 
+    def test_category_and_tag_roundtrip_in_every_additional_source_schema(self):
+        from parse_books import names
+        from recommendations import Recommendations
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            with closing(Recommendations(root / "recommendations.db")) as store:
+                for site in SOURCES:
+                    with self.subTest(site=site):
+                        data = parse(site, *sample(site)[:2])
+                        path = root / f"{site}.db"
+                        create_database(site, path)
+                        with closing(Database(site, path)) as db:
+                            db.save(data)
+                            saved = next(iter(db.stored_signals(list(db.known.values())).values()))
+                            self.assertEqual(names(saved.get("category")), names(data.get("category")))
+                            self.assertEqual(set(saved.get("tags", [])), set(data.get("tags", [])))
+                        with store.conn:
+                            store.save(site, data)
+                        labels = set(store.conn.execute("SELECT kind,label FROM labels WHERE site=?", (site,)))
+                        categories = names(names(data.get("categories")) + names(data.get("category")))
+                        self.assertTrue({("category", label) for label in categories}.issubset(labels))
+                        self.assertTrue({("tag", label) for label in data.get("tags", [])}.issubset(labels))
+
     def test_legimi_uses_audio_publisher_cover_and_never_ebook_isbn(self):
         html, url, _ = sample("legimi")
         data = parse("legimi", html, url)

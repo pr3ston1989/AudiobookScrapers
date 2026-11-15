@@ -24,9 +24,11 @@ MODES = {"Aktualizuj wszystkie bazy": [], "Szybkie sprawdzenie nowości": ["--fa
 MODES["Tylko nowości (bez napraw starych rekordów)"] = ["--new-only", "--fast"]
 MODES["Napraw miniaturki Audioteki"] = ["repair-covers"]
 MODES["Uzupełnij wszystkie braki w bazach"] = ["backfill"]
-MODES["Uzupełnij tylko tagi LubimyCzytać i Storytela"] = ["backfill", "--tags-only"]
+MODES["Uzupełnij tylko tagi LubimyCzytać, Storytela, Empiku i Woblinka"] = ["backfill", "--tags-only"]
+MODES["Sprawdź ponownie wszystkie tagi Empiku"] = ["backfill", "--tags-only", "--recheck"]
 MODES["Zbierz dane do rekomendacji"] = ["backfill", "--recommendations"]
 MODES["Sprawdź ponownie dane do rekomendacji"] = ["backfill", "--recommendations", "--recheck"]
+MODES["Sprawdź kategorie i rekomendacje we wszystkich rekordach"] = ["backfill", "--recommendations", "--recheck", "--sync-categories"]
 MODES["Eksportuj dane do rekomendacji bez pobierania"] = ["backfill", "--recommendations", "--local-only"]
 
 
@@ -135,7 +137,7 @@ class ScraperGUI:
     def command(self):
         """Build an argument list without shell interpolation."""
         services = [site for site, selected in self.selected.items() if selected.get()]
-        if not services and not self.url.get().strip() and self.mode.get() != "Napraw miniaturki Audioteki":
+        if not services and not self.url.get().strip() and self.mode.get() not in ("Napraw miniaturki Audioteki", "Sprawdź ponownie wszystkie tagi Empiku"):
             raise ValueError("Wybierz co najmniej jeden serwis.")
         limit, refresh = int(self.limit.get()), int(self.refresh.get())
         interval = float(self.interval.get().replace(",", "."))
@@ -149,10 +151,14 @@ class ScraperGUI:
             services = ["audioteka"]
             if self.url.get().strip():
                 raise ValueError("Usuń adres pojedynczej książki przed naprawą okładek.")
+        if self.mode.get() == "Sprawdź ponownie wszystkie tagi Empiku":
+            services = ["empik"]
+            if self.url.get().strip():
+                raise ValueError("Usuń adres pojedynczej książki przed sprawdzeniem wszystkich tagów Empiku.")
         if "--tags-only" in mode:
             services = [site for site in services if site in TAG_SITES]
             if not services and not self.url.get().strip():
-                raise ValueError("Wybierz LubimyCzytać lub Storytel.")
+                raise ValueError("Wybierz LubimyCzytać, Storytel, Empik lub Woblink.")
         if interval and any(value in mode for value in ("diagnose", "stats", "audit", "repair-covers", "backfill")):
             raise ValueError("Powtarzanie jest dostępne dla aktualizacji.")
         executable = Path(sys.executable)

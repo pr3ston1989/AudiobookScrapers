@@ -69,7 +69,9 @@ def parse_storytel_page(html, url):
             data["length_str"] = val_text
             data["duration_minutes"] = parse_duration_to_minutes(val_text)
         elif "język" in label: data["language"] = val_text
-        elif "kategoria" in label: data["category"] = val_text
+        elif "kategoria" in label:
+            data["categories"] = list(dict.fromkeys(a.get_text(" ", strip=True) for a in dd.select("a") if a.get_text(strip=True)))
+            data["category"] = (data["categories"] or [val_text])[0]
         elif "serie" in label or "seria" in label:
             series_link = dd.find('a')
             if series_link:

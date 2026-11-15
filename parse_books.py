@@ -12,13 +12,18 @@ from parsers.empik import EmpikParser
 from parsers.lc import extract_book_info, extract_reviews
 from parsers.storytel import parse_storytel_page
 from urls import identity, same_site
+from recommendation_parsers import related_signals
 
 
 TAG_SELECTORS = {
+    "woblink": '#product-card-tags a[href*="/tag/"]',
+    "empik": 'span[class*="productTag"]',
     "lubimyczytac": 'div.tags a.tag[href*="/ksiazki/t/"]',
     "storytel": 'ul[class*="_tagList"] a[href*="/pl/tags/"]',
 }
 BOOK_TITLE_SELECTORS = {
+    "woblink": "h1#book-title",
+    "empik": 'h1[data-ta="title"]',
     "lubimyczytac": "h1.book__title",
     "storytel": 'h1[class*="_styledTitle"]',
 }
@@ -69,8 +74,10 @@ def jsonld(soup):
                 yield from obj.get("@graph", [obj])
 
 
-def apply_structured(data, soup, site):
-    key = identity(site, data["url"])
+def structured_product(soup, site, url):
+    """Prefer a verified product identity and reject ambiguous unbound schema objects."""
+    key = identity(site, url)
+    matched, unbound = [], []
     for obj in jsonld(soup):
         if not isinstance(obj, dict):
             continue
@@ -78,7 +85,42 @@ def apply_structured(data, soup, site):
         types = [types] if isinstance(types, str) else types
         if not set(types) & {"Book", "Audiobook", "Product"}:
             continue
-        if obj.get("url") and identity(site, obj["url"]) != key:
+        target = obj.get("url")
+        if isinstance(target, dict):
+            target = target.get("@id")
+        if not target and isinstance(obj.get("@id"), str):
+            value = obj["@id"]
+            if value.startswith(("http://", "https://", "/", "#")):
+                target = urljoin(url, value)
+            elif site == "bookbeat" and value.isdigit():
+                if value == key:
+                    matched.append(obj)
+                continue
+        if isinstance(target, str):
+            if identity(site, urljoin(url, target)) == key:
+                matched.append(obj)
+        else:
+            unbound.append(obj)
+    if matched:
+        return matched[0]
+    if len(unbound) == 1:
+        heading = soup.select_one("h1")
+        if heading and isinstance(unbound[0].get("name"), str):
+            import unicodedata
+            def title_key(value):
+                value = re.sub(r"\s*[-–—]\s*(?:audiobook|ebook)\s*$", "", value, flags=re.I)
+                return unicodedata.normalize("NFC", " ".join(value.split())).casefold()
+            direct = " ".join(part.strip() for part in heading.find_all(string=True, recursive=False) if part.strip())
+            if title_key(unbound[0]["name"]) in {title_key(direct), title_key(heading.get_text(" ", strip=True))}:
+                return unbound[0]
+    return {}
+
+
+def apply_structured(data, soup, site):
+    for obj in [structured_product(soup, site, data["url"])]:
+        types = obj.get("@type", [])
+        types = [types] if isinstance(types, str) else types
+        if not set(types) & {"Book", "Audiobook", "Product"}:
             continue
         if obj.get("name"):
             data["title"] = obj["name"]
@@ -113,8 +155,12 @@ def apply_structured(data, soup, site):
             data["duration_minutes"] = minutes
             data["length_str"] = details["duration"]
         if site != "lubimyczytac" and (genres := names(details.get("genre"))):
-            data["category"] = genres[0]
-            data["categories"] = genres
+            data["category"] = data.get("category") or genres[0]
+            data["categories"] = names(names(data.get("categories")) + genres)
+        keywords = details.get("keywords")
+        if keywords:
+            labels = keywords.split(",") if isinstance(keywords, str) else keywords
+            data["tags"] = names(names(data.get("tags")) + names(labels))
         rating = details.get("aggregateRating") or {}
         for field, schema_field, convert in (("avg_rating", "ratingValue", float), ("rating_count", "ratingCount", int)):
             if rating.get(schema_field) is not None:
@@ -188,7 +234,7 @@ def validated_book_url(soup, site, url):
 def book_tags(soup, site):
     return list(dict.fromkeys(
         label for link in soup.select(TAG_SELECTORS[site])
-        if (label := " ".join(link.stripped_strings))
+        if (label := " ".join(link.stripped_strings)) and label not in ("...", "…")
     ))
 
 
@@ -200,14 +246,6 @@ def parse_tags(site, html, url):
     if not title or not title.get_text(strip=True):
         raise BookValidationError(f"Brak nagłówka karty książki: {url}")
     return book_tags(soup, site)
-
-
-def storytel_similar_urls(soup):
-    for heading in soup.select("section[data-card-list-section] h2"):
-        if heading.get_text(" ", strip=True).casefold().startswith("książki podobne"):
-            section = heading.find_parent("section", attrs={"data-card-list-section": True})
-            return [link["href"] for link in section.select('ol li a[href*="/pl/books/"]')]
-    return []
 
 
 def parse(site, html, url):
@@ -236,9 +274,8 @@ def parse(site, html, url):
         data["type"] = "audiobook"
     if site in TAG_SELECTORS:
         data["tags"] = book_tags(soup, site)
-    if site == "storytel":
-        data["related_urls"] = storytel_similar_urls(soup)
     apply_structured(data, soup, site)
+    data.update(related_signals(site, soup, url))
     source_details = {}
     for label, value in zip(soup.select('dl dt'), soup.select('dl dd')):
         label_text = label.get_text(' ', strip=True).rstrip(':')

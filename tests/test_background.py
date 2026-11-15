@@ -58,7 +58,8 @@ class BackgroundTests(unittest.TestCase):
     @staticmethod
     def data(url, **extra):
         data = dict(url=url, title="Book", description="Description", authors=["Author"],
-                    cover_url="https://example.test/cover.jpg", duration_minutes=60, **extra)
+                    cover_url="https://example.test/cover.jpg", duration_minutes=60,
+                    category="Fiction", categories=["Fiction"], **extra)
         if "lubimyczytac.pl" in url:
             data["external_id"] = int(identity("lubimyczytac", url))
             data["slug"] = "a"

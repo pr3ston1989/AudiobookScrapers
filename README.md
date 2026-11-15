@@ -244,21 +244,26 @@ niepełnych rekordów na serwis (`repair_limit`), z trwałym kursorem.
 ### Uzupełnianie istniejących rekordów
 
 **Uzupełnij wszystkie braki w bazach** przechodzi po istniejących książkach
-z brakami wykrywanymi w audycie oraz sprawdza tagi LubimyCzytać i Storytela.
+z brakami wykrywanymi w audycie oraz sprawdza tagi LubimyCzytać, Storytela, Empiku i Woblinka.
 Przy pobraniu karty uzupełnia także puste pola opcjonalne, które mają wartość
 w źródle. Nowe tagi trafiają do osobnej bazy rekomendacji.
 
 | Tryb GUI | Argumenty `main.py` | Dane |
 |---|---|---|
-| Uzupełnij tylko tagi LubimyCzytać i Storytela | `backfill --tags-only` | Tagi z zapisanych danych oraz z kart bez wcześniejszego wyniku |
+| Uzupełnij tylko tagi LubimyCzytać, Storytela, Empiku i Woblinka | `backfill --tags-only` | Tagi z zapisanych danych oraz z kart bez wcześniejszego wyniku |
+| Sprawdź ponownie wszystkie tagi Empiku | `backfill --tags-only --services empik --recheck --limit 0` | Wszystkie istniejące rekordy Empiku, również wcześniej sprawdzone lub mające stare tagi |
 | Zbierz dane do rekomendacji | `backfill --recommendations` | Dane z dotąd niesprawdzonych kart |
 | Sprawdź ponownie dane do rekomendacji | `backfill --recommendations --recheck` | Ponowne pobranie kart, także wcześniej sprawdzonych, z własnym punktem wznowienia |
+| Sprawdź kategorie i rekomendacje we wszystkich rekordach | `backfill --recommendations --recheck --sync-categories --limit 0` | Kategorie w bazach serwisów oraz aktualne etykiety i rekomendacje w bazie wspólnej |
 | Eksportuj dane do rekomendacji bez pobierania | `backfill --recommendations --local-only` | Dane zapisane w bazach serwisów i pamięci wcześniejszych odczytów |
 
 ```powershell
 python main.py backfill --recommendations --local-only
 python main.py backfill --recommendations --services storytel bookbeat legimi --limit 1000
 python main.py backfill --tags-only
+python main.py backfill --tags-only --services empik --recheck --limit 0
+python main.py backfill --recommendations --services empik --local-only --limit 0
+python main.py backfill --recommendations --recheck --sync-categories --limit 0
 ```
 
 Tryby zbierania rekomendacji i samych tagów otwierają bazy serwisów tylko do odczytu.
@@ -266,6 +271,25 @@ Limit dotyczy rekordów na serwis. Wartość `0` oznacza przejście do końca.
 Ponowne uruchomienie tego samego trybu kontynuuje od zapisanego ID. Udane
 sprawdzenia kart bez tagów są zapisywane, a nieudane pobrania trafiają do raportu.
 Przez `--url` można ponowić sprawdzenie pojedynczego rekordu.
+`--tags-only --recheck` pobiera ponownie każdą kartę, omijając także stare
+wyniki bez tagów i tagi obecne w archiwum. Ma osobny punkt wznowienia.
+Empik korzysta z Playwrighta: tagi ukryte za „Więcej” są już obecne w DOM
+i wszystkie są odczytywane bez klikania. Eksport offline przenosi istniejące
+tagi z `data\empik.db` do `state\recommendations.db` bez pobierania stron.
+Udany ponowny odczyt zastępuje sprawdzone tagi i kategorie aktualnymi etykietami.
+Eksport offline uzupełnia brakujące rodzaje etykiet, zachowując istniejące wyniki,
+również potwierdzony brak tagów. Błąd pobierania nie usuwa zapisanych danych.
+
+Audyt i uzupełnianie metadanych wykrywają również brak kategorii.
+Bazy serwisów zachowują swój schemat: główna kategoria to `books.category_id`,
+a LubimyCzytać korzysta z `book_categories`. Pełne listy kategorii trafiają
+do `recommendations.db` (`labels.kind = 'category'`). Kategorie i tagi nie są
+pobierane z globalnego menu, stopki ani kart polecanych produktów.
+Woblink: tagi pochodzą wyłącznie z `#product-card-tags`, również promocyjne
+etykiety serwisu. Można je uzupełnić przez `backfill --tags-only --services woblink`.
+Słowa kluczowe z JSON-LD własnego produktu są zapisywane jako tagi;
+epoki i rodzaje literackie Wolnych Lektur oraz oceny opisowe BookBeat mają
+osobne rodzaje etykiet. Brak kategorii w źródle pozostaje brakiem danych.
 
 Wynik jest wspólny dla serwisów i trafia do `state/recommendations.db` obok
 pliku stanu `coverage.db` dla danej konfiguracji. Zwykła aktualizacja również
@@ -281,13 +305,41 @@ karty Storytela). Lokalne `books.id` zależy od pliku źródłowego.
 | `titles` | Adres, nazwa serii, numer tomu i stan sprawdzenia karty |
 | `labels` | Tagi, kategorie, epoki i rodzaje literackie z Wolnych Lektur oraz surowe etykiety BookBeat opisujące książkę i narrację |
 | `title_details` | Język, czas trwania, ocena i liczba ocen oraz skala, jeśli podało ją źródło. BookBeat ma również osobną ocenę narracji i jej licznik |
-| `similar_titles` | Identyfikatory i adresy podobnych książek w kolejności podanej przez serwis |
+| `similar_titles` | Identyfikatory i adresy powiązanych książek, wyłącznie z potwierdzonym ID produktu |
+| `related_links` | Dokładny adres relacji, jej rodzaj, nagłówek źródłowy, tytuł, kolejność i informacja o audio, jeżeli źródło ją podało |
+| `recommendation_coverage` | Zakres odczytu, liczba relacji, adres źródłowy i następna partia; nie udaje kompletności danych z pojedynczej strony |
 
 ```sql
 SELECT label FROM labels
 WHERE site = :site AND product_key = :product_key AND kind = 'tag'
 ORDER BY label
 ```
+
+`--sync-categories` działa z `--recommendations` i zapisuje wyłącznie sprawdzone
+kategorie do istniejących rekordów baz serwisów. Nie przepisuje tytułów,
+autorów ani okładek. Naprawia również istniejące błędne powiązania kategorii LC.
+Tryb ma osobny punkt wznowienia. Bez tego argumentu bazy serwisów pozostają
+w trybach rekomendacji tylko do odczytu. Brak kategorii w źródle nie usuwa
+wcześniej zapisanej kategorii. `--recheck` jest potrzebny do ponownego pobrania
+kart już sprawdzonych przez starszy parser.
+
+Relacje `similar` pochodzą z odpowiednich sekcji Storytela, Empiku, Woblinka
+i Legimi. `read_also` to sekcja czytelników LC, a `also_liked` to publiczna lista
+BookBeat. LC często podaje link do opinii: wtedy `related_links.target_key`
+pozostaje `NULL`; ID książki nie jest zgadywane z adresu okładki ani ID opinii.
+Nieznana dostępność audiobooka ma `audio_available = NULL`; wartość `0`
+oznacza wyraźną informację źródła o formatach bez audio. Relacje mogą prowadzić
+do pozycji spoza lokalnego katalogu, w tym ebooków. Nokturn powinien uwzględnić
+dostępność audio i własne dopasowanie książek przed użyciem ich do rekomendacji.
+
+BookBeat pobiera pierwszą publiczną partię do 25 pozycji. Dalsza paginacja
+jest zapisana w `recommendation_coverage.next_url`; `complete = 0` oznacza,
+że istnieje następna partia. Dla sekcji HTML `scope = 'page_section'` i
+`complete = NULL` oznaczają wyłącznie odczyt pozycji obecnych w dokumencie.
+Menu, bestsellery, ostatnio oglądane i ogólne listy promocyjne nie są
+przypisywane do podobieństwa konkretnej książki.
+
+Wyniki i ograniczenia audytu wielu przykładów: [SOURCE_SIGNALS_AUDIT.md](SOURCE_SIGNALS_AUDIT.md).
 
 Pełny JSON danych produktu pobranego w zwykłej aktualizacji jest zachowywany
 w tabeli `metadata` w `state/<serwis>/coverage.db`. Obejmuje np. ISBN i datę

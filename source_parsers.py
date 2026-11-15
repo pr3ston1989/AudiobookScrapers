@@ -117,7 +117,7 @@ def largest_image(images):
 
 def parse_extra(site, html, url):
     """Parse one identified audiobook and retain source-specific provenance."""
-    from parse_books import BookValidationError, NotAudiobook, apply_structured, duration, jsonld, names
+    from parse_books import BookValidationError, NotAudiobook, apply_structured, book_tags, duration, jsonld, names, structured_product
     if site == "wolnelektury":
         return parse_wolnelektury(json.loads(html), url)
     soup = BeautifulSoup(html, "lxml")
@@ -132,8 +132,7 @@ def parse_extra(site, html, url):
             "narrators": [], "publisher": None, "description": None, "title": None,
             "cover_url": None, "duration_minutes": None, "language": None, "reviews": []}
     source_objects = list(jsonld(soup))
-    own = next((obj for obj in source_objects if isinstance(obj, dict) and obj.get("@type") in ("Book", "Audiobook", "Product")
-                and (not obj.get("url") or identity(site, obj["url"]) == key)), {})
+    own = structured_product(soup, site, url)
     apply_structured(data, soup, site)
     title = soup.select_one("h1")
     if title and not data.get("title"):
@@ -211,6 +210,7 @@ def parse_extra(site, html, url):
         image = soup.select_one('meta[property="og:image"][content]')
         data["cover_url"] = image["content"] if image else None
     elif site == "woblink":
+        data["tags"] = names(names(data.get("tags")) + book_tags(soup, site))
         if own.get("material") != "audiobook" and not urlsplit(url).path.startswith("/audiobook/"):
             raise NotAudiobook("Woblink: produkt nie jest audiobookiem")
         data['source_details'] = {}
@@ -240,10 +240,18 @@ def parse_extra(site, html, url):
                 data['collections'] = linked or [value]
                 data['series'] = (data['collections'] or [None])[0]
         breadcrumbs = next((obj for obj in source_objects if isinstance(obj, dict) and obj.get('@type') == 'BreadcrumbList'), {})
-        data['categories'] = [item['name'] for item in breadcrumbs.get('itemListElement', [])
-                              if item.get('name') and '/katalog/audiobooki/' in item.get('url', '')]
-        if data['categories']:
-            data['category'] = data['categories'][-1]
+        categories = []
+        for item in breadcrumbs.get('itemListElement', []):
+            target = item.get('item') or {}
+            href = item.get('url') or (target.get('@id') if isinstance(target, dict) else target) or ''
+            label = item.get('name') or (target.get('name') if isinstance(target, dict) else None)
+            if label and '/katalog/audiobooki/' in href:
+                categories.append(label)
+        data['source_metadata'] = {'category_breadcrumbs': categories}
+        if not data.get('categories'):
+            data['categories'] = names(categories)
+            if data['categories']:
+                data['category'] = data['categories'][-1]
         data["isbn"] = str(own.get("productID", "")).removeprefix("isbn:") or None
         data["release_date"] = own.get("releaseDate")
         data["rating_scale"] = 10
@@ -281,8 +289,10 @@ def parse_extra(site, html, url):
         narration = product.get('narratingRating') or {}
         data['narration_rating'] = narration.get('ratingValue')
         data['narration_rating_count'] = narration.get('numberOfRatings')
+        data['content_types'] = names(product.get('contenttypetags'))
+        data['related_readings_url'] = product.get('relatedreadingsurl')
         data['source_metadata'] = {field: product.get(field) for field in (
-            'subtitle', 'originalpublishyear', 'editions', 'rating', 'narratingRating', 'swiftWords', 'narratingSwiftWords') if product.get(field) is not None}
+            'contenttypetags', 'relatedreadingsurl', 'subtitle', 'originalpublishyear', 'editions', 'rating', 'narratingRating', 'swiftWords', 'narratingSwiftWords') if product.get(field) is not None}
     elif site == "legimi":
         state = redux(soup)
         response = state.get("bookContainer", {}).get("response") or {}
@@ -332,6 +342,8 @@ def parse_extra(site, html, url):
         match = re.match(r"(\d{4})-", data["release_date"])
         if match:
             data["release_year"] = int(match[1])
+    from recommendation_parsers import related_signals
+    data.update(related_signals(site, soup, url))
     return data
 
 

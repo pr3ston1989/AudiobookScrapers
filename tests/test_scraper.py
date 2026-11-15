@@ -145,6 +145,37 @@ class ParserTests(unittest.TestCase):
         self.assertEqual(data["narrators"], ["Wilkie John"])
         self.assertEqual(data["release_date"], "2026-07-22")
 
+    def test_empik_tags_include_hidden_spans_and_ignore_controls(self):
+        html = """<h1 data-ta="title">Konfrontacja - audiobook</h1>
+            <div class="ProductTags-module__container--new">
+            <span class="ProductTags-module__productTag--new">kryminał akcji</span>
+            <span class="ProductTags-module__productTag--new">kryminał policyjny</span>
+            <span class="ProductTags-module__productTag--new ProductTags-module__hidden--new">kryminał polityczny</span>
+            <span class="ProductTags-module__productTag--new"> kryminał akcji </span>
+            <span class="ProductTags-module__ellipsis--new">...</span><button>Więcej</button></div>"""
+        expected = ["kryminał akcji", "kryminał policyjny", "kryminał polityczny"]
+        self.assertEqual(parse_tags("empik", html, URLS["empik"]), expected)
+        self.assertEqual(parse("empik", html, URLS["empik"])["tags"], expected)
+        self.assertEqual(parse_tags("empik", '<h1 data-ta="title">Test</h1>', URLS["empik"]), [])
+        with self.assertRaises(BookValidationError):
+            parse_tags("empik", '<h1>Strona błędu</h1>', URLS["empik"])
+        with self.assertRaises(BookValidationError):
+            parse_tags("empik", '<link rel="canonical" href="https://www.empik.com/inny,p123,ebooki-i-mp3-p">' + html, URLS["empik"])
+
+    def test_product_keywords_and_categories_keep_only_own_signals(self):
+        html = """<h1 data-ta="title">Test - audiobook</h1>
+            <a data-ta="breadcrumb-category">Audiobooki i Ebooki</a>
+            <a data-ta="breadcrumb-category">Audiobooki</a>
+            <a data-ta="breadcrumb-category">Kryminały</a>
+            <script type="application/ld+json">{"@type":"Product", "url":"https://www.empik.com/the-truth-about-pyecraft-a-humorous-science-fiction-story-wells-herbert-george,p1764931904,ebooki-i-mp3-p", "genre":["Thriller","Sensacja"],
+            "keywords":"policja, śledztwo", "name":"Test"}</script>
+            <script type="application/ld+json">{"@type":"Product", "name":"Polecany produkt",
+            "keywords":"obcy tag"}</script>"""
+        data = parse("empik", html, URLS["empik"])
+        self.assertEqual(data["category"], "Kryminały")
+        self.assertEqual(data["categories"], ["Kryminały", "Thriller", "Sensacja"])
+        self.assertEqual(data["tags"], ["policja", "śledztwo"])
+
     def test_empik_rejects_ebooks(self):
         with self.assertRaises(NotAudiobook):
             parse("empik", fixture("empik").replace('"subtype":"MP3"', '"subtype":"EPUB"'), URLS["empik"])
@@ -261,6 +292,58 @@ class DatabaseTests(unittest.TestCase):
                              [("1", "Tag"), ("4", "Tag")])
             self.assertEqual(conn.execute("SELECT SUM(tags_checked) FROM titles").fetchone()[0], 4)
             self.assertEqual(conn.execute("PRAGMA foreign_key_check").fetchall(), [])
+
+    def test_empik_tag_backfill_imports_existing_and_rechecks_all_with_browser(self):
+        db = self.database("empik")
+        urls = [f"https://www.empik.com/test,p{i},ebooki-i-mp3-p" for i in (1, 2)]
+        db.save({"url": urls[0], "title": "Test", "tags": ["Stary tag"]})
+        db.save({"url": urls[1], "title": "Test"})
+        original = db.path.read_bytes()
+        settings = self.backfill_settings(db)
+        empty = b'<h1 data-ta="title">Test</h1>'
+        tagged = empty + '<span class="ProductTags-module__productTag--new ProductTags-module__hidden--new">Nowy tag</span>'.encode()
+        with patch("main.Client") as client:
+            get = client.return_value.get
+            get.return_value = Response(urls[1], empty)
+            report = run_site("empik", settings, self.backfill_args(), {})
+            self.assertEqual(report["tagged"], 1)
+            get.assert_called_once_with(urls[1], render=True)
+            get.reset_mock()
+            get.return_value = Response(urls[0], tagged)
+            with patch("recommendations.ArchivedSignals.empty_tag_keys", return_value={"1", "2"}):
+                first = run_site("empik", settings, self.backfill_args(recheck=True, limit=1), {})
+            self.assertEqual(first["downloaded"], 1)
+            get.assert_called_once_with(urls[0], render=True)
+            get.reset_mock()
+            get.side_effect = HTTPError(urls[1], 429)
+            failed = run_site("empik", settings, self.backfill_args(recheck=True), {})
+            self.assertTrue(failed["stopped_on_rate_limit"])
+            get.side_effect = None
+            get.return_value = Response(urls[1], empty)
+            resumed = run_site("empik", settings, self.backfill_args(recheck=True), {})
+            self.assertEqual(resumed["downloaded"], 1)
+            self.assertEqual(resumed["without_tags"], 1)
+        self.assertEqual(db.path.read_bytes(), original)
+        with closing(sqlite3.connect(recommendations_path(settings))) as conn:
+            self.assertEqual(set(conn.execute("SELECT product_key,label FROM labels WHERE kind='tag'")),
+                             {("1", "Nowy tag")})
+            self.assertEqual(conn.execute("SELECT SUM(tags_checked) FROM titles").fetchone()[0], 2)
+            self.assertEqual(conn.execute("SELECT last_id FROM checkpoints WHERE mode='tags-recheck'").fetchone()[0], 0)
+
+    def test_missing_categories_are_audited_and_selected_for_metadata_backfill(self):
+        for site in ("empik", "lubimyczytac"):
+            with self.subTest(site=site):
+                db = self.database(site)
+                data = parse(site, fixture(site), URLS[site])
+                data.pop("category", None)
+                data.pop("categories", None)
+                db.save(data)
+                self.assertEqual(db.audit()["category"], 1)
+                rows = db.backfill_candidates(0, 10, supplemental=False, metadata=True)
+                self.assertEqual(len(rows), 1)
+                db.save({**data, "category": "Kryminał", "categories": ["Kryminał"]}, fill_book_id=rows[0].id)
+                self.assertEqual(db.audit()["category"], 0)
+                self.assertIn("Kryminał", str(db.stored_signals([rows[0].id])))
 
     def test_metadata_backfill_only_fills_missing_fields_and_existing_records(self):
         site = "storytel"

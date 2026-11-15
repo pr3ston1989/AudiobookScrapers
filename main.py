@@ -95,6 +95,9 @@ def fetch_book(client, site, url, *, include_reviews=True):
         requested_id = identity(site, url)
         if requested_id != identity(site, response.url) and requested_id not in data.get("source_ids", []):
             raise BookValidationError(f"Przekierowanie poza żądany audiobook: {url}")
+        if site == 'bookbeat':
+            from dynamic_metadata import bookbeat_related
+            bookbeat_related(client, data)
         if site == 'bookbeat' and include_reviews:
             from dynamic_metadata import bookbeat_reviews
             bookbeat_reviews(client, data)
@@ -280,6 +283,8 @@ def run_site(site, settings, args, state):
                     continue
                 else:
                     data = fetch_book(client, site, item["url"])
+                    if data.get("recommendation_coverage", {}).get("error"):
+                        report["warnings"].append(f"Rekomendacje {item['url']}: {data['recommendation_coverage']['error']}")
                     review_coverage = data.get('review_coverage') or {}
                     if review_coverage.get('error'):
                         warning = 'Nie udało się pobrać części opinii; metadane książek zapisano, szczegóły w pomocniczych metadanych'
@@ -309,7 +314,9 @@ def run_site(site, settings, args, state):
                                 if recommendations is None:
                                     recommendations = Recommendations(recommendations_path(settings))
                                 with recommendations.conn:
-                                    recommendations.save(site, data, tags_checked="tags" in data, recommendations_checked=True)
+                                    recommendations.save(site, data, tags_checked="tags" in data,
+                                                         recommendations_checked=not data.get("recommendation_coverage", {}).get("error"),
+                                                         replace_labels=True)
                             except (OSError, sqlite3.Error) as exc:
                                 report["recommendations_error"] = str(exc)
                                 report["warnings"].append(f"Zapis danych do rekomendacji: {exc}")
@@ -519,10 +526,11 @@ def main():
     backups.add_argument("--no-backup", action="store_true")
     parser.add_argument("--no-covers", action="store_true")
     signals = parser.add_mutually_exclusive_group()
-    signals.add_argument("--tags-only", action="store_true", help="W trybie backfill uzupełniaj tylko tagi LubimyCzytać i Storytela")
+    signals.add_argument("--tags-only", action="store_true", help="W trybie backfill uzupełniaj tylko tagi LubimyCzytać, Storytela, Empiku i Woblinka")
     signals.add_argument("--recommendations", action="store_true", help="W trybie backfill zbieraj dane do rekomendacji")
     parser.add_argument("--local-only", action="store_true", help="Eksportuj dane do rekomendacji z lokalnych baz i zapisanych metadanych")
-    parser.add_argument("--recheck", action="store_true", help="Pobierz ponownie również wcześniej sprawdzone karty w trybie rekomendacji")
+    parser.add_argument("--recheck", action="store_true", help="Pobierz ponownie również wcześniej sprawdzone karty w trybie rekomendacji lub samych tagów")
+    parser.add_argument("--sync-categories", action="store_true", help="W trybie rekomendacji zapisz sprawdzone kategorie także do baz serwisów")
     parser.add_argument("--interval-hours", type=float, help="Powtarzaj pełny cykl co N godzin")
     args = parser.parse_args()
     if args.catalog_page_budget is not None and args.catalog_page_budget <= 0:
@@ -553,12 +561,14 @@ def main():
         parser.error("--tags-only i --recommendations wymagają trybu backfill")
     if args.local_only and not args.recommendations:
         parser.error("--local-only wymaga --recommendations")
-    if args.recheck and (not args.recommendations or args.local_only):
-        parser.error("--recheck wymaga trybu rekomendacji z pobieraniem kart")
+    if args.recheck and (not (args.recommendations or args.tags_only) or args.local_only):
+        parser.error("--recheck wymaga --recommendations lub --tags-only z pobieraniem kart")
+    if args.sync_categories and (not args.recommendations or args.local_only):
+        parser.error("--sync-categories wymaga --recommendations z pobieraniem kart")
     if args.tags_only:
         args.services = args.services or list(TAG_SITES)
         if any(site not in TAG_SITES for site in args.services):
-            parser.error("--tags-only obsługuje wyłącznie LubimyCzytać i Storytel")
+            parser.error("--tags-only obsługuje wyłącznie LubimyCzytać, Storytel, Empik i Woblink")
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8", errors="replace")
     (ROOT / "logs").mkdir(exist_ok=True)

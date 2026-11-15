@@ -4,7 +4,7 @@ import os
 import sqlite3
 from pathlib import Path
 
-TAG_SITES = ("lubimyczytac", "storytel")
+TAG_SITES = ("lubimyczytac", "storytel", "empik", "woblink")
 
 SOURCES = {
     "nexto": {"label": "Nexto (archiwum)", "base": "https://www.nexto.pl", "pattern": r"^/audiobooki/[^/]+_p(\d+)\.xml$", "starts": ["/audiobooki_c1033.xml"], "active": False},
